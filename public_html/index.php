@@ -4593,7 +4593,8 @@ document.addEventListener('DOMContentLoaded', function(){
           <h3>Stay in the Loop</h3>
           <p>Project updates, impact stories, ways to get involved — straight to your inbox.</p>
           <form class="nl-form" onsubmit="handleNL(event)">
-            <input type="email" placeholder="your@email.com" aria-label="Email address" required />
+            <label for="nl-email" class="visually-hidden">Email address</label>
+            <input type="email" id="nl-email" placeholder="your@email.com" required />
             <button type="submit" id="nl-btn">Get Updates</button>
           </form>
         </div>

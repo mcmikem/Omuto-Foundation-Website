@@ -71,6 +71,42 @@ function nav_active(string $key, string $current): string {
 <meta name="twitter:description" content="<?= htmlspecialchars($page_desc) ?>"/>
 <meta name="twitter:image"       content="<?= htmlspecialchars($page_og_image) ?>"/>
 
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Omuto Foundation",
+  "url": "https://omuto.org",
+  "logo": "https://i.imgur.com/onkikq1.png",
+  "description": "Youth-led community development in Mpigi and Butambala, Uganda. 47 completed projects. 7,000+ youth engaged.",
+  "foundingDate": "2019",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mpigi",
+    "addressCountry": "UG"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Mpigi and Butambala, Uganda"
+  },
+  "sameAs": [
+    "https://www.youtube.com/@omutopulse",
+    "https://www.instagram.com/omuto_foundation/"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "info@omuto.org",
+    "contactType": "general"
+  },
+  "potentialAction": {
+    "@type": "DonateAction",
+    "name": "Fund a Chapter",
+    "target": "https://omuto.org/campaign.php"
+  }
+}
+</script>
+
 <?= $page_extra_head ?>
 
 <!-- Fonts -->

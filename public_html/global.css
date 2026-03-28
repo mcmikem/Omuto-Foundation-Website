@@ -77,6 +77,18 @@ ul {
 /* ============================
    ACCESSIBILITY
    ============================ */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
@@ -969,6 +981,63 @@ footer nav ul a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+}
+
+/* ============================
+   BACK TO TOP
+   ============================ */
+#back-to-top {
+  position: fixed;
+  bottom: 100px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--red);
+  color: #fff;
+  border: var(--b);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all .3s ease;
+  z-index: 400;
+  box-shadow: var(--shadow-sm);
+}
+
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#back-to-top:hover {
+  background: var(--navy);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+#back-to-top:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
+#back-to-top svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+@media (max-width: 580px) {
+  #back-to-top {
+    bottom: 80px;
+    right: 16px;
+    width: 44px;
+    height: 44px;
   }
 }
 

@@ -175,6 +175,30 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 })();
 </script>
 
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top" title="Back to top">
+  <svg viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+</button>
+
+<script>
+(function(){
+  const btn = document.getElementById('back-to-top');
+  if(!btn) return;
+  
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 600) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  }, {passive: true});
+  
+  btn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  });
+})();
+</script>
+
 <?= $footer_extra_js ?>
 
 </body>

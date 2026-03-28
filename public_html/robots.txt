@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://omuto.org/sitemap.xml
+
+# Disallow admin/private areas
+Disallow: /admin/
+Disallow: /config/
+Disallow: /.git/
+
+# Crawl-delay (optional - use sparingly)
+Crawl-delay: 1
