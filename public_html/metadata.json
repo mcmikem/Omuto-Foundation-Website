@@ -1,0 +1,7 @@
+{
+  "name": "Omuto Foundation | Youth Leadership in Rural Uganda",
+  "description": "Building sustainable youth leadership systems in schools and communities. Rooted in Mpigi District, Uganda. 100% youth-led action.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
