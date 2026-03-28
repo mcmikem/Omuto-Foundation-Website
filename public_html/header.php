@@ -36,10 +36,10 @@ $page_extra_head = $page_extra_head ?? '';
 $page_no_ticker  = $page_no_ticker  ?? false;
 
 $ticker_messages = $ticker_messages ?? [
-    "Omuto Youth Center now open in Nabbuzi, Mpigi.",
     "47 community-led projects completed since 2019.",
     "700+ girls back in class every month.",
     "3,200+ residents with safer water access.",
+    "15 chapters across Mpigi and Butambala.",
 ];
 
 // Helper — returns ' active' if $key matches $page_active_nav
@@ -126,7 +126,6 @@ function nav_active(string $key, string $current): string {
 <div id="ticker">
   <div class="ticker-item" id="ticker-item">
     <span class="ticker-dot">●</span>
-    <span class="ticker-new">New</span>
     <span class="ticker-text"><?= htmlspecialchars($ticker_messages[0]) ?></span>
   </div>
 </div>
