@@ -1,263 +1,310 @@
+<?php
+$page_title      = "Our Programs | Omuto Foundation";
+$page_desc       = "Five interconnected programs building youth-led change: School Xperience, YAP Chapters, YoSkills, Omuto Essentials, and Omuto Talents.";
+$page_canonical  = "https://omuto.org/programs";
+$page_active_nav = "work";
+?>
 <?php include 'header.php'; ?>
 
-    <main class="pt-64">
-        <!-- 3. INTRO SECTION -->
-        <section class="container mx-auto px-6 mb-32 reveal">
-            <div class="max-w-5xl">
-                <span class="text-omuto-teal font-black uppercase tracking-[0.4em] text-[10px] mb-6 block">Our Work</span>
-                <h1 class="text-6xl md:text-[8rem] font-black leading-[0.85] tracking-tightest mb-12 uppercase italic comic-text-shadow-sm">
-                    Activate <br><span class="text-omuto-red">The Future.</span>
-                </h1>
-                <p class="text-2xl md:text-3xl font-black leading-tight mb-8">
-                    Youth-Led. Community-Built. <span class="text-omuto-red">Action-Driven.</span>
-                </p>
-                <p class="text-xl font-bold opacity-80 leading-relaxed max-w-3xl italic">
-                    At Omuto Foundation, we don’t just talk about change — we **activate it**. Every program is designed, led, and executed by young people, turning ideas into real solutions in schools, communities, and creative spaces across Uganda.
-                </p>
-            </div>
-        </section>
+<main>
+    <!-- HERO -->
+    <section id="programs-hero" style="min-height:80svh;background:var(--navy);display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:var(--b)">
+        <div class="halftone" style="opacity:0.5"></div>
+        <div style="position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(238,39,38,.13),transparent 70%)"></div>
+        <div class="container" style="position:relative;z-index:2;padding:60px 24px">
+            <span class="eyebrow ew-teal" style="margin-bottom:18px">Our Work</span>
+            <h1 style="font-family:var(--font-head);font-size:clamp(48px,9vw,100px);font-weight:900;line-height:.88;letter-spacing:-.04em;text-transform:uppercase;color:#fff;margin-bottom:16px">
+                Activate <em style="font-style:italic;color:var(--red)">The Future</em>
+            </h1>
+            <p style="font-size:clamp(16px,2vw,22px);font-weight:700;color:rgba(255,255,255,.7);max-width:560px;line-height:1.6">
+                Youth-Led. Community-Built. <span style="color:var(--red)">Action-Driven.</span>
+            </p>
+            <p style="font-size:16px;font-weight:500;color:rgba(255,255,255,.55);max-width:520px;margin-top:18px;line-height:1.75;font-style:italic">
+                At Omuto Foundation, we don't just talk about change — we activate it. Every program is designed, led, and executed by young people.
+            </p>
+        </div>
+    </section>
 
-        <!-- 4. SLF SECTION -->
-        <section class="py-32 bg-omuto-blue border-y-4 border-omuto-navy relative overflow-hidden">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-16 items-start reveal">
-                    <div>
-                        <span class="bg-omuto-navy text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Pathway 01</span>
-                        <h2 class="text-5xl md:text-7xl font-black italic uppercase leading-none mb-8">Student Leaders <br>Forum (SLF)</h2>
-                        <p class="text-xs font-black uppercase tracking-widest mb-8 italic"><i class="fa-solid fa-location-dot mr-1"></i> Schools as leadership labs</p>
-                        <p class="text-xl font-bold opacity-80 mb-10 leading-relaxed italic">
-                            SLF trains youth to lead with competence, confidence, and action-oriented skills. Youth facilitate projects in their schools based on their own capacities. They identify challenges, design solutions, and implement projects, while Omuto provides follow-up support to ensure impact.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-12">
-                            <div class="bg-white/40 p-6 border-2 border-omuto-navy rounded-xl">
-                                <h4 class="font-black uppercase text-xs mb-3">Key Activities</h4>
-                                <ul class="text-[11px] font-bold opacity-70 space-y-2">
-                                    <li><i class="fa-solid fa-minus mr-2"></i> Leadership Training</li>
-                                    <li><i class="fa-solid fa-minus mr-2"></i> Peer Mentoring</li>
-                                    <li><i class="fa-solid fa-minus mr-2"></i> Interschool Debates</li>
-                                    <li><i class="fa-solid fa-minus mr-2"></i> RED Campaign</li>
-                                    <li><i class="fa-solid fa-minus mr-2"></i> GreenSchools Campaign</li>
-                                </ul>
-                            </div>
-                            <div class="bg-omuto-yellow p-6 border-2 border-omuto-navy rounded-xl">
-                                <h4 class="font-black uppercase text-xs mb-3">The Impact</h4>
-                                <p class="text-3xl font-black italic mb-2">10k+</p>
-                                <p class="text-[10px] font-bold opacity-70 uppercase">Youth trained in leadership systems across Central Uganda</p>
-                            </div>
+    <!-- SLF -->
+    <section style="background:var(--blue);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden">
+        <div class="halftone halftone-light"></div>
+        <div class="container" style="position:relative;z-index:2">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start">
+                <div>
+                    <span class="eyebrow ew-navy">Pathway 01</span>
+                    <h2 style="font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:12px">
+                        School <span style="color:var(--red)">Xperience</span>
+                    </h2>
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(29,38,49,.5);margin-bottom:20px">Schools as leadership labs</p>
+                    <p style="font-size:16px;font-weight:500;line-height:1.8;color:rgba(29,38,49,.75);margin-bottom:28px">
+                        SLF trains youth to lead with competence, confidence, and action-oriented skills. Youth identify challenges, design solutions, and implement projects in their schools.
+                    </p>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+                        <div style="background:rgba(255,255,255,.4);padding:20px;border:var(--b-thin);border-radius:var(--radius-sm)">
+                            <h4 style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px">Key Activities</h4>
+                            <ul style="font-size:12px;font-weight:600;opacity:.7;line-height:2">
+                                <li>— Leadership Training</li>
+                                <li>— Peer Mentoring</li>
+                                <li>— Interschool Debates</li>
+                                <li>— RED Campaign</li>
+                                <li>— GreenSchools</li>
+                            </ul>
                         </div>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="contact.html" class="bg-omuto-navy text-white px-6 py-3 border-2 border-omuto-navy shadow-comic-sm font-black uppercase tracking-widest text-[10px]">Schools: Register Leaders</a>
-                            <a href="contact.html" class="bg-white text-omuto-navy px-6 py-3 border-2 border-omuto-navy shadow-comic-sm font-black uppercase tracking-widest text-[10px]">Youth: Volunteer</a>
-                            <a href="campaign.html" class="bg-omuto-red text-white px-6 py-3 border-2 border-omuto-navy shadow-comic-sm font-black uppercase tracking-widest text-[10px]">Support Youth</a>
+                        <div style="background:var(--yellow);padding:20px;border:var(--b);border-radius:var(--radius-sm)">
+                            <p style="font-family:var(--font-head);font-size:42px;font-weight:900;font-style:italic;color:var(--navy)">10k+</p>
+                            <p style="font-family:var(--font-ui);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.7">Youth trained in leadership</p>
                         </div>
                     </div>
-                    <div class="relative">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQGFJgySLVI0bw/feedshare-shrink_2048_1536/B4EZg.IGaNGwAw-/0/1753388972710?e=1770249600&v=beta&t=9IjOOFLtmBCHbt_5gCl_8B6d8enqdBLVrWoBpYACQ_U" 
-                             class="w-full h-auto border-4 border-omuto-navy shadow-comic rounded-2xl" alt="SLF in Action">
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                        <a href="contact.php" class="btn btn-navy btn-sm">Schools: Register</a>
+                        <a href="campaign.php" class="btn btn-red btn-sm">Support Youth</a>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://media.licdn.com/dms/image/v2/D4E22AQGFJgySLVI0bw/feedshare-shrink_2048_1536/B4EZg.IGaNGwAw-/0/1753388972710?e=1770249600&v=beta&t=9IjOOFLtmBCHbt_5gCl_8B6d8enqdBLVrWoBpYACQ_U" 
+                         alt="Student Leaders in action" style="width:100%;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YAP -->
+    <section style="background:var(--teal);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden">
+        <div class="halftone halftone-light"></div>
+        <div class="container" style="position:relative;z-index:2">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+                <div>
+                    <img src="https://media.licdn.com/dms/image/v2/D4E22AQEBjsUmipFO7Q/feedshare-shrink_1280/B4EZlYaf5YGcAs-/0/1758124967272?e=1770249600&v=beta&t=YYDFLYGM1gbmzhUGSMhmZlzC5XLYiWF09fbzXhzppDY" 
+                         alt="YAP Chapter Leaders" style="width:100%;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow)" loading="lazy">
+                </div>
+                <div>
+                    <span class="eyebrow ew-navy">Pathway 02</span>
+                    <h2 style="font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:12px">
+                        YAP <span style="color:var(--navy)">Chapters</span>
+                    </h2>
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(29,38,49,.5);margin-bottom:20px">From skills to community impact</p>
+                    <p style="font-size:16px;font-weight:500;line-height:1.8;color:rgba(29,38,49,.75);margin-bottom:28px">
+                        YAP guides youth from learning practical skills to creating measurable community impact. Our chapters function as organized cells of change.
+                    </p>
+                    <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:32px">
+                        <div style="background:rgba(255,255,255,.3);padding:16px 20px;border:var(--b-thin);border-radius:var(--radius-sm);display:flex;gap:16px;align-items:center">
+                            <span style="font-family:var(--font-head);font-size:36px;font-weight:900;color:var(--navy)">10</span>
+                            <span style="font-size:14px;font-weight:600;color:rgba(29,38,49,.7)">Active chapters with 5-member core teams in Buwama</span>
+                        </div>
+                        <div style="background:rgba(255,255,255,.3);padding:16px 20px;border:var(--b-thin);border-radius:var(--radius-sm);display:flex;gap:16px;align-items:center">
+                            <span style="font-family:var(--font-head);font-size:36px;font-weight:900;color:var(--navy)">47</span>
+                            <span style="font-size:14px;font-weight:600;color:rgba(29,38,49,.7)">Youth-led community projects across the region</span>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:12px;flex-wrap:wrap">
+                        <a href="yap.php" class="btn btn-navy btn-sm">Learn More</a>
+                        <a href="contact.php" class="btn btn-white btn-sm">Partner</a>
                     </div>
                 </div>
             </div>
-            <div class="absolute inset-0 halftone-bg opacity-10"></div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 5. YAP SECTION -->
-        <section class="py-32 bg-omuto-teal border-b-4 border-omuto-navy relative">
-            <div class="container mx-auto px-6 reveal">
-                <div class="grid lg:grid-cols-2 gap-20 items-center">
-                    <div class="lg:order-2">
-                        <span class="bg-white text-omuto-navy px-3 py-1 text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Pathway 02</span>
-                        <h2 class="text-5xl md:text-7xl font-black italic uppercase leading-none mb-8">Youth Action <br>Pathway (YAP)</h2>
-                        <p class="text-xs font-black uppercase tracking-widest mb-8 italic"><i class="fa-solid fa-location-dot mr-1"></i> From skills to community impact</p>
-                        <p class="text-xl font-bold opacity-80 mb-10 leading-relaxed italic">
-                            YAP guides youth from learning practical skills to creating measurable community impact. Our chapters function as organized cells of change addressing real-world rural challenges.
-                        </p>
-                        <div class="space-y-6 mb-12">
-                            <div class="flex gap-6 items-start bg-white/30 p-6 border-2 border-omuto-navy">
-                                <span class="text-2xl font-black">10</span>
-                                <p class="text-sm font-bold italic">Active chapters, each with a 5-member core team in Buwama.</p>
-                            </div>
-                            <div class="flex gap-6 items-start bg-white/30 p-6 border-2 border-omuto-navy">
-                                <span class="text-2xl font-black">47</span>
-                                <p class="text-sm font-bold italic">Active youth-led community projects across the region.</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-wrap gap-4">
-                            <a href="contact.html" class="bg-omuto-navy text-white px-6 py-4 border-2 border-omuto-navy shadow-comic-sm font-black uppercase tracking-widest text-[10px]">Join a YAP Chapter</a>
-                            <a href="contact.html" class="bg-white text-omuto-navy px-6 py-4 border-2 border-omuto-navy shadow-comic-sm font-black uppercase tracking-widest text-[10px]">Partner with YAP</a>
-                        </div>
+    <!-- YOSKILLS -->
+    <section style="background:var(--yellow);padding:88px 0;border-bottom:var(--b)">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:48px">
+                <span class="eyebrow ew-red">Pathway 03</span>
+                <h2 style="font-family:var(--font-head);font-size:clamp(36px,6vw,64px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:12px">
+                    YoSkills <span style="color:var(--red)">Circles</span>
+                </h2>
+                <p style="font-family:var(--font-ui);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(29,38,49,.5)">Turning skills into livelihoods</p>
+            </div>
+            <p style="text-align:center;max-width:640px;margin:0 auto 48px;font-size:18px;font-weight:600;line-height:1.7;color:rgba(29,38,49,.7)">
+                Equipping young people with practical business and technical skills for employment and entrepreneurship through intense weekend cohorts.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px">
+                <div style="background:#fff;padding:32px;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow-sm)">
+                    <div style="width:56px;height:56px;background:var(--red);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                        <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M21.3 8.7l-8.6 8.6-4-4-1.4 1.4 5.4 5.4 10-10-1.4-1.4z"/></svg>
                     </div>
-                    <div class="lg:order-1">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQEBjsUmipFO7Q/feedshare-shrink_1280/B4EZlYaf5YGcAs-/0/1758124967272?e=1770249600&v=beta&t=YYDFLYGM1gbmzhUGSMhmZlzC5XLYiWF09fbzXhzppDY" 
-                             class="w-full h-auto border-4 border-omuto-navy shadow-comic rounded-2xl" alt="YAP Chapter Leaders">
+                    <h4 style="font-family:var(--font-head);font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:12px">Vocational Base</h4>
+                    <p style="font-size:13px;font-weight:500;opacity:.7;line-height:1.6">Tailoring, hairdressing, and basic tech modules designed for the local market.</p>
+                </div>
+                <div style="background:#fff;padding:32px;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow-sm)">
+                    <div style="width:56px;height:56px;background:var(--teal);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                        <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>
                     </div>
+                    <h4 style="font-family:var(--font-head);font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:12px">Centers</h4>
+                    <p style="font-size:13px;font-weight:500;opacity:.7;line-height:1.6">Weekend short courses at Omuto Youth Center (Mpigi) and our office in Kampala.</p>
+                </div>
+                <div style="background:#fff;padding:32px;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow-sm)">
+                    <div style="width:56px;height:56px;background:var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+                        <svg width="24" height="24" fill="#fff" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+                    </div>
+                    <h4 style="font-family:var(--font-head);font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:12px">Milestones</h4>
+                    <p style="font-size:13px;font-weight:500;opacity:.7;line-height:1.6">25 graduates from the first cohort now building sustainable small businesses.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- 6. YOSKILLS SECTION -->
-        <section class="py-32 bg-omuto-yellow border-b-4 border-omuto-navy">
-            <div class="container mx-auto px-6 reveal text-center">
-                <span class="bg-omuto-red text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Pathway 03</span>
-                <h2 class="text-5xl md:text-8xl font-black italic uppercase leading-none mb-10">YoSkills <br>Circles</h2>
-                <p class="text-xs font-black uppercase tracking-widest mb-10 italic"><i class="fa-solid fa-location-dot mr-1"></i> Turning skills into livelihoods</p>
-                <p class="text-2xl font-bold italic max-w-4xl mx-auto mb-16 opacity-80">
-                    Equipping young people with practical business and technical skills for employment and entrepreneurship through intense weekend cohorts.
-                </p>
-                
-                <div class="grid md:grid-cols-3 gap-8 mb-16">
-                    <div class="bg-white border-4 border-omuto-navy p-10 shadow-comic-sm">
-                        <i class="fa-solid fa-scissors text-3xl mb-6 text-omuto-red"></i>
-                        <h4 class="font-black uppercase mb-4">Vocational Base</h4>
-                        <p class="text-sm opacity-60 italic">Tailoring, hairdressing, and basic tech modules designed for the local market.</p>
-                    </div>
-                    <div class="bg-white border-4 border-omuto-navy p-10 shadow-comic-sm">
-                        <i class="fa-solid fa-location-dot text-3xl mb-6 text-omuto-red"></i>
-                        <h4 class="font-black uppercase mb-4">Centers</h4>
-                        <p class="text-sm opacity-60 italic">Weekend short courses at Omuto Youth Center (Mpigi) and our office in Kampala.</p>
-                    </div>
-                    <div class="bg-white border-4 border-omuto-navy p-10 shadow-comic-sm">
-                        <i class="fa-solid fa-graduation-cap text-3xl mb-6 text-omuto-red"></i>
-                        <h4 class="font-black uppercase mb-4">Milestones</h4>
-                        <p class="text-sm opacity-60 italic">25 graduates from the first cohort now building sustainable small businesses.</p>
-                    </div>
-                </div>
-
-                <div class="flex justify-center gap-6">
-                    <a href="contact.html" class="bg-omuto-navy text-white px-10 py-5 border-4 border-omuto-navy shadow-comic font-black uppercase tracking-widest text-xs">Join YoSkills</a>
-                    <a href="campaign.html" class="bg-white text-omuto-navy px-10 py-5 border-4 border-omuto-navy shadow-comic font-black uppercase tracking-widest text-xs">Support Youth</a>
-                </div>
+            <div style="text-align:center">
+                <a href="contact.php" class="btn btn-navy">Join YoSkills</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 7. OMUTO ESSENTIALS -->
-        <section class="py-32 container mx-auto px-6 reveal">
-            <div class="flex flex-col lg:flex-row gap-20 items-center mb-24">
-                <div class="flex-1">
-                    <span class="bg-omuto-gold text-white px-3 py-1 text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Pathway 04</span>
-                    <h2 class="text-5xl md:text-7xl font-black italic uppercase leading-none mb-8">Omuto Essentials</h2>
-                    <p class="text-xs font-black uppercase tracking-widest mb-8 italic"><i class="fa-solid fa-location-dot mr-1"></i> Youth-led businesses that give back</p>
-                    <p class="text-xl font-bold opacity-80 leading-relaxed italic mb-8">
+    <!-- ESSENTIALS -->
+    <section style="padding:88px 0;border-bottom:var(--b)">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center">
+                <div>
+                    <span class="eyebrow ew-yellow">Pathway 04</span>
+                    <h2 style="font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:12px">
+                        Omuto <span style="color:var(--gold)">Essentials</span>
+                    </h2>
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:rgba(29,38,49,.5);margin-bottom:20px">Youth-led businesses that give back</p>
+                    <p style="font-size:16px;font-weight:500;line-height:1.8;color:rgba(29,38,49,.75);margin-bottom:24px">
                         Our social enterprise arm, producing youth-led products that generate revenue for programs. 100% of revenue is reinvested into the movement.
                     </p>
-                    <div class="bg-omuto-cream p-8 border-4 border-omuto-navy shadow-comic-sm">
-                        <h4 class="font-black uppercase text-xs mb-6 text-omuto-red">Current Product Line</h4>
-                        <div class="grid grid-cols-2 gap-x-8 gap-y-4 text-xs font-black uppercase tracking-widest opacity-60">
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Reusable Pads</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Skin Jelly</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Melon Body Wash</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Liquid Soap</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Body Soap</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Liquid Detergent</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Candles</div>
-                            <div><i class="fa-solid fa-circle-check mr-2"></i> Ginger Powder</div>
+                    <div style="background:var(--cream);padding:24px;border:var(--b);border-radius:var(--radius);margin-bottom:24px">
+                        <h4 style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--red);margin-bottom:16px">Current Products</h4>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-family:var(--font-ui);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;opacity:.7">
+                            <span>✓ Reusable Pads</span>
+                            <span>✓ Skin Jelly</span>
+                            <span>✓ Body Soap</span>
+                            <span>✓ Liquid Soap</span>
+                            <span>✓ Candles</span>
+                            <span>✓ Ginger Powder</span>
                         </div>
                     </div>
-                    <a href="essentials.html" class="mt-12 inline-block bg-omuto-gold text-white px-10 py-5 border-4 border-omuto-navy shadow-comic font-black uppercase tracking-widest text-xs">Explore All Products</a>
+                    <a href="essentials.php" class="btn btn-navy">Shop Products</a>
                 </div>
-                <div class="flex-1 grid grid-cols-2 gap-4">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
                     <img src="https://media.licdn.com/dms/image/v2/D4E22AQG9plKg2k3eQg/feedshare-shrink_800/B4EZoMUvh5HEAo-/0/1761143358684?e=1770249600&v=beta&t=IIMnq-133Qm8Xu85mPzz3HNWBVmn1YdL6lpvpmpA-GM" 
-                         class="w-full aspect-square object-cover border-4 border-omuto-navy shadow-comic-sm" alt="Product production">
+                         alt="Product production" style="width:100%;aspect-ratio:1;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow-sm);object-fit:cover" loading="lazy">
                     <img src="https://media.licdn.com/dms/image/v2/D4E22AQG6tvcpG4eXVw/feedshare-shrink_800/B4EZnJfC6jGcAg-/0/1760021984204?e=1770249600&v=beta&t=dxhLKv9BFlnbit2KVhj3XwrO2UnNxxzJnru8vlf4YiA" 
-                         class="w-full aspect-square object-cover border-4 border-omuto-navy shadow-comic-sm mt-12" alt="Product packaging">
+                         alt="Product packaging" style="width:100%;aspect-ratio:1;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow-sm);object-fit:cover;margin-top:32px" loading="lazy">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- 8. TALENTS PROJECT -->
-        <section class="py-32 bg-omuto-navy text-white relative overflow-hidden">
-            <div class="container mx-auto px-6 relative z-10 reveal">
-                <div class="text-center mb-24">
-                    <span class="text-omuto-red font-black uppercase tracking-[0.5em] text-[10px] mb-4 block">Pathway 05</span>
-                    <h2 class="text-6xl md:text-9xl font-black italic uppercase italic comic-text-shadow-sm leading-none mb-6">Omuto Talents</h2>
-                    <p class="font-sketch text-4xl text-omuto-yellow">Voice and creativity in action.</p>
-                </div>
-
-                <div class="grid lg:grid-cols-2 gap-12">
-                    <div class="bg-white/5 border-4 border-white/20 p-12 shadow-comic-sm group hover:bg-white/10 transition-all">
-                        <i class="fa-solid fa-microphone-lines text-omuto-red text-5xl mb-8"></i>
-                        <h3 class="text-4xl font-black italic uppercase mb-6">Omuto Pulse</h3>
-                        <p class="text-lg opacity-60 mb-10 italic">Our youth-led media platform amplifying stories, campaigns, and advocacy. We train youth in journalism, content creation, and storytelling to own their narrative.</p>
-                        <a href="contact.html" class="inline-block border-2 border-omuto-red text-omuto-red px-8 py-3 font-black uppercase text-[10px] tracking-widest hover:bg-omuto-red hover:text-white transition-all">Join Pulse</a>
-                    </div>
-                    <div class="bg-white/5 border-4 border-white/20 p-12 shadow-comic-sm group hover:bg-white/10 transition-all">
-                        <i class="fa-solid fa-soccer-ball text-omuto-teal text-5xl mb-8"></i>
-                        <h3 class="text-4xl font-black italic uppercase mb-6">Football Alliance (OFA)</h3>
-                        <p class="text-lg opacity-60 mb-10 italic">Building teamwork, discipline, and leadership through sports. We host regional tournaments including the prestigious Omuto Cup to engage the community.</p>
-                        <a href="contact.html" class="inline-block border-2 border-omuto-teal text-omuto-teal px-8 py-3 font-black uppercase text-[10px] tracking-widest hover:bg-omuto-teal hover:text-white transition-all">Join OFA</a>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute inset-0 halftone-bg opacity-10"></div>
-        </section>
-
-        <!-- 9. CAMPAIGNS GRID -->
-        <section class="py-32 container mx-auto px-6 reveal">
-            <div class="mb-24 text-center">
-                <h2 class="text-6xl font-black italic uppercase mb-6">Initiatives</h2>
-                <p class="text-xl font-bold opacity-50 italic">Focused campaigns for immediate regional change.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="reveal">
-                    <div class="h-64 border-4 border-omuto-navy mb-8 overflow-hidden rounded-2xl">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQGFJgySLVI0bw/feedshare-shrink_2048_1536/B4EZg.IGaNGwAw-/0/1753388972710?e=1770249600&v=beta&t=9IjOOFLtmBCHbt_5gCl_8B6d8enqdBLVrWoBpYACQ_U" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black uppercase italic mb-4 text-omuto-red">RED Campaign</h4>
-                    <p class="text-sm opacity-60 leading-relaxed italic">Educating girls about menstrual hygiene, distributing reusable pads, and advocating for dignity in schools.</p>
-                </div>
-                <div class="reveal" style="transition-delay: 0.1s;">
-                    <div class="h-64 border-4 border-omuto-navy mb-8 overflow-hidden rounded-2xl">
-                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQEBjsUmipFO7Q/feedshare-shrink_1280/B4EZlYaf5YGcAs-/0/1758124967272?e=1770249600&v=beta&t=YYDFLYGM1gbmzhUGSMhmZlzC5XLYiWF09fbzXhzppDY" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black uppercase italic mb-4 text-omuto-teal">GreenSchools</h4>
-                    <p class="text-sm opacity-60 leading-relaxed italic">Training youth to protect the environment through local action and regional tree planting initiatives.</p>
-                </div>
-                <div class="reveal" style="transition-delay: 0.2s;">
-                    <div class="h-64 border-4 border-omuto-navy mb-8 overflow-hidden rounded-2xl">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHszo_y2n2FDw/feedshare-shrink_800/B4DZjly9I4G8Ak-/0/1756202000636?e=1770249600&v=beta&t=lqriSiZi8pBhZUicLiiieUhStt1sblwgXYjuOR0Rbe0" class="w-full h-full object-cover">
-                    </div>
-                    <h4 class="text-2xl font-black uppercase italic mb-4 text-omuto-blue">PureWater</h4>
-                    <p class="text-sm opacity-60 leading-relaxed italic">Promoting access to safe drinking water through youth-led hygiene campaigns and purifier governance.</p>
-                </div>
-            </div>
-            <div class="text-center mt-20">
-                <a href="campaign.html" class="bg-omuto-red text-white px-12 py-6 border-4 border-omuto-navy shadow-comic font-black uppercase tracking-widest text-sm">Support Youth</a>
-            </div>
-        </section>
-
-        <!-- 10. WHY IT MATTERS -->
-        <section class="py-32 bg-omuto-yellow border-t-4 border-omuto-navy">
-            <div class="container mx-auto px-6 text-center max-w-4xl reveal">
-                <h2 class="text-6xl font-black italic uppercase leading-none mb-12">Why Our Work <br><span class="text-omuto-red">Matters.</span></h2>
-                <p class="text-2xl font-bold italic opacity-80 mb-12 leading-relaxed">
-                    Every program is youth-led, evidence-driven, and locally-rooted. Omuto ensures that youth are <span class="text-omuto-navy underline">not just participants</span> — they are owners of the change.
-                </p>
-                <div class="grid md:grid-cols-3 gap-8 text-[11px] font-black uppercase tracking-widest text-omuto-navy/60">
-                    <div class="p-6 border-2 border-omuto-navy/20">Skills applied to real problems</div>
-                    <div class="p-6 border-2 border-omuto-navy/20">Communities are strengthened</div>
-                    <div class="p-6 border-2 border-omuto-navy/20">Systems improve from inside out</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 11. FINAL CTA -->
-        <section class="py-48 bg-omuto-navy text-white reveal relative overflow-hidden">
-            <div class="container mx-auto px-6 text-center max-w-5xl relative z-10">
-                <h2 class="text-6xl md:text-[8rem] font-black italic uppercase mb-12 comic-text-shadow-sm leading-[0.85]">
-                    The Action <br><span class="text-omuto-red">Starts Now.</span>
+    <!-- TALENTS -->
+    <section style="background:var(--navy);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden">
+        <div class="halftone halftone-light" style="opacity:0.3"></div>
+        <div class="container" style="position:relative;z-index:2">
+            <div style="text-align:center;margin-bottom:56px">
+                <span class="eyebrow ew-red">Pathway 05</span>
+                <h2 style="font-family:var(--font-head);font-size:clamp(36px,6vw,72px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;color:#fff">
+                    Omuto <span style="color:var(--yellow)">Talents</span>
                 </h2>
-                <p class="text-xl font-bold italic mb-16 max-w-3xl mx-auto opacity-80">
-                    Ready to build youth agency in your community? Ready to invest in real action?
-                </p>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="contact.html" class="bg-omuto-red text-white px-12 py-6 border-4 border-white shadow-comic font-black uppercase tracking-widest text-sm hover:translate-y-1 transition-all">Join a Program</a>
-                    <a href="contact.html" class="bg-white text-omuto-navy px-12 py-6 border-4 border-white shadow-comic font-black uppercase tracking-widest text-sm hover:translate-y-1 transition-all">Volunteer</a>
-                    <a href="campaign.html" class="bg-omuto-teal text-navy px-12 py-6 border-4 border-white shadow-comic font-black uppercase tracking-widest text-sm hover:translate-y-1 transition-all">Support Youth</a>
+                <p style="font-family:var(--font-sketch);font-size:28px;color:var(--yellow);margin-top:12px">Voice and creativity in action.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+                <div style="background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.2);padding:32px;border-radius:var(--radius)">
+                    <div style="width:64px;height:64px;background:var(--red);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px">
+                        <svg width="28" height="28" fill="#fff" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-head);font-size:24px;font-weight:900;text-transform:uppercase;font-style:italic;color:#fff;margin-bottom:16px">Omuto Pulse</h3>
+                    <p style="font-size:14px;font-weight:500;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:24px">
+                        Our youth-led media platform amplifying stories, campaigns, and advocacy. We train youth in journalism, content creation, and storytelling to own their narrative.
+                    </p>
+                    <a href="https://www.youtube.com/@omutopulse" target="_blank" rel="noopener" class="btn btn-outline-white btn-sm">Watch on YouTube →</a>
+                </div>
+                <div style="background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.2);padding:32px;border-radius:var(--radius)">
+                    <div style="width:64px;height:64px;background:var(--teal);border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px">
+                        <svg width="28" height="28" fill="#fff" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3 style="font-family:var(--font-head);font-size:24px;font-weight:900;text-transform:uppercase;font-style:italic;color:#fff;margin-bottom:16px">Football Alliance</h3>
+                    <p style="font-size:14px;font-weight:500;line-height:1.7;color:rgba(255,255,255,.6);margin-bottom:24px">
+                        Building teamwork, discipline, and leadership through sports. We host regional tournaments including the prestigious Omuto Cup to engage the community.
+                    </p>
+                    <a href="ofa.php" class="btn btn-outline-white btn-sm">Learn More →</a>
                 </div>
             </div>
-            <div class="absolute inset-0 halftone-bg opacity-10"></div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <?php include 'footer.php'; ?>
+    <!-- INITIATIVES -->
+    <section style="padding:88px 0">
+        <div class="container">
+            <div style="text-align:center;margin-bottom:48px">
+                <h2 style="font-family:var(--font-head);font-size:clamp(32px,5vw,52px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:12px">
+                    Our <span style="color:var(--red)">Initiatives</span>
+                </h2>
+                <p style="font-size:16px;font-weight:500;opacity:.6">Focused campaigns for immediate regional change.</p>
+            </div>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px">
+                <div>
+                    <div style="aspect-ratio:4/3;background:var(--navy);border:var(--b);border-radius:var(--radius);overflow:hidden;margin-bottom:20px">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQGFJgySLVI0bw/feedshare-shrink_2048_1536/B4EZg.IGaNGwAw-/0/1753388972710?e=1770249600&v=beta&t=9IjOOFLtmBCHbt_5gCl_8B6d8enqdBLVrWoBpYACQ_U" 
+                             alt="RED Campaign" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+                    </div>
+                    <h4 style="font-family:var(--font-head);font-size:18px;font-weight:800;text-transform:uppercase;font-style:italic;color:var(--red);margin-bottom:8px">RED Campaign</h4>
+                    <p style="font-size:13px;font-weight:500;line-height:1.6;opacity:.7">Educating girls about menstrual hygiene, distributing reusable pads, and advocating for dignity in schools.</p>
+                </div>
+                <div>
+                    <div style="aspect-ratio:4/3;background:var(--navy);border:var(--b);border-radius:var(--radius);overflow:hidden;margin-bottom:20px">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E22AQEBjsUmipFO7Q/feedshare-shrink_1280/B4EZlYaf5YGcAs-/0/1758124967272?e=1770249600&v=beta&t=YYDFLYGM1gbmzhUGSMhmZlzC5XLYiWF09fbzXhzppDY" 
+                             alt="GreenSchools" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+                    </div>
+                    <h4 style="font-family:var(--font-head);font-size:18px;font-weight:800;text-transform:uppercase;font-style:italic;color:var(--teal);margin-bottom:8px">GreenSchools</h4>
+                    <p style="font-size:13px;font-weight:500;line-height:1.6;opacity:.7">Training youth to protect the environment through local action and regional tree planting initiatives.</p>
+                </div>
+                <div>
+                    <div style="aspect-ratio:4/3;background:var(--navy);border:var(--b);border-radius:var(--radius);overflow:hidden;margin-bottom:20px">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQHszo_y2n2FDw/feedshare-shrink_800/B4DZjly9I4G8Ak-/0/1756202000636?e=1770249600&v=beta&t=lqriSiZi8pBhZUicLiiieUhStt1sblwgXYjuOR0Rbe0" 
+                             alt="PureWater" style="width:100%;height:100%;object-fit:cover" loading="lazy">
+                    </div>
+                    <h4 style="font-family:var(--font-head);font-size:18px;font-weight:800;text-transform:uppercase;font-style:italic;color:var(--blue);margin-bottom:8px">PureWater</h4>
+                    <p style="font-size:13px;font-weight:500;line-height:1.6;opacity:.7">Promoting access to safe drinking water through youth-led hygiene campaigns and purifier governance.</p>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:48px">
+                <a href="campaign.php" class="btn btn-red">Support Youth</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY IT MATTERS -->
+    <section style="background:var(--yellow);padding:88px 0;border-top:var(--b)">
+        <div class="container" style="text-align:center">
+            <h2 style="font-family:var(--font-head);font-size:clamp(32px,5vw,52px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;margin-bottom:16px">
+                Why Our Work <span style="color:var(--red)">Matters</span>
+            </h2>
+            <p style="font-size:18px;font-weight:600;line-height:1.7;max-width:560px;margin:0 auto 40px;opacity:.75">
+                Every program is youth-led, evidence-driven, and locally-rooted. Omuto ensures that youth are <strong>not just participants</strong> — they are owners of the change.
+            </p>
+            <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:0 auto">
+                <div style="padding:20px;border:2px solid rgba(29,38,49,.2);border-radius:var(--radius-sm)">
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.6">Skills</p>
+                    <p style="font-family:var(--font-head);font-size:14px;font-weight:800">Applied to real problems</p>
+                </div>
+                <div style="padding:20px;border:2px solid rgba(29,38,49,.2);border-radius:var(--radius-sm)">
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.6">Impact</p>
+                    <p style="font-family:var(--font-head);font-size:14px;font-weight:800">Communities strengthened</p>
+                </div>
+                <div style="padding:20px;border:2px solid rgba(29,38,49,.2);border-radius:var(--radius-sm)">
+                    <p style="font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;opacity:.6">Future</p>
+                    <p style="font-family:var(--font-head);font-size:14px;font-weight:800">Systems improve inside-out</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:var(--navy);padding:120px 0;position:relative;overflow:hidden">
+        <div class="halftone halftone-light" style="opacity:0.3"></div>
+        <div class="container" style="position:relative;z-index:2;text-align:center">
+            <h2 style="font-family:var(--font-head);font-size:clamp(36px,7vw,80px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;color:#fff;margin-bottom:20px">
+                The Action <span style="color:var(--red)">Starts Now</span>
+            </h2>
+            <p style="font-size:18px;font-weight:500;color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 36px">
+                Ready to build youth agency in your community? Ready to invest in real action?
+            </p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+                <a href="contact.php" class="btn btn-red">Join a Program</a>
+                <a href="contact.php" class="btn btn-white">Volunteer</a>
+                <a href="campaign.php" class="btn btn-outline-white">Support Youth</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<?php include 'footer.php'; ?>
 </body>
 </html>
