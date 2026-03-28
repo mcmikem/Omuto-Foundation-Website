@@ -1187,8 +1187,8 @@
       letter-spacing: .15em;
       display: block;
       margin-top: 6px;
-      opacity: .6;
-      color: rgba(255, 255, 255, .5)
+      opacity: .85;
+      color: rgba(255, 255, 255, .85)
     }
 
     .sb-red .stat-num {
@@ -2064,7 +2064,7 @@
       height: 15px
     }
 
-    .yc-feat h4 {
+    .yc-feat h3 {
       font-family: var(--font-head);
       font-size: 12px;
       font-weight: 800;
@@ -3005,7 +3005,7 @@
       font-size: 10px;
       text-transform: uppercase;
       letter-spacing: .22em;
-      color: rgba(29, 38, 49, .38);
+      color: #4a5568;
       text-align: center;
       margin-bottom: 12px
     }
@@ -3286,7 +3286,7 @@
       fill: #fff
     }
 
-    footer nav h4 {
+    footer nav h3 {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3940,6 +3940,7 @@ document.addEventListener('DOMContentLoaded', function(){
             <a href="impact.php" class="btn btn-outline-white btn-sm" style="margin-top:22px">See Our Impact Data →</a>
           </div>
         </div>
+        <h2 class="visually-hidden">The Problems We Address</h2>
         <div class="prob-grid">
           <div class="prob-card pc-water reveal rd1">
             <div class="prob-thumb"><img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/a2da555753b4b3a13bebfa4619e4bb44c969c3e4.jpg" alt="Unsafe water access in rural Uganda" loading="lazy" style="object-position:center" /></div>
@@ -4212,13 +4213,13 @@ document.addEventListener('DOMContentLoaded', function(){
             </span>
             <h2 class="yc-title">The Omuto<br /><span style="color:var(--yellow)">Youth Center</span></h2>
             <p class="yc-body">A permanent home in Mpigi District — counselling, digital skills, entrepreneurship training, and enterprise production. All under one roof.</p>
-            <div class="yc-features">
+              <div class="yc-features">
               <div class="yc-feat">
                 <div class="yc-feat-icon" style="background:rgba(255,207,93,.15)"><svg width="15" height="15" fill="var(--yellow)" viewBox="0 0 24 24">
                     <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z" />
                   </svg></div>
                 <div>
-                  <h4>Free Skills &amp; Counselling</h4>
+                  <h3>Free Skills &amp; Counselling</h3>
                   <p>Career guidance, mentorship — at no cost</p>
                 </div>
               </div>
@@ -4227,7 +4228,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     <path d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z" />
                   </svg></div>
                 <div>
-                  <h4>Digital Literacy</h4>
+                  <h3>Digital Literacy</h3>
                   <p>Weekend cohorts · 10–15 learners per intake</p>
                 </div>
               </div>
@@ -4236,7 +4237,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z" />
                   </svg></div>
                 <div>
-                  <h4>YoSkills Entrepreneurship</h4>
+                  <h3>YoSkills Entrepreneurship</h3>
                   <p>15 trained · 10 graduated in 2024–2025 pilot</p>
                 </div>
               </div>
@@ -4245,7 +4246,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
                   </svg></div>
                 <div>
-                  <h4>Essentials Production Hub</h4>
+                  <h3>Essentials Production Hub</h3>
                   <p>Soap &amp; Dignity Pads produced here — revenue funds programmes</p>
                 </div>
               </div>
@@ -4323,7 +4324,7 @@ document.addEventListener('DOMContentLoaded', function(){
             </div>
             <div class="vid-info">
               <p class="v-tag">Featured · Documentary</p>
-              <h4 class="v-title">Menstruation - The Story of Poor Rural Girls</h4>
+              <h3 class="v-title">Menstruation - The Story of Poor Rural Girls</h3>
               <p class="v-desc">A short documentary about how period poverty affects rural poor families and girls.</p>
             </div>
           </div>
@@ -4338,7 +4339,7 @@ document.addEventListener('DOMContentLoaded', function(){
             </div>
             <div class="vid-info">
               <p class="v-tag">Young Leaders Camp</p>
-              <h4 class="v-title">Highlights from the Young Leaders Camp, 2023</h4>
+              <h3 class="v-title">Highlights from the Young Leaders Camp, 2023</h3>
             </div>
           </div>
           <div class="vid-card" onclick="openModal('JZ76qdSHM2Q')" role="button" tabindex="0" aria-label="Play video 3" onkeydown="if(event.key==='Enter')openModal('JZ76qdSHM2Q')">
@@ -4352,7 +4353,7 @@ document.addEventListener('DOMContentLoaded', function(){
             </div>
             <div class="vid-info">
               <p class="v-tag">Omuto Pulse</p>
-              <h4 class="v-title">RED Campaign · Girls Voices</h4>
+              <h3 class="v-title">RED Campaign · Girls Voices</h3>
             </div>
           </div>
           <div class="vid-card" onclick="openModal('CdMBDRVExaA')" role="button" tabindex="0" aria-label="Play video 4" onkeydown="if(event.key==='Enter')openModal('CdMBDRVExaA')">
@@ -4366,7 +4367,7 @@ document.addEventListener('DOMContentLoaded', function(){
             </div>
             <div class="vid-info">
               <p class="v-tag">Omuto Football Alliance</p>
-              <h4 class="v-title">OFA Launch Match Day - Jan 2026</h4>
+              <h3 class="v-title">OFA Launch Match Day - Jan 2026</h3>
             </div>
           </div>
         </div>
@@ -4650,7 +4651,7 @@ document.addEventListener('DOMContentLoaded', function(){
           </div>
         </div>
         <nav aria-label="Footer Programs">
-          <h4>Programs</h4>
+          <h3>Programs</h3>
           <ul>
             <li><a href="osx.php">School Xperience</a></li>
             <li><a href="yap.php">YAP Chapters</a></li>
@@ -4660,7 +4661,7 @@ document.addEventListener('DOMContentLoaded', function(){
           </ul>
         </nav>
         <nav aria-label="Footer Organisation">
-          <h4>Organisation</h4>
+          <h3>Organisation</h3>
           <ul>
             <li><a href="about.php">About Omuto</a></li>
             <li><a href="impact.php">Impact Data</a></li>

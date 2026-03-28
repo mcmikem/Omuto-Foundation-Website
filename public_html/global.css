@@ -8,7 +8,7 @@
    CSS VARIABLES
    ============================ */
 :root {
-  --red: #EE2726;
+  --red: #d62020;
   --navy: #1D2631;
   --cream: #F9F6EE;
   --yellow: #FFCF5D;
@@ -261,7 +261,7 @@ ul {
 }
 
 .btn-red {
-  background: var(--red);
+  background: #d62020;
   color: #fff;
   box-shadow: var(--shadow-sm);
 }
@@ -385,7 +385,7 @@ ul {
 }
 
 .ticker-new {
-  background: var(--red);
+  background: #d62020;
   color: #fff;
   font-family: var(--font-ui);
   font-size: 8px;
@@ -941,7 +941,7 @@ footer nav h4 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .22em;
-  opacity: .45;
+  opacity: .7;
   margin-bottom: 14px;
 }
 
@@ -952,7 +952,7 @@ footer nav ul li {
 footer nav ul a {
   font-size: 13px;
   font-weight: 500;
-  opacity: .58;
+  opacity: .75;
   transition: opacity .15s;
 }
 
@@ -973,7 +973,7 @@ footer nav ul a:hover {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .1em;
-  opacity: .3;
+  opacity: .55;
   flex-wrap: wrap;
 }
 
