@@ -935,7 +935,7 @@ footer .container {
   border-color: var(--red);
 }
 
-footer nav h4 {
+footer nav h3 {
   font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 700;
