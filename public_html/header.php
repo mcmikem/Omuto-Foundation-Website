@@ -144,7 +144,7 @@ function nav_active(string $key, string $current): string {
           <a href="yap.php">YAP Chapters</a>
           <a href="ofa.php">Football Alliance</a>
           <a href="https://www.youtube.com/@omutopulse" target="_blank" rel="noopener">Omuto Pulse ↗</a>
-          <a href="shop.php">Omuto Essentials</a>
+          <a href="essentials.php">Omuto Essentials</a>
         </div>
       </div>
       <a href="about.php" class="nav-link<?= nav_active('about', $page_active_nav) ?>">About</a>
@@ -185,7 +185,7 @@ function nav_active(string $key, string $current): string {
       <a href="yap.php">YAP Chapters</a>
       <a href="ofa.php">Football Alliance</a>
       <a href="https://www.youtube.com/@omutopulse" target="_blank">Omuto Pulse ↗</a>
-      <a href="shop.php">Essentials</a>
+      <a href="essentials.php">Essentials</a>
     </div>
     <a href="about.php"<?= $page_active_nav === 'about' ? ' style="color:var(--red)"' : '' ?>>About</a>
     <span class="mob-group-lbl">Impact</span>

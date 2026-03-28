@@ -3555,7 +3555,7 @@
           <a href="yap.php" role="menuitem">YAP Chapters</a>
           <a href="ofa.php" role="menuitem">Football Alliance</a>
           <a href="https://www.youtube.com/@omutopulse" target="_blank" rel="noopener" role="menuitem">Omuto Pulse ↗</a>
-          <a href="shop.php" role="menuitem">Omuto Essentials</a>
+          <a href="essentials.php" role="menuitem">Omuto Essentials</a>
         </div>
       </div>
 
@@ -3614,7 +3614,7 @@
       <a href="yap.php">YAP Chapters</a>
       <a href="ofa.php">Football Alliance</a>
       <a href="https://www.youtube.com/@omutopulse" target="_blank">Omuto Pulse ↗</a>
-      <a href="shop.php">Essentials</a>
+      <a href="essentials.php">Essentials</a>
     </div>
     <a href="about.php">About</a>
     <span class="mob-group-lbl">Impact</span>
@@ -3857,23 +3857,11 @@ document.addEventListener('DOMContentLoaded', function(){
     <div id="stats" aria-label="Omuto Foundation impact figures">
       <div class="stats-row">
         <div class="stat-box sb-red">
-          <span class="stat-num stat-counter" data-target="7000" data-suffix="+" data-delay="0">0</span>
-          <span class="stat-lbl">Youth Engaged</span>
-        </div>
-        <div class="stat-box sb-teal">
-          <span class="stat-num stat-counter" data-target="3200" data-suffix="+" data-delay="150">0</span>
-          <span class="stat-lbl">Safer Water Access</span>
-        </div>
-        <div class="stat-box sb-yellow">
-          <span class="stat-num stat-counter" data-target="700" data-suffix="+" data-delay="300">0</span>
-          <span class="stat-lbl">Girls Supported</span>
-        </div>
-        <div class="stat-box sb-blue">
-          <span class="stat-num stat-counter" data-target="2300" data-suffix="+" data-delay="450">0</span>
-          <span class="stat-lbl">Trees Planted</span>
-        </div>
-        <div class="stat-box sb-white">
-          <span class="stat-num stat-counter" data-target="47" data-suffix="" data-delay="600">0</span>
+          <span class="stat-num stat-counter" data-target="7000" data-suffix="+" data-delay="0">7,000+</span>
+          <span class="stat-num stat-counter" data-target="3200" data-suffix="+" data-delay="150">3,200+</span>
+          <span class="stat-num stat-counter" data-target="700" data-suffix="+" data-delay="300">700+</span>
+          <span class="stat-num stat-counter" data-target="2300" data-suffix="+" data-delay="450">2,300+</span>
+          <span class="stat-num stat-counter" data-target="47" data-suffix="" data-delay="600">47</span>
           <span class="stat-lbl">Completed Projects</span>
         </div>
       </div>
@@ -4179,8 +4167,8 @@ document.addEventListener('DOMContentLoaded', function(){
               <span class="pillar-tag" style="background:var(--yellow);color:var(--navy)">Expression</span>
               <h3 class="pillar-name">Talents & Voice</h3>
               <p class="pillar-sub">Football Alliance · Omuto Cup · Omuto Pulse</p>
-              <p>Football and youth media build discipline, teamwork, and public voice. The Football Alliance develops leaders on and off the pitch. Omuto Pulse documents real stories from the ground.</p>
-              <p class="pillar-tagline">"Every match, every story — leadership practice."</p>
+              <p>Football builds discipline and teamwork. Our media team captures real stories from the ground. Every captain learns public speaking. Every match is a leadership lab.</p>
+              <p class="pillar-tagline">"Leaders are made on the pitch and in the community."</p>
               <a href="ofa.php" class="btn btn-navy btn-full btn-sm" style="margin-top:10px">See the Alliance →</a>
             </div>
           </div>
