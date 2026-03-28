@@ -72,7 +72,8 @@
     }
 
     html {
-      scroll-behavior: smooth
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px
     }
 
     body {
@@ -107,8 +108,53 @@
     }
 
     /* ============================
-   UTILITY
-============================ */
+    ACCESSIBILITY
+    ============================ */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-family: var(--font-ui);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      z-index: 9999;
+      transition: top .2s;
+    }
+    .skip-link:focus {
+      top: 10px;
+    }
+    :focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 2px;
+    }
+    .btn:focus-visible,
+    .nav-link:focus-visible,
+    .vid-card:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 3px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal { opacity: 1; transform: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ============================
+    UTILITY
+    ============================ */
     .container {
       max-width: 1160px;
       margin: 0 auto;
@@ -478,7 +524,7 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .1em;
-      padding: 7px 11px;
+      padding: 10px 14px;
       border-radius: 8px;
       color: var(--navy);
       transition: all .15s;
@@ -559,13 +605,28 @@
       display: none;
       flex-direction: column;
       gap: 5px;
-      padding: 8px;
-      cursor: pointer
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 8px;
+      min-width: 48px;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s
+    }
+
+    .hbg:hover {
+      background: var(--cream)
+    }
+
+    .hbg:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 2px
     }
 
     .hbg span {
       display: block;
-      width: 22px;
+      width: 24px;
       height: 2.5px;
       background: var(--navy);
       border-radius: 2px;
@@ -605,13 +666,14 @@
     .mob-links a {
       display: block;
       font-family: var(--font-ui);
-      font-size: 13px;
+      font-size: 15px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .08em;
-      padding: 10px 14px;
+      padding: 14px 18px;
       border-radius: 8px;
-      color: var(--navy)
+      color: var(--navy);
+      min-height: 48px
     }
 
     .mob-links a:hover {
@@ -645,14 +707,18 @@
 
     .mob-ctas a {
       font-family: var(--font-ui);
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .08em;
-      padding: 12px;
+      padding: 14px 20px;
       border-radius: 10px;
       text-align: center;
-      border: var(--b)
+      border: var(--b);
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center
     }
 
     .mob-ctas a.primary {
@@ -2710,15 +2776,16 @@
     .d-toggle {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      cursor: pointer
+      gap: 12px;
+      margin-bottom: 12px;
+      cursor: pointer;
+      padding: 8px 0
     }
 
     .d-sw {
-      width: 40px;
-      height: 22px;
-      border-radius: 11px;
+      width: 48px;
+      height: 28px;
+      border-radius: 14px;
       background: rgba(255, 255, 255, .22);
       border: 1.5px solid rgba(255, 255, 255, .3);
       position: relative;
@@ -2732,10 +2799,10 @@
 
     .d-sw-k {
       position: absolute;
-      top: 2px;
-      left: 2px;
-      width: 16px;
-      height: 16px;
+      top: 3px;
+      left: 3px;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       background: #fff;
       transition: left .2s;
@@ -2743,7 +2810,7 @@
     }
 
     .d-sw.on .d-sw-k {
-      left: 20px
+      left: 23px
     }
 
     .d-toggle-lbl {
@@ -2777,20 +2844,26 @@
       background: rgba(255, 255, 255, .1);
       border: 1.5px solid rgba(255, 255, 255, .18);
       border-radius: 7px;
-      padding: 7px 4px;
+      padding: 12px 8px;
       text-align: center;
       font-family: var(--font-ui);
       font-size: 12px;
       font-weight: 700;
       color: #fff;
       cursor: pointer;
-      transition: all .15s
+      transition: all .15s;
+      min-height: 48px
     }
 
     .d-amt:hover,
     .d-amt.sel {
       background: rgba(255, 255, 255, .22);
       border-color: rgba(255, 255, 255, .5)
+    }
+
+    .d-amt:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 2px
     }
 
     /* TASK 22: impact equivalency line under donate amounts */
@@ -3063,12 +3136,19 @@
 
     .nl-form input {
       flex: 1;
-      padding: 11px 15px;
+      padding: 14px 18px;
       border: var(--b);
       border-radius: var(--radius-sm);
       font-family: 'Inter', sans-serif;
-      font-size: 14px;
-      background: #fff
+      font-size: 15px;
+      background: #fff;
+      min-height: 52px
+    }
+
+    .nl-form input:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(238, 39, 38, .15)
     }
 
     .nl-form button {
@@ -3077,16 +3157,23 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .1em;
-      padding: 11px 18px;
+      padding: 14px 24px;
       background: var(--navy);
       color: #fff;
       border: var(--b);
       border-radius: var(--radius-sm);
-      cursor: pointer
+      cursor: pointer;
+      min-height: 52px;
+      transition: all .15s
     }
 
     .nl-form button:hover {
       background: var(--red)
+    }
+
+    .nl-form button:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 2px
     }
 
     /* ============================
@@ -3324,7 +3411,7 @@
 
     .modal-close {
       position: absolute;
-      top: -46px;
+      top: -52px;
       right: 0;
       color: #fff;
       font-family: var(--font-ui);
@@ -3333,10 +3420,21 @@
       text-transform: uppercase;
       letter-spacing: .1em;
       cursor: pointer;
-      padding: 5px 12px;
+      padding: 10px 18px;
       border: 2px solid rgba(255, 255, 255, .3);
       border-radius: 8px;
-      background: rgba(255, 255, 255, .08)
+      background: rgba(255, 255, 255, .08);
+      min-height: 44px;
+      transition: background .15s
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, .15)
+    }
+
+    .modal-close:focus-visible {
+      outline: 3px solid var(--red);
+      outline-offset: 3px
     }
 
     .modal-inner iframe {
@@ -3352,12 +3450,12 @@
       left: 0;
       width: 100%;
       background: rgba(29, 38, 49, .96);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
       border-top: 3px solid var(--red);
-      padding: 11px 0;
+      padding: 12px 0;
       z-index: 500;
       transform: translateY(100%);
-      transition: transform .3s ease
+      transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1)
     }
 
     #sticky.show {
@@ -3368,7 +3466,10 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px
+      gap: 14px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 16px
     }
 
     .sticky-msg {
@@ -3386,12 +3487,21 @@
       align-items: center
     }
 
+    .sticky-btns .btn {
+      min-height: 40px
+    }
+
     .sticky-x {
       color: rgba(255, 255, 255, .4);
       font-size: 18px;
-      padding: 4px 8px;
+      padding: 8px;
       cursor: pointer;
       transition: color .15s;
+      min-width: 40px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center
       background: none;
       border: none
     }
@@ -3401,14 +3511,25 @@
     }
 
     @media(max-width:580px) {
+      #sticky {
+        padding: 10px 0
+      }
+      .sticky-inner {
+        gap: 8px
+      }
       .sticky-msg {
         display: none
+      }
+      .sticky-btns .btn {
+        padding: 10px 16px;
+        font-size: 11px
       }
     }
   </style>
 </head>
 
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- ======== TICKER ======== -->
   <div id="ticker">
