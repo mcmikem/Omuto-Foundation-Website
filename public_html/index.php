@@ -3535,7 +3535,8 @@
   <div id="ticker">
     <div class="ticker-item" id="ticker-item">
       <span class="ticker-dot">●</span>
-      <span class="ticker-text">47 projects completed since 2019.</span>
+      <span class="ticker-new">New</span>
+      <span class="ticker-text">Omuto Youth Center now open in Nabbuzi, Mpigi.</span>
     </div>
   </div>
 
@@ -3678,7 +3679,7 @@
         </div>
 
         <p class="hero-body reveal rd3">
-          Young people in our network are building real things — water points, health campaigns, tree nurseries, football leagues, businesses. Not charity projects. Youth-owned systems.
+          Young people in our network are designing and running their own solutions; clean water, menstrual health, trees, talents and enterprise. Built from within, by the people who live here.
         </p>
 
         <div class="hero-ctas reveal rd4">
@@ -3915,44 +3916,57 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="halftone halftone-light"></div>
       <div class="container reality-hook">
         <div class="hook-inner reveal">
+          <div class="hook-stat-block">
+            <span class="hook-pct">57%</span>
+            <p class="hook-label">of Uganda's youth<br />not in school,<br />work, or training.</p>
+            <p class="hook-source">Source: Uganda National Planning Authority · NEET = Not in Education, Employment or Training</p>
+          </div>
           <div>
-            <span class="eyebrow ew-white">The Problem</span>
-            <p class="hook-explain">57% of Uganda's youth are not in school or employment. <strong>The energy is there. The structures aren't.</strong></p>
-            <p class="hook-explain" style="margin-top:14px">We build those structures. Youth-run. Community-owned.</p>
-            <a href="impact.php" class="btn btn-outline-white btn-sm" style="margin-top:22px">See What We've Built →</a>
+            <span class="eyebrow ew-white">The Challenge We Face</span>
+            <p class="hook-explain">Rural Uganda's young people have the energy, but lack support structures. <strong>Without a clear path, talent is wasted and potential turns into frustration.</strong></p>
+            <p class="hook-explain" style="margin-top:14px">Omuto exists to turn that energy into organized community power.</p>
+            <a href="impact.php" class="btn btn-outline-white btn-sm" style="margin-top:22px">See Our Impact Data →</a>
           </div>
         </div>
-        <h2 class="visually-hidden">What We're Solving</h2>
+        <h2 class="visually-hidden">The Problems We Address</h2>
         <div class="prob-grid">
           <div class="prob-card pc-water reveal rd1">
+            <div class="prob-thumb"><img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/a2da555753b4b3a13bebfa4619e4bb44c969c3e4.jpg" alt="Unsafe water access in rural Uganda" loading="lazy" style="object-position:center" /></div>
+            <div class="prob-overlay"></div>
             <div class="prob-body">
               <span class="prob-stat">1in3</span>
-              <h3 class="prob-title">No Clean Water</h3>
-              <p class="prob-desc">Kids miss school. Money goes to treatment, not school fees.</p>
+              <h3 class="prob-title">No Safe Water</h3>
+              <p class="prob-desc">Waterborne illness keeps kids out of school, drains households income and time</p>
               <span class="prob-hint">→ PureWater Initiative</span>
             </div>
           </div>
           <div class="prob-card pc-girls reveal rd2">
+            <div class="prob-thumb"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/655a8405-cb60-520e-9668-dc30b49d4a98/0af98422-8d5d-5204-9f00-361f34eddb23.jpg" alt="Girls missing school due to menstrual health barriers" loading="lazy" /></div>
+            <div class="prob-overlay"></div>
             <div class="prob-body">
               <span class="prob-stat">5days/mo</span>
-              <h3 class="prob-title">Girls Out of Class</h3>
-              <p class="prob-desc">No pads. No toilets. No attendance.</p>
+              <h3 class="prob-title">Girls Missing School</h3>
+              <p class="prob-desc">No pads, no safe toilets, no health conversations. The gap compounds over years</p>
               <span class="prob-hint">→ RED Campaign</span>
             </div>
           </div>
           <div class="prob-card pc-youth reveal rd3">
+            <div class="prob-thumb"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3cd104c4-31de-5aa7-9b30-279160e974b6/5bc4b7a2-8b8f-5391-a0d7-85a6f628625a.jpg" alt="Youth without pathways or mentors" loading="lazy" /></div>
+            <div class="prob-overlay"></div>
             <div class="prob-body">
               <span class="prob-stat">57%</span>
-              <h3 class="prob-title">Youth Idle</h3>
-              <p class="prob-desc">Skills. Energy. No way to use them.</p>
+              <h3 class="prob-title">Youth Without a Path</h3>
+              <p class="prob-desc">Talented, energised — but no structure, no mentors, no route forward</p>
               <span class="prob-hint">→ YAP Chapters</span>
             </div>
           </div>
           <div class="prob-card pc-env reveal rd4">
+            <div class="prob-thumb"><img src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/2391dd6a-e42f-51ad-b7b5-1a218707a4e4/fab81a65-2c50-5a4f-a0f6-a4279f631876.jpg" alt="Deforestation and environmental damage" loading="lazy" /></div>
+            <div class="prob-overlay"></div>
             <div class="prob-body">
               <span class="prob-stat">↓30%</span>
-              <h3 class="prob-title">Forests Gone</h3>
-              <p class="prob-desc">Land degrades. The next generation inherits nothing.</p>
+              <h3 class="prob-title">Forest Loss</h3>
+              <p class="prob-desc">Deforestation strips the land. The next generation inherits the damage</p>
               <span class="prob-hint">→ GreenSchools</span>
             </div>
           </div>
@@ -3967,7 +3981,7 @@ document.addEventListener('DOMContentLoaded', function(){
       <span class="eyebrow ew-teal">Our Methodology</span>
       <h2 class="t-section">The <em class="line-red">OMUTO</em> Model</h2>
       <p class="t-body" style="opacity:.72;max-width:520px;margin:12px auto 0">
-        <strong>Five stages.</strong> From identifying problems to owning solutions.
+        <strong>Every chapter moves through five stages</strong> — from organising around real community problems to owning independent, youth‑run initiatives.
       </p>
     </div>
 
@@ -4133,7 +4147,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div style="text-align:center" class="reveal">
           <span class="eyebrow ew-navy">Connected System</span>
           <h2 class="t-section">Three Programmes.<br /><em class="line-red">One System.</em></h2>
-          <p class="t-body" style="opacity:.65;max-width:480px;margin:12px auto 0">What we do. All connected.</p>
+          <p class="t-body" style="opacity:.65;max-width:480px;margin:12px auto 0">Youth, talent, and enterprise — reinforcing each other.</p>
         </div>
         <div class="pillar-grid">
           <div class="pillar reveal rd1">
@@ -4142,7 +4156,8 @@ document.addEventListener('DOMContentLoaded', function(){
               <span class="pillar-tag" style="background:var(--teal);color:var(--navy)">Core Program</span>
               <h3 class="pillar-name">Youth Action</h3>
               <p class="pillar-sub">School Xperience · RED · GreenSchools · PureWater</p>
-              <p>School forums. Campaigns. Real projects in real communities.</p>
+              <p>Student Forums anchor schools. Campaigns turn youth-identified problems into community-owned solutions.</p>
+              <p class="pillar-tagline">"Youth run it. Communities own it."</p>
               <a href="osx.php" class="btn btn-navy btn-full btn-sm" style="margin-top:10px">Explore →</a>
             </div>
           </div>
@@ -4163,7 +4178,8 @@ document.addEventListener('DOMContentLoaded', function(){
               <span class="pillar-tag" style="background:var(--red);color:#fff">Sustainability</span>
               <h3 class="pillar-name">Omuto Essentials</h3>
               <p class="pillar-sub">Youth-Run Social Enterprise</p>
-              <p>Soap. Dignity Pads. Made by youth. Profits fund our programs.</p>
+              <p>A youth-run social enterprise producing soap and Dignity Reusable Pads at the Youth Center. Revenue funds community campaigns and training.</p>
+              <p class="pillar-tagline">"Youth learn business by running one."</p>
               <a href="essentials.php" class="btn btn-navy btn-full btn-sm" style="margin-top:10px">Shop Products →</a>
             </div>
           </div>
@@ -4181,7 +4197,7 @@ document.addEventListener('DOMContentLoaded', function(){
               <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
               </svg>
-              Now Open in Nabbuzi
+              Now Open · February 2026
             </span>
             <h2 class="yc-title">The Omuto<br /><span style="color:var(--yellow)">Youth Center</span></h2>
             <p class="yc-body">A permanent home in Mpigi District — counselling, digital skills, entrepreneurship training, and enterprise production. All under one roof.</p>
@@ -4362,7 +4378,7 @@ document.addEventListener('DOMContentLoaded', function(){
         <div style="text-align:center" class="reveal">
           <span class="eyebrow ew-navy">Our Approach</span>
           <h2 class="t-section">Why This <em class="line-red">Endures</em></h2>
-          <p class="t-body" style="opacity:.65;max-width:500px;margin:12px auto 0">We don't do short-term fixes. We build things that last.</p>
+          <p class="t-body" style="opacity:.65;max-width:500px;margin:12px auto 0">Structure beats charity. Ownership beats handouts. Here's the difference.</p>
         </div>
         <div class="compare-wrap reveal">
           <table class="compare-table">
@@ -4376,34 +4392,34 @@ document.addEventListener('DOMContentLoaded', function(){
             </thead>
             <tbody>
               <tr>
-                <td>Water</td>
-                <td>Filter installed, then breaks</td>
-                <td>Students trained to maintain it</td>
+                <td>Water Access</td>
+                <td><span class="cx">×</span>Infrastructure installed, no maintenance plan</td>
+                <td><span class="ck">✓</span>Non-electric water filters + student team trained to maintain it</td>
               </tr>
               <tr>
-                <td>Girls</td>
-                <td>Pads handed out once</td>
-                <td>Reusable pads + peer educators</td>
+                <td>Girls &amp; Health</td>
+                <td><span class="cx">×</span>Disposable pads distributed once, supply runs out</td>
+                <td><span class="ck">✓</span>Reusable Dignity Pads + safe toilets + peer educators trained</td>
               </tr>
               <tr>
                 <td>Environment</td>
-                <td>Trees planted by outsiders</td>
-                <td>Students plant and tend their own</td>
+                <td><span class="cx">×</span>Trees planted by outsiders, community uninvested</td>
+                <td><span class="ck">✓</span>Students plant, name, and tend their own — GreenSchools</td>
               </tr>
               <tr>
-                <td>Skills</td>
-                <td>Workshop ends, nothing changes</td>
-                <td>Applied to real projects immediately</td>
+                <td>Youth Skills</td>
+                <td><span class="cx">×</span>Workshops end, skills unused</td>
+                <td><span class="ck">✓</span>Skills applied immediately to a real community project</td>
               </tr>
               <tr>
-                <td>Leadership</td>
-                <td>Adults decide</td>
-                <td>Youth decide, adults advise</td>
+                <td>Who Leads</td>
+                <td><span class="cx">×</span>External solutions or adult-led committee</td>
+                <td><span class="ck">✓</span>Young people design, run, and evaluate every project</td>
               </tr>
               <tr>
-                <td>Future</td>
-                <td>Funding stops, work stops</td>
-                <td>Alumni launch new chapters</td>
+                <td>What's Next</td>
+                <td><span class="cx">×</span>Funding ends, activity stops</td>
+                <td><span class="ck">✓</span>Graduates become mentors. Alumni launch new chapters.</td>
               </tr>
             </tbody>
           </table>
@@ -4496,7 +4512,7 @@ document.addEventListener('DOMContentLoaded', function(){
               <button class="d-go" id="d-go" type="button" onclick="window.location.href='campaign.php'">Donate $10 Now</button>
             </div>
             <!-- TASK 23: soft conversion for those not ready to donate -->
-            <a href="report2025.php" class="d-soft-cta">See our 2025 Impact Report →</a>
+            <a href="report2025.php" class="d-soft-cta">Not ready yet? Download our 2025 Impact Report →</a>
             <a href="campaign.php" class="btn btn-outline-white btn-full btn-sm" style="margin-top:4px">All Giving Options →</a>
           </div>
 
