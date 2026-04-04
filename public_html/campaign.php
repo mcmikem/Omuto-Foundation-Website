@@ -15,11 +15,13 @@
 // ── CONFIG (edit these) ───────────────────────────────────────────────────
 $WHATSAPP_NUMBER  = "256750028703";           // McMike's WhatsApp (no + or spaces)
 $MTN_NUMBER       = "0750 028 703";           // Personal MoMo number for now
-$AIRTEL_NUMBER    = "0701 234 567";           // Update when you have it
+$AIRTEL_NUMBER    = "";                      // TODO: Update with real Airtel Money number
 $NOTIFY_EMAIL     = "info@omuto.org";         // Where donation alerts go
-$FORMSPREE_ID     = "YOUR_FORMSPREE_ID";      // Get free at formspree.io
-$FLW_PAYMENT_LINK = "https://flutterwave.com/donate/omutofoundation"; // Replace with your real link from flutterwave.com/donate
-$USE_FLW_API      = false;                    // Set true when merchant account approved
+$FORMSPREE_ID     = "";      // Get free at formspree.io — replace with your form ID
+$FLW_PAYMENT_LINK = "";      // Replace with your real Flutterwave payment link
+$USE_FLW_API      = false;   // Set true when merchant account approved
+$PAYPAL_CLIENT_ID = "";      // Replace with your PayPal client ID
+$PAYPAL_BUTTON_ID = "DTBYQVYX5ABTY"; // Replace with your hosted button ID
 // ─────────────────────────────────────────────────────────────────────────
 
 $page_title      = "Donate | Omuto Foundation";
@@ -430,7 +432,7 @@ include 'header.php';
         <div class="give-box" id="give-box">
           <div class="gb-top">
             <span class="gb-top-title">Give Now</span>
-            <span class="gb-badge">🔒 Secure</span>
+            <span class="gb-badge"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:2px"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>Secure</span>
           </div>
           <div class="gb-body">
 
@@ -466,21 +468,26 @@ include 'header.php';
             <span class="gb-label">How would you like to pay?</span>
             <div class="method-tabs">
               <button class="m-tab on" onclick="switchMethod('mtn',this)">
-                <span class="m-icon">📱</span>MTN MoMo
+                <span class="m-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></span>MTN MoMo
               </button>
               <button class="m-tab" onclick="switchMethod('airtel',this)">
-                <span class="m-icon">📱</span>Airtel
+                <span class="m-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg></span>Airtel
               </button>
               <button class="m-tab" onclick="switchMethod('card',this)">
-                <span class="m-icon">💳</span>Card
+                <span class="m-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z"/></svg></span>Card
               </button>
               <button class="m-tab" onclick="switchMethod('paypal',this)">
-                <span class="m-icon">🅿</span>PayPal
+                <span class="m-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6z"/></svg></span>PayPal
               </button>
             </div>
 
             <!-- ══ MTN PANEL ══ -->
             <div class="pay-panel on" id="panel-mtn">
+              <div class="donate-steps" id="mtn-steps">
+                <div class="donate-step active" data-step="1"><span class="donate-step-n">1</span>Send</div>
+                <div class="donate-step" data-step="2"><span class="donate-step-n">2</span>Confirm</div>
+                <div class="donate-step" data-step="3"><span class="donate-step-n">3</span>Done</div>
+              </div>
               <div class="mm-header">
                 <span class="mm-logo">MTN</span>
                 <p>Send to this number directly. Takes 30 seconds. No app needed — just dial.</p>
@@ -537,7 +544,7 @@ include 'header.php';
               </button>
 
               <div class="wa-fallback">
-                <span class="wa-icon">💬</span>
+                <span class="wa-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
                 <p class="wa-text">Prefer to sort it over WhatsApp? <a href="https://wa.me/<?= $WHATSAPP_NUMBER ?>?text=Hi%20McMike%2C%20I%20want%20to%20donate%20to%20Omuto" target="_blank" rel="noopener">Message McMike directly →</a></p>
               </div>
             </div>
@@ -562,10 +569,10 @@ include 'header.php';
                 </div>
               </div>
 
-              <button class="mm-number-btn" style="background:#c00" onclick="copyNumber('0701234567','airtel-copy-hint')" aria-label="Copy Airtel number">
+              <button class="mm-number-btn" style="background:#c00" onclick="copyNumber('<?= str_replace(' ', '', $AIRTEL_NUMBER) ?>','airtel-copy-hint')" aria-label="Copy Airtel number">
                 <div style="flex:1">
                   <span class="nbtn-label">Airtel Money · Omuto Foundation</span>
-                  <span class="nbtn-num">0701 234 567</span>
+                  <span class="nbtn-num"><?= $AIRTEL_NUMBER ?: 'Coming Soon' ?></span>
                 </div>
                 <span class="nbtn-copy" id="airtel-copy-hint">Tap to copy</span>
               </button>
@@ -596,7 +603,7 @@ include 'header.php';
               </button>
 
               <div class="wa-fallback">
-                <span class="wa-icon">💬</span>
+                <span class="wa-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
                 <p class="wa-text">Need help? <a href="https://wa.me/<?= $WHATSAPP_NUMBER ?>?text=Hi%20McMike%2C%20I%20want%20to%20donate%20via%20Airtel" target="_blank" rel="noopener">Message McMike on WhatsApp →</a></p>
               </div>
             </div>
@@ -620,7 +627,7 @@ include 'header.php';
               <p style="font-size:13px;font-weight:500;color:rgba(29,38,49,.65);line-height:1.65;margin-bottom:14px">
                 Pay via PayPal — great for international donors. Any currency accepted.
               </p>
-              <div id="paypal-container-DTBYQVYX5ABTY"></div>
+              <div id="paypal-container-<?= htmlspecialchars($PAYPAL_BUTTON_ID) ?>"></div>
               <p style="font-size:10px;font-weight:600;opacity:.35;text-align:center;margin-top:10px;line-height:1.5">
                 You'll be redirected to PayPal's secure checkout page.
               </p>
@@ -634,7 +641,7 @@ include 'header.php';
               <a href="https://wa.me/<?= $WHATSAPP_NUMBER ?>?text=Hi%20McMike%2C%20I%20just%20donated%20to%20Omuto!" target="_blank" rel="noopener" class="btn btn-navy btn-sm" style="margin-top:16px;display:inline-flex">Say hi on WhatsApp →</a>
             </div>
 
-            <span class="give-secure">🔒 Your info is never shared or sold</span>
+            <span class="give-secure"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-1px;margin-right:2px"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>Your info is never shared or sold</span>
           </div><!-- /gb-body -->
         </div><!-- /give-box -->
       </div>
@@ -733,15 +740,15 @@ include 'header.php';
 <?php include 'footer.php'; ?>
 
 <!-- PayPal SDK -->
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+<script src="https://www.paypal.com/sdk/js?client-id=<?= htmlspecialchars($PAYPAL_CLIENT_ID) ?>&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
 
 <script>
 const CFG = <?= $js_config ?>;
 
 // ── PayPal ──
 if (typeof paypal !== 'undefined') {
-  paypal.HostedButtons({ hostedButtonId: "DTBYQVYX5ABTY" })
-    .render("#paypal-container-DTBYQVYX5ABTY");
+  paypal.HostedButtons({ hostedButtonId: "<?= htmlspecialchars($PAYPAL_BUTTON_ID) ?>" })
+    .render("#paypal-container-<?= htmlspecialchars($PAYPAL_BUTTON_ID) ?>");
 }
 
 // ── Amount state ──
@@ -769,6 +776,26 @@ function switchMethod(tab, el) {
   el.classList.add('on');
   document.getElementById('panel-' + tab).classList.add('on');
 }
+
+// ── Keyboard navigation for method tabs ──
+(function(){
+  const tabs = document.querySelectorAll('.m-tab');
+  tabs.forEach((tab, i) => {
+    tab.setAttribute('role', 'tab');
+    tab.setAttribute('tabindex', tab.classList.contains('on') ? '0' : '-1');
+    tab.addEventListener('keydown', function(e){
+      let next = -1;
+      if(e.key === 'ArrowRight' || e.key === 'ArrowDown'){ next = (i + 1) % tabs.length; }
+      else if(e.key === 'ArrowLeft' || e.key === 'ArrowUp'){ next = (i - 1 + tabs.length) % tabs.length; }
+      else if(e.key === 'Home'){ next = 0; }
+      else if(e.key === 'End'){ next = tabs.length - 1; }
+      else return;
+      e.preventDefault();
+      tabs[next].focus();
+      tabs[next].click();
+    });
+  });
+})();
 
 // ── Copy number to clipboard ──
 function copyNumber(num, hintId) {
@@ -832,6 +859,9 @@ function submitMoMo(network) {
   .then(r => r.json())
   .then(data => {
     if (data.ok || data.error === undefined) {
+      // Update progress steps
+      const steps = document.querySelectorAll('#mtn-steps .donate-step');
+      steps.forEach(s => { s.classList.remove('active'); s.classList.add('done'); });
       showSuccess();
     } else {
       throw new Error('formspree error');

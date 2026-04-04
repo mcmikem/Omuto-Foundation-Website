@@ -9,66 +9,31 @@ $page_active_nav = "about";                      // highlights "About" in nav
 $footer_show_leaflet = true;                     // tells footer.php to load Leaflet
 $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 <style>
-/* ====== ABOUT PAGE STYLES ====== */
+/* ====== ABOUT PAGE UNIQUE STYLES ====== */
 
-/* 1. HERO */
-#about-hero{min-height:78svh;background:var(--navy);display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:var(--b)}
-.ah-halftone{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
-.ah-glow-r{position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(238,39,38,.13),transparent 70%);pointer-events:none}
-.ah-glow-l{position:absolute;bottom:-60px;left:-60px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(64,210,175,.09),transparent 70%);pointer-events:none}
-.ah-inner{position:relative;z-index:2;width:100%}
+/* Hero overrides */
+#about-hero{min-height:78svh}
 .ah-rule{width:100%;height:4px;background:var(--red)}
 .ah-text{padding:52px 0 0}
-.ah-eyebrow{font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.28em;color:rgba(255,255,255,.35);display:block;margin-bottom:18px}
 .ah-h1{font-family:var(--font-head);font-size:clamp(60px,10.5vw,128px);font-weight:900;line-height:.88;letter-spacing:-.04em;text-transform:uppercase;color:#fff}
 .ah-h1 em{font-style:italic;color:var(--red)}
-.ah-strip{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;border-top:1px solid rgba(255,255,255,.1);margin-top:52px}
-.ah-cell{padding:22px 0;border-right:1px solid rgba(255,255,255,.08)}
-.ah-cell:last-child{border-right:none}
-.ah-num{font-family:var(--font-head);font-size:clamp(24px,3.5vw,38px);font-weight:900;line-height:1;display:block;color:var(--yellow)}
-.ah-lbl{font-family:var(--font-ui);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.18em;display:block;margin-top:5px;color:rgba(255,255,255,.35)}
-@media(max-width:700px){
-  .ah-strip{grid-template-columns:1fr 1fr}
-  .ah-cell:nth-child(2){border-right:none}
-  .ah-cell:nth-child(3){border-top:1px solid rgba(255,255,255,.08)}
-  .ah-cell:nth-child(4){border-right:none;border-top:1px solid rgba(255,255,255,.08)}
-}
 
-/* 2. ORIGIN */
-#origin{background:var(--cream);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden}
-.origin-wm{position:absolute;top:20px;right:-20px;font-family:var(--font-head);font-size:clamp(120px,18vw,200px);font-weight:900;line-height:1;color:rgba(29,38,49,.04);letter-spacing:-.05em;pointer-events:none;user-select:none;white-space:nowrap}
-.origin-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start;position:relative;z-index:2}
-.origin-pull{font-family:var(--font-head);font-size:clamp(20px,2.8vw,32px);font-weight:900;line-height:1.2;font-style:italic;color:var(--navy);margin-bottom:26px}
-.origin-pull .red{color:var(--red)}
-.origin-body{font-size:16px;line-height:1.85;font-weight:500;color:rgba(29,38,49,.75)}
-.origin-body p+p{margin-top:16px}
+/* Origin collage */
 .collage{position:relative;height:460px}
 .c-main{position:absolute;top:0;left:0;width:78%;aspect-ratio:4/3;border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--navy)}
 .c-main img{width:100%;height:100%;object-fit:cover}
 .c-over{position:absolute;bottom:0;right:0;width:52%;aspect-ratio:3/4;border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--navy)}
 .c-over img{width:100%;height:100%;object-fit:cover}
 .c-sticker{position:absolute;top:44%;left:52%;transform:translate(-50%,-50%) rotate(-5deg);font-family:var(--font-sketch);font-size:22px;color:var(--navy);background:var(--yellow);border:3px solid var(--navy);border-radius:10px;padding:8px 18px;box-shadow:4px 4px 0 var(--navy);z-index:5;white-space:nowrap}
-@media(max-width:900px){.origin-grid{grid-template-columns:1fr;gap:40px}.collage{height:320px}}
+@media(max-width:900px){.collage{height:320px}}
 
-/* 3. PHILOSOPHY */
-#philosophy{background:var(--navy);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden}
-.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;position:relative;z-index:2}
-.phil-big{font-family:var(--font-head);font-size:clamp(26px,3.8vw,46px);font-weight:900;line-height:1.1;font-style:italic;color:#fff}
-.phil-big .red{color:var(--red)}.phil-big .yellow{color:var(--yellow)}
-.phil-body-text{font-size:15px;line-height:1.85;font-weight:500;color:rgba(255,255,255,.62);margin-top:22px}
-.phil-body-text p+p{margin-top:14px}
-.phil-list{display:flex;flex-direction:column;gap:0;border:var(--b-thin);border-color:rgba(255,255,255,.12);border-radius:var(--radius);overflow:hidden}
-.pp{padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:flex-start;gap:16px;transition:background .15s}
-.pp:last-child{border-bottom:none}
-.pp:hover{background:rgba(255,255,255,.04)}
+/* Philosophy list overrides */
+.pp{padding:20px 24px}
 .pp-num{font-family:var(--font-head);font-size:11px;font-weight:900;color:var(--red);width:28px;flex-shrink:0;padding-top:2px;letter-spacing:.08em}
 .pp-text{font-size:14px;font-weight:600;color:rgba(255,255,255,.78);line-height:1.55}
 .pp-text strong{display:block;font-family:var(--font-head);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#fff;margin-bottom:3px}
-@media(max-width:900px){.phil-grid{grid-template-columns:1fr;gap:40px}}
 
-/* 4. FOUNDER */
-#founder{background:var(--cream);padding:88px 0;border-bottom:var(--b);position:relative;overflow:hidden}
-.founder-grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;position:relative;z-index:2}
+/* Founder card */
 .founder-card{border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);background:var(--navy)}
 .founder-photo{aspect-ratio:3/4;overflow:hidden;background:#0e1a26}
 .founder-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
@@ -83,11 +48,9 @@ $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/
 .founder-quote{font-family:var(--font-head);font-size:clamp(17px,2.2vw,24px);font-weight:800;font-style:italic;line-height:1.4;color:var(--navy);margin-bottom:20px;padding-left:20px;border-left:4px solid var(--red)}
 .founder-bio{font-size:16px;line-height:1.8;font-weight:500;color:rgba(29,38,49,.7)}
 .founder-bio p+p{margin-top:14px}
-@media(max-width:900px){.founder-grid{grid-template-columns:1fr;gap:40px}.founder-card{max-width:260px}}
+@media(max-width:900px){.founder-card{max-width:260px}}
 
-/* 5. MAP */
-#map-section{background:#fff;padding:88px 0;border-bottom:var(--b)}
-.map-layout{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start;margin-top:48px}
+/* Map overrides */
 #omuto-map{height:480px;border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .leaflet-popup-content-wrapper{border:3px solid var(--navy)!important;border-radius:10px!important;box-shadow:4px 4px 0 var(--navy)!important;font-family:"Space Grotesk",sans-serif!important}
 .leaflet-popup-tip{background:var(--navy)!important}
@@ -103,10 +66,9 @@ $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/
 .mloc:hover{background:var(--cream);border-color:var(--navy);transform:translate(-2px,-2px);box-shadow:var(--shadow-sm)}
 .mloc-name{font-family:var(--font-head);font-size:13px;font-weight:800;text-transform:uppercase;margin-bottom:2px}
 .mloc-type{font-family:var(--font-ui);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(29,38,49,.38)}
-@media(max-width:900px){.map-layout{grid-template-columns:1fr}#omuto-map{height:340px}}
+@media(max-width:900px){#omuto-map{height:340px}}
 
-/* 6. TIMELINE */
-#timeline{background:var(--cream);padding:88px 0;border-bottom:var(--b)}
+/* Timeline */
 .tl-track{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);margin-top:48px}
 .tl-cell{padding:32px 26px;border-right:var(--b);display:flex;flex-direction:column;gap:14px;transition:background .18s}
 .tl-cell:last-child{border-right:none}
@@ -139,8 +101,7 @@ $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/
   .tl-cell:first-child{border-top:none}
 }
 
-/* 7. TEAM */
-#team{background:#fff;padding:88px 0;border-bottom:var(--b)}
+/* Team */
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px}
 .team-card{border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);background:var(--cream);transition:transform .22s,box-shadow .22s}
 .team-card:hover{transform:translate(-4px,-6px);box-shadow:var(--shadow)}
@@ -152,9 +113,7 @@ $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/
 .team-role{font-family:var(--font-ui);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;color:rgba(29,38,49,.38)}
 @media(max-width:900px){.team-grid{grid-template-columns:repeat(2,1fr)}}
 
-/* 8. RECOGNITION */
-#recognition{background:var(--navy);padding:64px 0;border-bottom:var(--b);position:relative;overflow:hidden}
-.rec-inner{position:relative;z-index:2;text-align:center}
+/* Recognition */
 .rec-lbl{font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.22em;color:rgba(255,255,255,.35);margin-bottom:24px;display:block}
 .rec-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:32px}
 .rec-pill{font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;padding:8px 18px;border-radius:30px;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.75);transition:all .15s}
@@ -165,13 +124,12 @@ $page_extra_css = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/
 .p-pill{font-family:var(--font-ui);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:6px 14px;border-radius:30px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.42);transition:all .15s}
 .p-pill:hover{background:rgba(255,255,255,.08);color:rgba(255,255,255,.65)}
 
-/* FINAL CTA */
-#finalcta{background:var(--red);color:#fff;padding:80px 0;position:relative;overflow:hidden;border-top:var(--b)}
+/* Final CTA overrides */
+#finalcta{padding:80px 0}
 #finalcta .halftone{opacity:.06}
-.fcta-inner{text-align:center;position:relative;z-index:2;max-width:540px;margin:0 auto}
 .fcta-h{font-family:var(--font-head);font-size:clamp(28px,4.5vw,52px);font-weight:900;line-height:1;text-transform:uppercase;font-style:italic;margin-bottom:14px;letter-spacing:-.02em}
 .fcta-p{font-size:17px;font-weight:500;opacity:.9;margin-bottom:28px;line-height:1.6}
-.fcta-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+@media(max-width:900px){.founder-grid{grid-template-columns:1fr!important;gap:40px!important}.founder-card{max-width:260px}}
 </style>';
 
 // Page-specific JS (Leaflet map init + flyTo helper)
@@ -217,10 +175,10 @@ include 'header.php';
 <main style="padding-top:calc(var(--ticker-h) + 70px)">
 
 <!-- 1. HERO -->
-<section id="about-hero">
-  <div class="ah-halftone"></div>
-  <div class="ah-glow-r"></div>
-  <div class="ah-glow-l"></div>
+<section id="about-hero" class="section-navy">
+  <div class="hero-dots ah-halftone"></div>
+  <div class="glow-red ah-glow-r"></div>
+  <div class="glow-teal ah-glow-l"></div>
   <div class="ah-inner">
     <div class="ah-rule"></div>
     <div class="container">
@@ -228,21 +186,21 @@ include 'header.php';
         <span class="ah-eyebrow">Omuto Foundation · Est. 2019 · Kammengo, Mpigi, Uganda</span>
         <h1 class="ah-h1">Built From<br/><em>Within.</em></h1>
       </div>
-      <div class="ah-strip reveal">
-        <div class="ah-cell"><span class="ah-num">7,000+</span><span class="ah-lbl">Youth Engaged</span></div>
-        <div class="ah-cell" style="padding-left:24px"><span class="ah-num">47</span><span class="ah-lbl">Completed Projects</span></div>
-        <div class="ah-cell" style="padding-left:24px"><span class="ah-num">3,200+</span><span class="ah-lbl">Safer Water Access</span></div>
-        <div class="ah-cell" style="padding-left:24px"><span class="ah-num">2019</span><span class="ah-lbl">Year We Started</span></div>
+      <div class="stat-strip ah-strip reveal">
+        <div class="stat-strip-cell"><span class="stat-strip-num">7,000+</span><span class="stat-strip-lbl">Youth Engaged</span></div>
+        <div class="stat-strip-cell" style="padding-left:24px"><span class="stat-strip-num">47</span><span class="stat-strip-lbl">Completed Projects</span></div>
+        <div class="stat-strip-cell" style="padding-left:24px"><span class="stat-strip-num">3,200+</span><span class="stat-strip-lbl">Safer Water Access</span></div>
+        <div class="stat-strip-cell" style="padding-left:24px"><span class="stat-strip-num">2019</span><span class="stat-strip-lbl">Year We Started</span></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 2. ORIGIN -->
-<section id="origin">
-  <span class="origin-wm" aria-hidden="true">KAMMENGO</span>
+<section id="origin" class="section-cream">
+  <span class="watermark origin-wm" aria-hidden="true">KAMMENGO</span>
   <div class="container">
-    <div class="origin-grid">
+    <div class="grid-2 origin-grid">
       <div class="reveal">
         <span class="eyebrow ew-red" style="margin-bottom:24px">Where We Started</span>
         <p class="origin-pull">2019. Kammengo, Mpigi District.<br/><span class="red">No office. No money.</span><br/>Just young people tired of waiting.</p>
@@ -268,10 +226,10 @@ include 'header.php';
 </section>
 
 <!-- 3. PHILOSOPHY -->
-<section id="philosophy">
+<section id="philosophy" class="section-navy">
   <div class="halftone halftone-light"></div>
   <div class="container">
-    <div class="phil-grid">
+    <div class="grid-2-center phil-grid">
       <div class="reveal">
         <span class="eyebrow ew-white" style="margin-bottom:24px">What We Believe</span>
         <p class="phil-big"><span class="yellow">Charity feeds a day.</span><br/>Structure feeds<br/><span class="red">a generation.</span></p>
@@ -281,8 +239,8 @@ include 'header.php';
           <p>If the work stops when one person leaves, it was not strong enough.</p>
         </div>
       </div>
-      <div class="reveal rd2">
-        <div class="phil-list">
+        <div class="reveal rd2">
+        <div class="bordered-list-dark phil-list">
           <div class="pp"><span class="pp-num">01</span><div class="pp-text"><strong>Youth Own It</strong>Young people design, run, and evaluate every project. Adults advise. Youth decide.</div></div>
           <div class="pp"><span class="pp-num">02</span><div class="pp-text"><strong>Systems Not Handouts</strong>Every intervention builds something that outlasts it — a trained team, a maintained system, a new chapter.</div></div>
           <div class="pp"><span class="pp-num">03</span><div class="pp-text"><strong>Real Problems Only</strong>We work on issues the community itself identifies. Not what funders assume is needed.</div></div>
@@ -295,9 +253,9 @@ include 'header.php';
 </section>
 
 <!-- 4. FOUNDER -->
-<section id="founder">
+<section id="founder" class="section-cream">
   <div class="container">
-    <div class="founder-grid">
+    <div class="founder-grid" style="display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;position:relative;z-index:2">
       <div class="reveal">
         <div class="founder-card">
           <div class="founder-photo"><img src="https://i.ibb.co/QtQpJRz/10.png" alt="Mark Mike Mutumba — Founder, Omuto Foundation" loading="lazy"/></div>
@@ -319,7 +277,7 @@ include 'header.php';
         </div>
         <blockquote class="founder-quote">"Young people, when given the right tools, are the key to achieving the 2030 Sustainable Development Goals — not just in Uganda but across Africa."</blockquote>
         <div class="founder-bio">
-          <p>Mark Mike founded Omuto in 2019 with no office, no funding, and a simple conviction: that the young people around him were not the problem — they were the answer.</p>
+          <p>Mark Mike (known as "McMike") founded Omuto in 2019 with no office, no funding, and a simple conviction: that the young people around him were not the problem — they were the answer.</p>
           <p>From community meetups in Kammengo to being featured in Forbes Africa, the mission has stayed exactly the same. He is a YALI alumni and a Theirworld Ambassador.</p>
           <p>With Africa's booming youth population, every young person is either a challenge or an asset. Omuto chooses to make them assets — leaders, activists, entrepreneurs, innovators.</p>
         </div>
@@ -333,14 +291,14 @@ include 'header.php';
 </section>
 
 <!-- 5. MAP -->
-<section id="map-section">
+<section id="map-section" class="section-white">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-teal">Where We Work</span>
       <h2 class="t-section">Our <em class="line-red">Footprint</em></h2>
       <p class="t-body" style="opacity:.65;max-width:480px;margin:12px auto 0">Offices in Kammengo and Kampala. Active programmes across Mpigi and Butambala districts. Click any location to zoom in.</p>
     </div>
-    <div class="map-layout reveal">
+    <div class="map-layout reveal" style="display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start;margin-top:48px">
       <div id="omuto-map" aria-label="Map of Omuto Foundation locations"></div>
       <div class="map-side">
         <div class="map-key">
@@ -362,7 +320,7 @@ include 'header.php';
 </section>
 
 <!-- 6. TIMELINE -->
-<section id="timeline">
+<section id="timeline" class="section-cream">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-navy">Our Journey</span>
@@ -378,7 +336,7 @@ include 'header.php';
 </section>
 
 <!-- 7. TEAM -->
-<section id="team">
+<section id="team" class="section-white">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-navy">The People</span>
@@ -395,10 +353,10 @@ include 'header.php';
 </section>
 
 <!-- 8. RECOGNITION -->
-<section id="recognition">
+<section id="recognition" class="section-navy" style="padding:64px 0">
   <div class="halftone halftone-light"></div>
   <div class="container">
-    <div class="rec-inner reveal">
+    <div class="rec-inner reveal" style="position:relative;z-index:2;text-align:center">
       <span class="rec-lbl">Recognised &amp; Verified By</span>
       <div class="rec-pills">
         <span class="rec-pill hl">Forbes Africa · Jun/Jul 2024</span>
@@ -422,13 +380,13 @@ include 'header.php';
 </section>
 
 <!-- FINAL CTA -->
-<section id="finalcta">
+<section id="finalcta" class="section-red">
   <div class="halftone"></div>
   <div class="container">
-    <div class="fcta-inner reveal">
+    <div class="fcta-inner reveal" style="text-align:center;position:relative;z-index:2;max-width:540px;margin:0 auto">
       <h2 class="fcta-h">Ready to build with us?</h2>
       <p class="fcta-p">Whether you fund, partner, or start a chapter — there is a place for you in the Omuto story.</p>
-      <div class="fcta-btns">
+      <div class="fcta-btns" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
         <a href="campaign.php" class="btn btn-white">Fund a Chapter →</a>
         <a href="contact.php" class="btn btn-navy">Partner With Us</a>
         <a href="index.php" class="btn btn-outline-white">Back to Home</a>

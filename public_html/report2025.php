@@ -1,11 +1,15 @@
-<?php include 'header.php'; ?>
+<?php
+$page_title      = "2025 Annual Report | Omuto Foundation";
+$page_desc       = "Omuto Foundation Annual Report 2025 — From Experimentation to Conviction. 10,000+ youth trained, $150K Zayed Prize, 8 partner schools.";
+$page_canonical  = "https://omuto.org/report2025";
+$page_active_nav = "impact";
+$footer_show_sticky = false;
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omuto Foundation — 2025 Annual Report</title>
+$page_extra_css = '<style>';
+include 'header.php';
+?>
+</head>
+<body>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=Inter:wght@400;500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}

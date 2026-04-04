@@ -680,7 +680,7 @@ include 'header.php';
 
       <!-- SLF -->
       <div class="pc c-navy">
-        <div class="pc-img"><img src="https://picsum.photos/seed/slf1/800/400" alt="Student Leaders Forum session" loading="lazy"/></div>
+        <div class="pc-img"><img src="https://i.ibb.co/m5TL3gFq/23.png" alt="Student Leaders Forum session" loading="lazy"/></div>
         <span class="pc-tag">01 — Student Leaders Forum</span>
         <h3 class="pc-h">Leadership<br/>&amp; Debate</h3>
         <p class="pc-body">Prefects across 40 schools trained in ethics, public speaking, project management, and conflict resolution. Termly interschool debate championships run across Mpigi and Butambala.</p>
@@ -718,7 +718,7 @@ include 'header.php';
 
       <!-- GreenSchools -->
       <div class="pc c-teal">
-        <div class="pc-img"><img src="https://picsum.photos/seed/gs1/800/400" alt="GreenSchools tree planting" loading="lazy"/></div>
+        <div class="pc-img"><img src="https://i.ibb.co/wrPnfcKG/21.png" alt="GreenSchools tree planting" loading="lazy"/></div>
         <span class="pc-tag">03 — GreenSchools</span>
         <h3 class="pc-h">Environmental<br/>Action</h3>
         <p class="pc-body">Student Green Teams lead tree planting, school gardens, and composting projects — all documented and reported. The GreenSchools framework produced the Kyanja Ecoloop team that won $150,000 globally.</p>
@@ -737,7 +737,7 @@ include 'header.php';
 
       <!-- PureWater -->
       <div class="pc c-blue">
-        <div class="pc-img"><img src="https://picsum.photos/seed/pw1/800/400" alt="PureWater initiative clean water" loading="lazy"/></div>
+        <div class="pc-img"><img src="https://i.ibb.co/m5TL3gFq/23.png" alt="PureWater Initiative clean water" loading="lazy"/></div>
         <span class="pc-tag">04 — PureWater Initiative</span>
         <h3 class="pc-h">Clean Water<br/>in Schools</h3>
         <p class="pc-body">Spouts Purifaaya ceramic filter installation in schools, maintained by trained student teams. Zero firewood used for water boiling. Waterborne disease risk from drinking water eliminated in participating schools.</p>
@@ -807,11 +807,11 @@ include 'header.php';
     <span class="is-cell-lbl">McMike Mutumba · Founder</span>
   </div>
   <div class="is-cell">
-    <img src="https://picsum.photos/seed/yth1/800/500" alt="Omuto youth programme field session" loading="lazy"/>
+    <img src="https://i.ibb.co/wrPnfcKG/21.png" alt="Omuto youth programme field session" loading="lazy"/>
     <span class="is-cell-lbl">Field session · Mpigi District 2025</span>
   </div>
   <div class="is-cell">
-    <img src="https://picsum.photos/seed/sk1/800/500" alt="Youth entrepreneurship training" loading="lazy"/>
+    <img src="https://i.ibb.co/JWHrCkcp/26.png" alt="Youth entrepreneurship training" loading="lazy"/>
     <span class="is-cell-lbl">YoSkills · Entrepreneurship cohort</span>
   </div>
 </div>

@@ -137,6 +137,10 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 
 // Scroll-reveal
 (function(){
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    return;
+  }
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
   },{threshold:0.08,rootMargin:'0px 0px -20px 0px'});
@@ -147,11 +151,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 <?php if ($footer_show_sticky): ?>
 (function(){
   let shown = false;
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if(!shown && window.scrollY > 500){
-      shown = true;
-      const s = document.getElementById('sticky');
-      if(s) s.classList.add('show');
+    if(!ticking){
+      requestAnimationFrame(() => {
+        if(!shown && window.scrollY > 500){
+          shown = true;
+          const s = document.getElementById('sticky');
+          if(s) s.classList.add('show');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   },{passive:true});
 })();
@@ -184,12 +195,18 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 (function(){
   const btn = document.getElementById('back-to-top');
   if(!btn) return;
-  
+  let ticking = false;
   window.addEventListener('scroll', () => {
-    if(window.scrollY > 600) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
+    if(!ticking){
+      requestAnimationFrame(() => {
+        if(window.scrollY > 600) {
+          btn.classList.add('visible');
+        } else {
+          btn.classList.remove('visible');
+        }
+        ticking = false;
+      });
+      ticking = true;
     }
   }, {passive: true});
   
@@ -200,6 +217,49 @@ document.getElementById('yr').textContent = new Date().getFullYear();
 </script>
 
 <?= $footer_extra_js ?>
+
+<!-- Image Lightbox -->
+<script>
+(function(){
+  let overlay = null;
+  function openLightbox(src, alt){
+    if(!overlay){
+      overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.setAttribute('role','dialog');
+      overlay.setAttribute('aria-label','Image viewer');
+      overlay.innerHTML = '<button class="lightbox-close" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg></button><img src="" alt=""/><div class="lightbox-caption"></div>';
+      overlay.addEventListener('click', function(e){
+        if(e.target === overlay || e.target.classList.contains('lightbox-close')) closeLightbox();
+      });
+      document.body.appendChild(overlay);
+    }
+    const img = overlay.querySelector('img');
+    const cap = overlay.querySelector('.lightbox-caption');
+    img.src = src; img.alt = alt || '';
+    cap.textContent = alt || '';
+    requestAnimationFrame(()=> overlay.classList.add('active'));
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox(){
+    if(!overlay) return;
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeLightbox();
+  });
+  window.openLightbox = openLightbox;
+  document.addEventListener('click', function(e){
+    const trigger = e.target.closest('[data-lightbox]');
+    if(!trigger) return;
+    e.preventDefault();
+    const src = trigger.dataset.lightbox;
+    const alt = trigger.dataset.lightboxAlt || trigger.alt || '';
+    openLightbox(src, alt);
+  });
+})();
+</script>
 
 </body>
 </html>

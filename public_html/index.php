@@ -465,7 +465,7 @@
       left: 0;
       width: 100%;
       z-index: 700;
-      padding: 6px 16px
+      padding: 6px 16px;
       transition: transform .22s ease-out;
     }
 #nav.nav-hidden{
@@ -961,13 +961,28 @@
   left:0;
   width:100%;
   height:100%;
-  object-fit:contain; /* no cropping, stays inside frame */
+  object-fit:contain;
   opacity:0;
   transition:opacity .6s ease;
   pointer-events:none;
   filter:drop-shadow(8px 12px 20px rgba(29,38,49,.28));
 }
-
+.hero-slide.skeleton{
+  background: linear-gradient(90deg, #1D2631 25%, #2a3645 50%, #1D2631 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+.hero-slide.loaded{
+  animation: fadeIn .4s ease-out;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 .hero-slide.active{
   opacity:1;
 }
@@ -3700,43 +3715,48 @@
         <div class="hero-ss">
           <div class="slide-holder" id="ss-holder">
             <img
-              class="hero-slide active"
+              class="hero-slide active skeleton"
               id="hs0"
               src="https://i.ibb.co/wZ9cf7Ny/31.png"
               alt="Youth-led community water project, Mpigi Uganda"
               data-watermark="SDGs"
+              onload="this.classList.remove('skeleton');this.classList.add('loaded')"
             />
             <img
-              class="hero-slide"
+              class="hero-slide skeleton"
               id="hs1"
               src="https://i.ibb.co/m5TL3gFq/23.png"
               alt="Students presenting their community action plan"
               loading="lazy"
               data-watermark="LEADERSHIP"
+              onload="this.classList.remove('skeleton');this.classList.add('loaded')"
             />
             <img
-              class="hero-slide"
+              class="hero-slide skeleton"
               id="hs2"
               src="https://i.ibb.co/TBrW6BPh/28.png"
               alt="Omuto School Xperience training session"
               loading="lazy"
               data-watermark="SCHOOLS"
+              onload="this.classList.remove('skeleton');this.classList.add('loaded')"
             />
             <img
-              class="hero-slide"
+              class="hero-slide skeleton"
               id="hs3"
               src="https://i.ibb.co/mVPm5DzK/18.png"
               alt="Omuto Football Alliance match day"
               loading="lazy"
               data-watermark="SPORTS"
+              onload="this.classList.remove('skeleton');this.classList.add('loaded')"
             />
             <img
-              class="hero-slide"
+              class="hero-slide skeleton"
               id="hs4"
               src="https://i.ibb.co/whj2bMb6/22.png"
               alt="RED Campaign menstrual health distribution"
               loading="lazy"
               data-watermark="GENDER"
+              onload="this.classList.remove('skeleton');this.classList.add('loaded')"
             />
 
             <button class="ss-pause" id="ss-pause" aria-label="Pause slideshow" type="button">

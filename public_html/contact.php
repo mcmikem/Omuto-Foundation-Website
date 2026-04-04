@@ -6,8 +6,8 @@ $page_active_nav = "impact";
 $footer_show_sticky = false;
 
 $page_extra_css = '<style>
-.hero-contact{min-height:60svh;background:var(--navy);display:flex;align-items:flex-end;position:relative;overflow:hidden;border-bottom:var(--b)}
-.hero-contact-glow{position:absolute;top:-80px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(238,39,38,.13),transparent 70%)}
+.hero-contact{min-height:60svh;display:flex;align-items:flex-end}
+.hero-contact-glow{top:-80px;right:-80px;width:500px;height:500px}
 .hero-contact-wm{position:absolute;bottom:20px;right:40px;font-family:var(--font-head);font-size:clamp(80px,15vw,180px);font-weight:900;color:rgba(255,255,255,.04);letter-spacing:-.02em;pointer-events:none;user-select:none}
 .hero-contact-inner{padding:60px 0;position:relative;z-index:2}
 .hero-contact h1{font-family:var(--font-head);font-size:clamp(48px,8vw,96px);font-weight:900;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
@@ -20,7 +20,7 @@ $page_extra_css = '<style>
 .engage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px}
 .engage-card{padding:36px 28px;border-right:var(--b);display:flex;flex-direction:column;gap:10px;transition:background .18s}
 .engage-card:last-child{border-right:none}
-.engage-card:hover{background:rgba(255,255,255,.05}
+.engage-card:hover{background:rgba(255,255,255,.05)}
 .engage-card h3{font-family:var(--font-head);font-size:20px;font-weight:900;text-transform:uppercase;font-style:italic;color:#fff;margin-bottom:8px}
 .engage-card p{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);line-height:1.6}
 .engage-card .ec-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
@@ -68,7 +68,6 @@ $page_extra_head = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4
 $footer_extra_js = '<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
-  // FAQ accordion
   document.querySelectorAll(".faq-trigger").forEach(function(btn){
     btn.addEventListener("click",function(){
       var item=this.closest(".faq-item");
@@ -77,19 +76,20 @@ document.addEventListener("DOMContentLoaded",function(){
       if(!isOpen){item.classList.add("open");this.setAttribute("aria-expanded","true")}
     });
   });
-  // Leaflet map
   if(document.getElementById("contact-map")){
     var map=L.map("contact-map",{center:[0.25,32.0],zoom:9,scrollWheelZoom:false});
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:"© OpenStreetMap"}).addTo(map);
     L.marker([0.25,32.0],{icon:L.divIcon({className:"map-marker",html:"<div style=\'background:var(--red);width:20px;height:20px;border-radius:50%;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,0.3)\'></div>",iconSize:[20,20],iconAnchor:[10,10]})}).addTo(map).bindPopup("<strong>Omuto Foundation</strong><br/>Mpigi, Uganda");
   }
-  // Form
   var form=document.getElementById("contactForm");
   if(form){
     form.addEventListener("submit",function(e){
       e.preventDefault();
-      form.style.display="none";
-      document.getElementById("formSuccess").style.display="block";
+      var fd=new FormData(form);
+      fd.append("_subject","Omuto Contact: "+(fd.get("subject")||"General"));
+      fetch("https://formspree.io/f/YOUR_FORMSPREE_ID",{method:"POST",body:fd,headers:{"Accept":"application/json"}})
+      .then(function(r){if(r.ok){form.style.display="none";document.getElementById("formSuccess").style.display="block"}else{alert("Could not send. Try WhatsApp instead.")}})
+      .catch(function(){alert("Network error. Try WhatsApp instead.")});
     });
   }
 });
@@ -99,8 +99,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
 <main>
   <!-- HERO -->
-  <section class="hero-contact">
-    <div class="hero-contact-glow"></div>
+  <section class="section-navy hero-contact">
+    <div class="glow-red hero-contact-glow"></div>
     <div class="hero-contact-wm" aria-hidden="true">TALK</div>
     <div class="container hero-contact-inner">
       <h1>Build<br/><em>With Us.</em></h1>
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded",function(){
   </section>
 
   <!-- FORM -->
-  <section style="padding:88px 0">
+  <section class="section-white">
     <div class="container">
       <div class="contact-grid">
         <div class="form-card">
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded",function(){
   </section>
 
   <!-- CTA -->
-  <section id="finalcta">
+  <section id="finalcta" class="section-navy">
     <div class="halftone halftone-light"></div>
     <div class="container">
       <div class="fc-inner">
@@ -241,5 +241,3 @@ document.addEventListener("DOMContentLoaded",function(){
 </main>
 
 <?php include 'footer.php'; ?>
-</body>
-</html>

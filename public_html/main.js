@@ -128,20 +128,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  window.addEventListener('scroll', shouldStartCounters);
+  window.addEventListener('scroll', shouldStartCounters, {passive: true});
   shouldStartCounters();
 
   // SCROLL REVEAL
   const revealEls = document.querySelectorAll('.reveal');
+  let revealTicking = false;
   function handleReveal() {
-    revealEls.forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 80) {
-        el.classList.add('revealed');
-      }
-    });
+    if (!revealTicking) {
+      requestAnimationFrame(() => {
+        revealEls.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (rect.top < window.innerHeight - 80) {
+            el.classList.add('revealed');
+          }
+        });
+        revealTicking = false;
+      });
+      revealTicking = true;
+    }
   }
-  window.addEventListener('scroll', handleReveal);
+  window.addEventListener('scroll', handleReveal, {passive: true});
   handleReveal();
 
   // MOBILE MENU
@@ -162,15 +169,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // STICKY CTA BAR (optional)
   const stickyCta = document.getElementById('sticky-cta');
   if (stickyCta) {
+    let stickyTicking = false;
     function handleSticky() {
-      const scrollY = window.scrollY || window.pageYOffset;
-      if (scrollY > 600) {
-        stickyCta.classList.add('visible');
-      } else {
-        stickyCta.classList.remove('visible');
+      if (!stickyTicking) {
+        requestAnimationFrame(() => {
+          const scrollY = window.scrollY || window.pageYOffset;
+          if (scrollY > 600) {
+            stickyCta.classList.add('visible');
+          } else {
+            stickyCta.classList.remove('visible');
+          }
+          stickyTicking = false;
+        });
+        stickyTicking = true;
       }
     }
-    window.addEventListener('scroll', handleSticky);
+    window.addEventListener('scroll', handleSticky, {passive: true});
     handleSticky();
   }
 
@@ -203,6 +217,98 @@ document.addEventListener('DOMContentLoaded', function () {
       closeVideoModal();
     }
   });
+
+  // HERO SLIDESHOW — SWIPE SUPPORT
+  (function(){
+    const hero = document.querySelector('.hero-section');
+    if(!hero || !slides.length) return;
+    let startX = 0, startY = 0, isDragging = false;
+    hero.addEventListener('touchstart', function(e){
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    }, {passive: true});
+    hero.addEventListener('touchend', function(e){
+      if(!isDragging) return;
+      isDragging = false;
+      const dx = e.changedTouches[0].clientX - startX;
+      const dy = e.changedTouches[0].clientY - startY;
+      if(Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)){
+        if(dx < 0){
+          let next = currentSlide + 1;
+          if(next >= slides.length) next = 0;
+          goToSlide(next);
+        } else {
+          let prev = currentSlide - 1;
+          if(prev < 0) prev = slides.length - 1;
+          goToSlide(prev);
+        }
+      }
+    }, {passive: true});
+  })();
+
+  // MODEL STEPPER — SWIPE SUPPORT
+  (function(){
+    const stepper = document.querySelector('.model-stepper');
+    if(!stepper || !modelButtons.length) return;
+    let startX = 0;
+    stepper.addEventListener('touchstart', function(e){
+      startX = e.touches[0].clientX;
+    }, {passive: true});
+    stepper.addEventListener('touchend', function(e){
+      const dx = e.changedTouches[0].clientX - startX;
+      if(Math.abs(dx) > 50){
+        if(dx < 0) window.modelNav(1);
+        else window.modelNav(-1);
+      }
+    }, {passive: true});
+  })();
+
+  // STAT COUNTERS — RE-CLICKABLE
+  (function(){
+    const statEls = document.querySelectorAll('.stat-num-wrap');
+    statEls.forEach(function(el){
+      el.addEventListener('click', function(){
+        const counter = el.querySelector('.stat-counter');
+        if(!counter) return;
+        const target = parseInt(counter.getAttribute('data-target') || '0', 10);
+        const suffix = counter.getAttribute('data-suffix') || '';
+        let current = 0;
+        const duration = 1200;
+        const startTime = performance.now();
+        counter.textContent = '0' + suffix;
+        function update(now){
+          const progress = Math.min((now - startTime) / duration, 1);
+          current = Math.floor(progress * target);
+          counter.textContent = current.toLocaleString() + suffix;
+          if(progress < 1) requestAnimationFrame(update);
+          else counter.textContent = target.toLocaleString() + suffix;
+        }
+        requestAnimationFrame(update);
+      });
+    });
+  })();
+
+  // PHOTO STRIP SWIPE (for mobile)
+  (function(){
+    const strips = document.querySelectorAll('.ps-track, .photo-strip');
+    strips.forEach(function(strip){
+      let startX = 0, isDragging = false;
+      strip.addEventListener('touchstart', function(e){
+        startX = e.touches[0].clientX;
+        isDragging = true;
+      }, {passive: true});
+      strip.addEventListener('touchend', function(e){
+        if(!isDragging) return;
+        isDragging = false;
+        const dx = e.changedTouches[0].clientX - startX;
+        if(Math.abs(dx) > 40){
+          const scrollAmount = strip.offsetWidth * 0.7;
+          strip.scrollBy({ left: dx < 0 ? scrollAmount : -scrollAmount, behavior: 'smooth' });
+        }
+      }, {passive: true});
+    });
+  })();
 
 });
 
