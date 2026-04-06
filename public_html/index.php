@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Space+Grotesk:wght@500;600;700&family=Gochi+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="global.css" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -38,32 +39,7 @@
     }
   </script>
   <style>
-    /* ============================
-   RESET & BASE
-============================ */
-    :root {
-      --red: #EE2726;
-      --navy: #1D2631;
-      --cream: #F9F6EE;
-      --yellow: #FFCF5D;
-      --teal: #40D2AF;
-      --blue: #96D9F2;
-      --gold: #D69100;
-      --white: #fff;
-      --ticker-h: 32px;
-      --font-head: 'Inter', system-ui, sans-serif;
-      --font-ui: 'Space Grotesk', sans-serif;
-      --font-sketch: 'Gochi Hand', cursive;
-      --b: 4px solid #1D2631;
-      --b-thin: 2px solid #1D2631;
-      --shadow: 8px 8px 0 #1D2631;
-      --shadow-sm: 4px 4px 0 #1D2631;
-      --shadow-lg: 12px 12px 0 #1D2631;
-      --radius: 16px;
-      --radius-sm: 10px;
-    }
-
-    *,
+*,
     *::before,
     *::after {
       box-sizing: border-box;
@@ -71,76 +47,7 @@
       padding: 0
     }
 
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--navy);
-      background: var(--cream);
-      overflow-x: hidden
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit
-    }
-
-    button {
-      border: none;
-      background: none;
-      cursor: pointer;
-      font-family: inherit
-    }
-
-    ul {
-      list-style: none
-    }
-
-    /* ============================
-    ACCESSIBILITY
-    ============================ */
-    .skip-link {
-      position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--navy);
-      color: #fff;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-family: var(--font-ui);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      z-index: 9999;
-      transition: top .2s;
-    }
-    .skip-link:focus {
-      top: 10px;
-    }
-    :focus-visible {
-      outline: 3px solid var(--red);
-      outline-offset: 2px;
-    }
-    .btn:focus-visible,
-    .nav-link:focus-visible,
-    .vid-card:focus-visible {
-      outline: 3px solid var(--red);
-      outline-offset: 3px;
-    }
-    @media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce) {
       *,
       *::before,
       *::after {
@@ -152,233 +59,6 @@
       html { scroll-behavior: auto; }
     }
 
-    /* ============================
-    UTILITY
-    ============================ */
-    .container {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 0 24px
-    }
-
-    /* TASK 26: increased section padding for mid-page breathing room */
-    .section {
-      padding: 88px 0
-    }
-
-    .section-lg {
-      padding: 104px 0
-    }
-
-    .section-sm {
-      padding: 48px 0
-    }
-
-    .t-hero {
-      font-family: var(--font-head);
-      font-size: clamp(54px, 8.5vw, 100px);
-      font-weight: 900;
-      line-height: .9;
-      letter-spacing: -.03em;
-      text-transform: uppercase
-    }
-
-    .t-section {
-      font-family: var(--font-head);
-      font-size: clamp(32px, 4.5vw, 52px);
-      font-weight: 900;
-      line-height: 1;
-      letter-spacing: -.02em;
-      text-transform: uppercase
-    }
-
-    .t-ui {
-      font-family: var(--font-ui);
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .18em
-    }
-
-    .t-body {
-      font-size: 17px;
-      line-height: 1.75;
-      font-weight: 500
-    }
-
-    .t-pullquote {
-      font-family: var(--font-head);
-      font-size: clamp(18px, 2.2vw, 24px);
-      font-weight: 800;
-      line-height: 1.4;
-      font-style: italic
-    }
-
-    .line-red {
-      color: var(--red)
-    }
-
-    .line-yellow {
-      color: var(--yellow)
-    }
-
-    .eyebrow {
-      font-family: var(--font-ui);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .22em;
-      display: inline-block;
-      padding: 5px 14px;
-      border-radius: 30px;
-      margin-bottom: 16px
-    }
-
-    .ew-red {
-      background: rgba(238, 39, 38, .1);
-      border: 1.5px solid rgba(238, 39, 38, .3);
-      color: var(--red)
-    }
-
-    .ew-teal {
-      background: rgba(64, 210, 175, .12);
-      border: 1.5px solid rgba(64, 210, 175, .35);
-      color: #1a7a64
-    }
-
-    .ew-navy {
-      background: rgba(29, 38, 49, .07);
-      border: 1.5px solid rgba(29, 38, 49, .2);
-      color: var(--navy)
-    }
-
-    .ew-yellow {
-      background: rgba(255, 207, 93, .25);
-      border: 1.5px solid rgba(255, 207, 93, .6);
-      color: #7a5d00
-    }
-
-    .ew-white {
-      background: rgba(255, 255, 255, .15);
-      border: 1.5px solid rgba(255, 255, 255, .35);
-      color: rgba(255, 255, 255, .9)
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--font-ui);
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .1em;
-      padding: 14px 28px;
-      border-radius: var(--radius-sm);
-      border: var(--b);
-      cursor: pointer;
-      transition: all .18s ease;
-      white-space: nowrap
-    }
-
-    .btn-red {
-      background: var(--red);
-      color: #fff;
-      box-shadow: var(--shadow-sm)
-    }
-
-    .btn-red:hover {
-      transform: translate(-3px, -3px);
-      box-shadow: var(--shadow)
-    }
-
-    .btn-white {
-      background: #fff;
-      color: var(--navy);
-      box-shadow: var(--shadow-sm)
-    }
-
-    .btn-white:hover {
-      transform: translate(-2px, -2px);
-      box-shadow: var(--shadow);
-      background: var(--yellow)
-    }
-
-    .btn-navy {
-      background: var(--navy);
-      color: #fff
-    }
-
-    .btn-navy:hover {
-      background: #2a3847
-    }
-
-    .btn-outline-white {
-      background: transparent;
-      color: #fff;
-      border-color: rgba(255, 255, 255, .4)
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255, 255, 255, .12)
-    }
-
-    .btn-sm {
-      padding: 10px 20px;
-      font-size: 11px
-    }
-
-    .btn-full {
-      width: 100%;
-      justify-content: center
-    }
-
-    .halftone {
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(29, 38, 49, .07) 1px, transparent 1px);
-      background-size: 22px 22px;
-      pointer-events: none
-    }
-
-    .halftone-light {
-      background-image: radial-gradient(circle, rgba(255, 255, 255, .06) 1px, transparent 1px)
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .55s ease, transform .55s ease
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: none
-    }
-
-    .rd1 {
-      transition-delay: .08s
-    }
-
-    .rd2 {
-      transition-delay: .16s
-    }
-
-    .rd3 {
-      transition-delay: .24s
-    }
-
-    .rd4 {
-      transition-delay: .32s
-    }
-
-    .rd5 {
-      transition-delay: .4s
-    }
-
-/* ============================
-   TICKER
-============================ */
 #ticker{
   position:fixed;
   top:0;
@@ -425,15 +105,14 @@
   border-radius:3px;
 }
 
-/* hide with nav on scroll */
 #ticker{
   transition:transform .22s ease-out;
 }
+
 #ticker.nav-hidden{
   transform:translateY(-110%);
 }
 
-/* MOBILE: allow horizontal scroll so text doesn't wrap/break */
 @media (max-width:600px){
   #ticker{
     justify-content:flex-start;
@@ -454,12 +133,7 @@
   }
 }
 
-    /* ============================
-   NAV
-   TASK 6: removed first duplicate .nav-dd/.nav-dd-panel block entirely
-   TASK 9: removed second duplicate .nav-dd-panel a hover
-============================ */
-    #nav{
+#nav{
       position: fixed;
       top: var(--ticker-h);
       left: 0;
@@ -468,10 +142,12 @@
       padding: 6px 16px;
       transition: transform .22s ease-out;
     }
+
 #nav.nav-hidden{
   transform: translateY(-110%);
 }
-    .nav-wrap {
+
+.nav-wrap {
       max-width: 1200px;
       margin: 0 auto;
       background: #fff;
@@ -485,40 +161,40 @@
       gap: 8px
     }
 
-    .nav-left {
+.nav-left {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       gap: 18px
     }
 
-    .nav-center {
+.nav-center {
       padding: 0 24px
     }
 
-    .nav-center a {
+.nav-center a {
       display: flex;
       align-items: center
     }
 
-    .nav-center img {
+.nav-center img {
       height: 64px;
       display: block;
       transition: transform .2s
     }
 
-    .nav-center a:hover img {
+.nav-center a:hover img {
       transform: scale(1.06)
     }
 
-    .nav-right {
+.nav-right {
       display: flex;
       align-items: center;
       justify-content: flex-start;
       gap: 18px
     }
 
-    .nav-link {
+.nav-link {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -534,17 +210,17 @@
       white-space: nowrap
     }
 
-    .nav-link:hover,
+.nav-link:hover,
     .nav-link.active {
       background: var(--cream);
       color: var(--red)
     }
 
-    .nav-dd {
+.nav-dd {
       position: relative
     }
 
-    .nav-dd-panel {
+.nav-dd-panel {
       position: absolute;
       top: 100%;
       left: 0;
@@ -561,14 +237,14 @@
       z-index: 50
     }
 
-    .nav-dd:hover .nav-dd-panel,
+.nav-dd:hover .nav-dd-panel,
     .nav-dd:focus-within .nav-dd-panel {
       opacity: 1;
       visibility: visible;
       transform: translateY(0)
     }
 
-    .nav-dd-panel a {
+.nav-dd-panel a {
       display: block;
       padding: 8px 16px;
       font-family: var(--font-ui);
@@ -579,12 +255,12 @@
       color: var(--navy)
     }
 
-    .nav-dd-panel a:hover {
+.nav-dd-panel a:hover {
       background: var(--cream);
       color: var(--red)
     }
 
-    .nav-cta-btn {
+.nav-cta-btn {
       font-family: var(--font-ui) !important;
       background: var(--red) !important;
       color: #fff !important;
@@ -596,12 +272,12 @@
       transition: all .15s !important
     }
 
-    .nav-cta-btn:hover {
+.nav-cta-btn:hover {
       background: var(--navy) !important;
       transform: translateY(-1px)
     }
 
-    .hbg {
+.hbg {
       display: none;
       flex-direction: column;
       gap: 5px;
@@ -615,16 +291,16 @@
       transition: background .15s
     }
 
-    .hbg:hover {
+.hbg:hover {
       background: var(--cream)
     }
 
-    .hbg:focus-visible {
+.hbg:focus-visible {
       outline: 3px solid var(--red);
       outline-offset: 2px
     }
 
-    .hbg span {
+.hbg span {
       display: block;
       width: 24px;
       height: 2.5px;
@@ -633,7 +309,7 @@
       transition: all .2s
     }
 
-    #mob-nav{
+#mob-nav{
   position:fixed;
   top:calc(var(--ticker-h) + 70px);
   left:12px;
@@ -663,7 +339,7 @@
   padding-bottom:24px;
 }
 
-    .mob-links a {
+.mob-links a {
       display: block;
       font-family: var(--font-ui);
       font-size: 15px;
@@ -676,12 +352,12 @@
       min-height: 48px
     }
 
-    .mob-links a:hover {
+.mob-links a:hover {
       background: var(--cream);
       color: var(--red)
     }
 
-    .mob-group-lbl {
+.mob-group-lbl {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -692,12 +368,12 @@
       display: block
     }
 
-    .mob-group-links a {
+.mob-group-links a {
       padding: 8px 14px 8px 24px;
       font-size: 12px
     }
 
-    .mob-ctas {
+.mob-ctas {
       display: flex;
       flex-direction: column;
       gap: 8px;
@@ -705,7 +381,7 @@
       border-top: 2px solid rgba(29, 38, 49, .08)
     }
 
-    .mob-ctas a {
+.mob-ctas a {
       font-family: var(--font-ui);
       font-size: 14px;
       font-weight: 700;
@@ -721,17 +397,17 @@
       justify-content: center
     }
 
-    .mob-ctas a.primary {
+.mob-ctas a.primary {
       background: var(--red);
       color: #fff
     }
 
-    .mob-ctas a.secondary {
+.mob-ctas a.secondary {
       background: #fff;
       color: var(--navy)
     }
 
-    @media(max-width:960px) {
+@media(max-width:960px) {
 
       .nav-left,
       .nav-right {
@@ -747,19 +423,19 @@
         display: flex
       }
     }
+
 .hbg.active span:nth-child(1){
   transform:translateY(7px) rotate(45deg);
 }
+
 .hbg.active span:nth-child(2){
   opacity:0;
 }
+
 .hbg.active span:nth-child(3){
   transform:translateY(-7px) rotate(-45deg);
 }
 
-   /* ============================
-   HERO
-============================ */
 #hero{
   min-height:80svh;
   background:var(--cream);
@@ -769,6 +445,7 @@
   position:relative;
   overflow:hidden;
 }
+
 #hero::before{
   content:'';
   position:absolute;
@@ -778,6 +455,7 @@
   pointer-events:none;
   z-index:1;
 }
+
 .hero-halftone{
   position:absolute;
   inset:0;
@@ -785,6 +463,7 @@
   background-size:22px 22px;
   pointer-events:none;
 }
+
 .hero-glow-r{
   position:absolute;
   top:-80px;
@@ -795,6 +474,7 @@
   background:radial-gradient(circle,rgba(238,39,38,.13),transparent 70%);
   pointer-events:none;
 }
+
 .hero-glow-l{
   position:absolute;
   bottom:-80px;
@@ -815,18 +495,17 @@
   z-index:2;
 }
 
-/* text / image layering */
 .hero-text-col{
   position:relative;
   z-index:2;
 }
+
 .hero-vis{
   position:relative;
   z-index:1;
   margin-right:-60px; /* makes hero image feel bigger */
 }
 
-/* fade between text + image */
 .hero-text-fade{
   position:absolute;
   inset:0;
@@ -840,7 +519,6 @@
   z-index:1;
 }
 
-/* badges, headings, body as before */
 .hero-badges{
   display:flex;
   flex-wrap:wrap;
@@ -848,6 +526,7 @@
   align-items:center;
   margin-bottom:18px;
 }
+
 .hero-h1{
   margin-bottom:16px;
   font-family:var(--font-head);
@@ -856,6 +535,7 @@
   line-height:0.88;
   text-shadow:3px 3px 0 rgba(29,38,49,.18),7px 7px 0 rgba(29,38,49,.08);
 }
+
 .hero-h1 .line1{
   display:block;
   font-size:clamp(52px,7.5vw,88px);
@@ -864,12 +544,14 @@
   color:var(--navy);
   white-space:nowrap;
 }
+
 .hero-h1 .line2{
   display:block;
   font-size:clamp(52px,7.5vw,88px);
   text-transform:uppercase;
   color:var(--red);
 }
+
 .hero-tagline{
   font-family:var(--font-head);
   font-size:clamp(13px,1.4vw,15px);
@@ -882,7 +564,6 @@
   opacity:.85;
 }
 
-/* proof strip, but no shadow */
 .hero-proof-strip{
   display:flex;
   flex-wrap:wrap;
@@ -896,6 +577,7 @@
   width:fit-content;
   box-shadow:none;
 }
+
 .hps-item{
   display:flex;
   align-items:center;
@@ -908,17 +590,22 @@
   color:rgba(29,38,49,.65);
   padding:0 14px;
 }
+
 .hps-item:first-child{padding-left:0;}
+
 .hps-item:last-child{padding-right:0;}
+
 .hps-item strong{
   color:var(--navy);
   font-size:12px;
 }
+
 .hps-divider{
   width:1px;
   height:18px;
   background:rgba(29,38,49,.12);
 }
+
 .hps-dot{
   width:8px;
   height:8px;
@@ -934,6 +621,7 @@
   margin-bottom:28px;
   max-width:520px;
 }
+
 .hero-ctas{
   display:flex;
   flex-wrap:wrap;
@@ -941,7 +629,6 @@
   margin-bottom:24px;
 }
 
-/* slideshow */
 .hero-ss{
   position:relative;
   width:100%;
@@ -967,26 +654,30 @@
   pointer-events:none;
   filter:drop-shadow(8px 12px 20px rgba(29,38,49,.28));
 }
+
 .hero-slide.skeleton{
   background: linear-gradient(90deg, #1D2631 25%, #2a3645 50%, #1D2631 75%);
   background-size: 200% 100%;
   animation: shimmer 1.5s ease-in-out infinite;
 }
+
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
 .hero-slide.loaded{
   animation: fadeIn .4s ease-out;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 .hero-slide.active{
   opacity:1;
 }
-
 
 .slide-dots{
   display:flex;
@@ -994,6 +685,7 @@
   justify-content:center;
   margin-top:16px;
 }
+
 .sdot{
   width:9px;
   height:9px;
@@ -1003,13 +695,13 @@
   cursor:pointer;
   transition:all .15s;
 }
+
 .sdot.active{
   background:var(--red);
   border-color:var(--red);
   transform:scale(1.25);
 }
 
-/* pause button */
 .ss-pause{
   position:absolute;
   bottom:0;
@@ -1026,16 +718,13 @@
   z-index:5;
   box-shadow:2px 2px 0 var(--navy);
 }
+
 .ss-pause svg{
   width:13px;
   height:13px;
   fill:var(--navy);
 }
 
-/* watch button bottom-left of image */
-
-
-/* bottom watermark, big but subtle */
 .hero-watermark{
   position:absolute;
   bottom:8px;               /* very bottom */
@@ -1051,6 +740,7 @@
   z-index:1;                /* behind main content */
   white-space:nowrap;
 }
+
 @media(max-width:900px){
   .hero-watermark{
     font-size:46px;
@@ -1059,6 +749,7 @@
     bottom:6px;
   }
 }
+
 @media(max-width:900px){
   .hero-grid{
     grid-template-columns:1fr;
@@ -1141,33 +832,29 @@
   transform:rotate(-1.5deg);
 }
 
-
-    /* ============================
-   STATS BAR
-============================ */
-    #stats {
+#stats {
       background: var(--navy);
       padding: 0;
       border-bottom: 4px solid var(--red)
     }
 
-    .stats-row {
+.stats-row {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       gap: 0
     }
 
-    .stat-box {
+.stat-box {
       padding: 28px 16px;
       text-align: center;
       border-right: 1px solid rgba(255, 255, 255, .08)
     }
 
-    .stat-box:last-child {
+.stat-box:last-child {
       border-right: none
     }
 
-    .stat-num {
+.stat-num {
       font-family: var(--font-head);
       font-size: clamp(30px, 4vw, 46px);
       font-weight: 900;
@@ -1175,8 +862,7 @@
       line-height: 1
     }
 
-    /* TASK 25: pulse animation that fires after stat counter completes */
-    @keyframes stat-pop {
+@keyframes stat-pop {
       0% {
         transform: scale(1)
       }
@@ -1190,11 +876,11 @@
       }
     }
 
-    .stat-num.popped {
+.stat-num.popped {
       animation: stat-pop .4s ease-out
     }
 
-    .stat-lbl {
+.stat-lbl {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1206,27 +892,27 @@
       color: rgba(255, 255, 255, .85)
     }
 
-    .sb-red .stat-num {
+.sb-red .stat-num {
       color: var(--red)
     }
 
-    .sb-teal .stat-num {
+.sb-teal .stat-num {
       color: var(--teal)
     }
 
-    .sb-yellow .stat-num {
+.sb-yellow .stat-num {
       color: var(--yellow)
     }
 
-    .sb-blue .stat-num {
+.sb-blue .stat-num {
       color: var(--blue)
     }
 
-    .sb-white .stat-num {
+.sb-white .stat-num {
       color: #fff
     }
 
-    @media(max-width:700px) {
+@media(max-width:700px) {
       .stats-row {
         grid-template-columns: repeat(2, 1fr)
       }
@@ -1245,11 +931,7 @@
       }
     }
 
-    /* ============================
-   MANIFESTO
-   TASK 1: fixed selector — was #manifesto.visible (never fires) → .manifesto-inner.visible
-============================ */
-    #manifesto {
+#manifesto {
       background: var(--cream);
       padding: 64px 0;
       position: relative;
@@ -1257,7 +939,7 @@
       border-bottom: var(--b)
     }
 
-    .manifesto-inner {
+.manifesto-inner {
       max-width: 720px;
       margin: 0 auto;
       text-align: center;
@@ -1265,7 +947,7 @@
       z-index: 2
     }
 
-    .manifesto-rule {
+.manifesto-rule {
       width: 48px;
       height: 4px;
       background: var(--red);
@@ -1273,7 +955,7 @@
       border-radius: 2px
     }
 
-    .manifesto-quote {
+.manifesto-quote {
       font-family: var(--font-head);
       font-size: clamp(17px, 2vw, 22px);
       font-weight: 800;
@@ -1283,7 +965,7 @@
       margin-bottom: 20px
     }
 
-    .manifesto-attr {
+.manifesto-attr {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -1292,14 +974,14 @@
       color: rgba(29, 38, 49, .4)
     }
 
-    .highlight-text {
+.highlight-text {
       position: relative;
       color: var(--navy);
       z-index: 1;
       white-space: nowrap
     }
 
-    .highlight-text::after {
+.highlight-text::after {
       content: '';
       position: absolute;
       bottom: 2px;
@@ -1311,33 +993,29 @@
       transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1)
     }
 
-    /* TASK 1: corrected — triggers when .manifesto-inner (the reveal element) gets .visible */
-    .manifesto-inner.visible .highlight-text::after {
+.manifesto-inner.visible .highlight-text::after {
       width: 100%
     }
 
-    /* ============================
-   PHOTO STRIP
-============================ */
-    .photo-strip {
+.photo-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border-top: var(--b);
       border-bottom: var(--b)
     }
 
-    .ps-item {
+.ps-item {
       position: relative;
       overflow: hidden;
       aspect-ratio: 3/4;
       background: var(--navy)
     }
 
-    .ps-item:not(:last-child) {
+.ps-item:not(:last-child) {
       border-right: var(--b)
     }
 
-    .ps-item img {
+.ps-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1345,11 +1023,11 @@
       display: block
     }
 
-    .ps-item:hover img {
+.ps-item:hover img {
       transform: scale(1.08)
     }
 
-    .ps-cap {
+.ps-cap {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1358,7 +1036,7 @@
       padding: 28px 16px 16px
     }
 
-    .ps-cap-lbl {
+.ps-cap-lbl {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1367,7 +1045,7 @@
       margin-bottom: 4px
     }
 
-    .ps-cap-title {
+.ps-cap-title {
       font-family: var(--font-head);
       font-size: 12px;
       font-weight: 800;
@@ -1375,39 +1053,39 @@
       color: #fff
     }
 
-    .ps-water .ps-cap-lbl {
+.ps-water .ps-cap-lbl {
       color: var(--blue)
     }
 
-    .ps-girls .ps-cap-lbl {
+.ps-girls .ps-cap-lbl {
       color: var(--red)
     }
 
-    .ps-lead .ps-cap-lbl {
+.ps-lead .ps-cap-lbl {
       color: var(--yellow)
     }
 
-    .ps-sports .ps-cap-lbl {
+.ps-sports .ps-cap-lbl {
       color: var(--teal)
     }
 
-    .ps-item.ps-water {
+.ps-item.ps-water {
       background: #0e2233
     }
 
-    .ps-item.ps-girls {
+.ps-item.ps-girls {
       background: #2b0e0e
     }
 
-    .ps-item.ps-lead {
+.ps-item.ps-lead {
       background: #1a1600
     }
 
-    .ps-item.ps-sports {
+.ps-item.ps-sports {
       background: #0e2318
     }
 
-    @media(max-width:760px) {
+@media(max-width:760px) {
       .photo-strip {
         grid-template-columns: repeat(2, 1fr)
       }
@@ -1417,30 +1095,26 @@
       }
     }
 
-    @media(max-width:460px) {
+@media(max-width:460px) {
       .photo-strip {
         grid-template-columns: 1fr
       }
     }
 
-    /* ============================
-   REALITY
-   TASK 16: removed class="section" from the section element — .reality-hook controls padding
-============================ */
-    #reality {
+#reality {
       background: var(--navy);
       color: #fff;
       position: relative;
       overflow: hidden
     }
 
-    .reality-hook {
+.reality-hook {
       padding: 88px 0;
       position: relative;
       z-index: 2
     }
 
-    .hook-inner {
+.hook-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 48px;
@@ -1448,11 +1122,11 @@
       margin-bottom: 64px
     }
 
-    .hook-stat-block {
+.hook-stat-block {
       position: relative
     }
 
-    .hook-pct {
+.hook-pct {
       font-family: var(--font-head);
       font-size: clamp(100px, 16vw, 180px);
       font-weight: 900;
@@ -1463,7 +1137,7 @@
       position: relative
     }
 
-    .hook-pct::after {
+.hook-pct::after {
       content: 'NEET';
       position: absolute;
       bottom: 8px;
@@ -1479,7 +1153,7 @@
       border: 2px solid var(--navy)
     }
 
-    .hook-label {
+.hook-label {
       font-family: var(--font-head);
       font-size: clamp(18px, 2.5vw, 28px);
       font-weight: 900;
@@ -1489,7 +1163,7 @@
       margin-top: 8px
     }
 
-    .hook-sub {
+.hook-sub {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -1499,7 +1173,7 @@
       margin-top: 8px
     }
 
-    .hook-explain {
+.hook-explain {
       font-size: 16px;
       font-weight: 500;
       line-height: 1.75;
@@ -1507,12 +1181,12 @@
       max-width: 440px
     }
 
-    .hook-explain strong {
+.hook-explain strong {
       color: var(--yellow);
       font-weight: 700
     }
 
-    .hook-source {
+.hook-source {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1522,7 +1196,7 @@
       margin-top: 16px
     }
 
-    .prob-grid {
+.prob-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 12px;
@@ -1531,7 +1205,7 @@
       z-index: 2
     }
 
-    .prob-card {
+.prob-card {
       position: relative;
       border-radius: var(--radius);
       overflow: hidden;
@@ -1540,18 +1214,18 @@
       cursor: default
     }
 
-    .prob-card:hover {
+.prob-card:hover {
       transform: translateY(-6px);
       border-color: rgba(255, 255, 255, .3)
     }
 
-    .prob-thumb {
+.prob-thumb {
       aspect-ratio: 3/4;
       overflow: hidden;
       background: rgba(255, 255, 255, .05)
     }
 
-    .prob-thumb img {
+.prob-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -1559,17 +1233,17 @@
       transition: transform .5s
     }
 
-    .prob-card:hover .prob-thumb img {
+.prob-card:hover .prob-thumb img {
       transform: scale(1.06)
     }
 
-    .prob-overlay {
+.prob-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(29, 38, 49, .96) 45%, rgba(29, 38, 49, .2))
     }
 
-    .prob-body {
+.prob-body {
       position: absolute;
       bottom: 0;
       left: 0;
@@ -1577,7 +1251,7 @@
       padding: 18px
     }
 
-    .prob-stat {
+.prob-stat {
       font-family: var(--font-head);
       font-size: clamp(26px, 4vw, 38px);
       font-weight: 900;
@@ -1586,7 +1260,7 @@
       margin-bottom: 4px
     }
 
-    .prob-title {
+.prob-title {
       font-family: var(--font-head);
       font-size: 13px;
       font-weight: 800;
@@ -1595,14 +1269,14 @@
       line-height: 1.2
     }
 
-    .prob-desc {
+.prob-desc {
       font-size: 12px;
       font-weight: 500;
       color: rgba(255, 255, 255, .62);
       line-height: 1.5
     }
 
-    .prob-hint {
+.prob-hint {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1616,43 +1290,43 @@
       width: fit-content
     }
 
-    .pc-water .prob-stat {
+.pc-water .prob-stat {
       color: var(--blue)
     }
 
-    .pc-water .prob-hint {
+.pc-water .prob-hint {
       color: var(--blue);
       border-color: rgba(150, 217, 242, .4)
     }
 
-    .pc-girls .prob-stat {
+.pc-girls .prob-stat {
       color: var(--red)
     }
 
-    .pc-girls .prob-hint {
+.pc-girls .prob-hint {
       color: var(--red);
       border-color: rgba(238, 39, 38, .5)
     }
 
-    .pc-youth .prob-stat {
+.pc-youth .prob-stat {
       color: var(--yellow)
     }
 
-    .pc-youth .prob-hint {
+.pc-youth .prob-hint {
       color: var(--yellow);
       border-color: rgba(255, 207, 93, .4)
     }
 
-    .pc-env .prob-stat {
+.pc-env .prob-stat {
       color: var(--teal)
     }
 
-    .pc-env .prob-hint {
+.pc-env .prob-hint {
       color: var(--teal);
       border-color: rgba(64, 210, 175, .4)
     }
 
-    @media(max-width:900px) {
+@media(max-width:900px) {
       .hook-inner {
         grid-template-columns: 1fr
       }
@@ -1662,15 +1336,12 @@
       }
     }
 
-    @media(max-width:500px) {
+@media(max-width:500px) {
       .prob-grid {
         grid-template-columns: 1fr 1fr
       }
     }
 
-/* ============================
-   OMUTO MODEL (NAMESPACED)
-============================ */
 .om-model-box{
   margin-top:28px;
   border:var(--b);
@@ -1680,7 +1351,6 @@
   overflow:hidden;
 }
 
-/* Tabs row */
 .om-model-tabs{
   display:flex;
   flex-wrap:nowrap;
@@ -1736,7 +1406,6 @@
   color:#fff;
 }
 
-/* Progress bar: track + sliding liquid segment */
 .om-model-progress-wrap{
   position:relative;
   height:4px;
@@ -1767,8 +1436,6 @@
     width .6s cubic-bezier(0.16,1,0.3,1);
 }
 
-
-/* Panels */
 .om-model-panel{
   display:none;
   padding:18px 20px 20px;
@@ -1780,7 +1447,6 @@
   gap:24px;
 }
 
-/* Text + watermark */
 .om-model-content{
   position:relative;
   display:flex;
@@ -1852,7 +1518,6 @@
   object-fit:cover;
 }
 
-/* Responsive */
 @media(max-width:900px){
   .om-model-panel.active{
     grid-template-columns:1fr;
@@ -1867,25 +1532,18 @@
   }
 }
 
-
-    /* ============================
-   ECOSYSTEM
-   TASK 28: downgraded .pillar to --shadow-sm
-   TASK 8: removed duplicate .pillar block with conflicting transition
-   TASK 4: removed JS magnetic tilt — using clean CSS-only hover
-============================ */
-    #ecosystem {
+#ecosystem {
       background: var(--cream)
     }
 
-    .pillar-grid {
+.pillar-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
       margin-top: 80px
     }
 
-    .pillar {
+.pillar {
       background: #fff;
       border: var(--b);
       border-radius: 20px;
@@ -1898,12 +1556,12 @@
       margin-top: 64px
     }
 
-    .pillar:hover {
+.pillar:hover {
       transform: translate(-4px, -6px);
       box-shadow: var(--shadow)
     }
 
-    .pillar-float-img {
+.pillar-float-img {
       position: absolute;
       top: -72px;
       left: 0;
@@ -1913,7 +1571,7 @@
       pointer-events: none
     }
 
-    .pillar-float-img img {
+.pillar-float-img img {
       height: 140px;
       width: auto;
       object-fit: contain;
@@ -1921,11 +1579,11 @@
       transition: transform .35s ease
     }
 
-    .pillar:hover .pillar-float-img img {
+.pillar:hover .pillar-float-img img {
       transform: scale(1.08) translateY(-4px)
     }
 
-    .pillar-body {
+.pillar-body {
       padding: 16px 22px 26px;
       flex: 1;
       display: flex;
@@ -1934,7 +1592,7 @@
       padding-top: 76px
     }
 
-    .pillar-tag {
+.pillar-tag {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1948,7 +1606,7 @@
       margin-bottom: 4px
     }
 
-    .pillar-name {
+.pillar-name {
       font-family: var(--font-head);
       font-size: 19px;
       font-weight: 900;
@@ -1956,7 +1614,7 @@
       font-style: italic
     }
 
-    .pillar-sub {
+.pillar-sub {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -1965,14 +1623,14 @@
       color: rgba(29, 38, 49, .45)
     }
 
-    .pillar-body p {
+.pillar-body p {
       font-size: 13px;
       font-weight: 500;
       line-height: 1.65;
       color: rgba(29, 38, 49, .75)
     }
 
-    .pillar-tagline {
+.pillar-tagline {
       font-family: var(--font-head);
       font-size: 13px;
       font-weight: 700;
@@ -1983,7 +1641,7 @@
       margin-top: auto
     }
 
-    @media(max-width:900px) {
+@media(max-width:900px) {
       .pillar-grid {
         grid-template-columns: 1fr
       }
@@ -1993,17 +1651,14 @@
       }
     }
 
-    /* ============================
-   YOUTH CENTER
-============================ */
-    #youthcenter {
+#youthcenter {
       background: var(--navy);
       color: #fff;
       position: relative;
       overflow: hidden
     }
 
-    .yc-grid {
+.yc-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 60px;
@@ -2012,7 +1667,7 @@
       z-index: 2
     }
 
-    .yc-new-badge {
+.yc-new-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -2029,7 +1684,7 @@
       margin-bottom: 16px
     }
 
-    .yc-title {
+.yc-title {
       font-family: var(--font-head);
       font-size: clamp(28px, 4vw, 44px);
       font-weight: 900;
@@ -2039,7 +1694,7 @@
       margin-bottom: 12px
     }
 
-    .yc-body {
+.yc-body {
       font-size: 15px;
       font-weight: 500;
       line-height: 1.7;
@@ -2047,14 +1702,14 @@
       margin-bottom: 20px
     }
 
-    .yc-features {
+.yc-features {
       display: flex;
       flex-direction: column;
       gap: 9px;
       margin-bottom: 24px
     }
 
-    .yc-feat {
+.yc-feat {
       display: flex;
       align-items: flex-start;
       gap: 12px;
@@ -2064,7 +1719,7 @@
       padding: 11px 14px
     }
 
-    .yc-feat-icon {
+.yc-feat-icon {
       width: 32px;
       height: 32px;
       border-radius: 8px;
@@ -2074,12 +1729,12 @@
       flex-shrink: 0
     }
 
-    .yc-feat-icon svg {
+.yc-feat-icon svg {
       width: 15px;
       height: 15px
     }
 
-    .yc-feat h3 {
+.yc-feat h3 {
       font-family: var(--font-head);
       font-size: 12px;
       font-weight: 800;
@@ -2087,14 +1742,14 @@
       margin-bottom: 1px
     }
 
-    .yc-feat p {
+.yc-feat p {
       font-size: 12px;
       font-weight: 500;
       opacity: .6;
       line-height: 1.4
     }
 
-    .yc-loc {
+.yc-loc {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -2105,54 +1760,50 @@
       line-height: 1.7
     }
 
-    .yc-loc strong {
+.yc-loc strong {
       color: var(--yellow)
     }
 
-    .yc-photos {
+.yc-photos {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 10px
     }
 
-    .yc-photo {
+.yc-photo {
       border: var(--b);
       border-radius: var(--radius);
       overflow: hidden;
       background: rgba(255, 255, 255, .05)
     }
 
-    .yc-photo img {
+.yc-photo img {
       width: 100%;
       height: 100%;
       object-fit: cover
     }
 
-    .yc-photo-tall {
+.yc-photo-tall {
       grid-row: span 2;
       aspect-ratio: 3/4
     }
 
-    .yc-photo:not(.yc-photo-tall) {
+.yc-photo:not(.yc-photo-tall) {
       aspect-ratio: 4/3
     }
 
-    @media(max-width:900px) {
+@media(max-width:900px) {
       .yc-grid {
         grid-template-columns: 1fr;
         gap: 36px
       }
     }
 
-    /* ============================
-   PROOF STRIP
-   TASK 28: downgraded .proof-grid to --shadow-sm
-============================ */
-    #proof {
+#proof {
       background: var(--cream)
     }
 
-    .proof-grid {
+.proof-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
@@ -2163,7 +1814,7 @@
       margin-top: 44px
     }
 
-    .proof-cell {
+.proof-cell {
       padding: 36px 30px;
       border-right: var(--b);
       display: flex;
@@ -2173,15 +1824,15 @@
       transition: background .2s
     }
 
-    .proof-cell:last-child {
+.proof-cell:last-child {
       border-right: none
     }
 
-    .proof-cell:hover {
+.proof-cell:hover {
       background: #fff
     }
 
-    .proof-num {
+.proof-num {
       font-family: var(--font-head);
       font-size: clamp(44px, 6vw, 72px);
       font-weight: 900;
@@ -2189,7 +1840,7 @@
       display: block
     }
 
-    .proof-label {
+.proof-label {
       font-family: var(--font-head);
       font-size: 16px;
       font-weight: 800;
@@ -2197,14 +1848,14 @@
       line-height: 1.15
     }
 
-    .proof-story {
+.proof-story {
       font-size: 13px;
       font-weight: 500;
       line-height: 1.65;
       color: rgba(29, 38, 49, .65)
     }
 
-    .proof-tag {
+.proof-tag {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -2217,54 +1868,54 @@
       border: 1.5px solid
     }
 
-    .pc-r {
+.pc-r {
       border-top: 5px solid var(--red)
     }
 
-    .pc-r .proof-num {
+.pc-r .proof-num {
       color: var(--red)
     }
 
-    .pc-r .proof-tag {
+.pc-r .proof-tag {
       color: var(--red);
       border-color: rgba(238, 39, 38, .3);
       background: rgba(238, 39, 38, .06)
     }
 
-    .pc-b {
+.pc-b {
       border-top: 5px solid var(--blue)
     }
 
-    .pc-b .proof-num {
+.pc-b .proof-num {
       color: var(--blue)
     }
 
-    .pc-b .proof-tag {
+.pc-b .proof-tag {
       color: #2a7a9a;
       border-color: rgba(150, 217, 242, .5);
       background: rgba(150, 217, 242, .1)
     }
 
-    .pc-y {
+.pc-y {
       border-top: 5px solid var(--gold)
     }
 
-    .pc-y .proof-num {
+.pc-y .proof-num {
       color: var(--gold)
     }
 
-    .pc-y .proof-tag {
+.pc-y .proof-tag {
       color: var(--gold);
       border-color: rgba(214, 145, 0, .3);
       background: rgba(214, 145, 0, .07)
     }
 
-    .proof-cta {
+.proof-cta {
       text-align: center;
       margin-top: 36px
     }
 
-    @media(max-width:700px) {
+@media(max-width:700px) {
       .proof-grid {
         grid-template-columns: 1fr
       }
@@ -2279,16 +1930,13 @@
       }
     }
 
-    /* ============================
-   VIDEOS
-============================ */
-    #videos {
+#videos {
       background: var(--navy);
       position: relative;
       overflow: hidden
     }
 
-    .vid-grid {
+.vid-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
       grid-template-rows: auto auto;
@@ -2298,7 +1946,7 @@
       z-index: 2
     }
 
-    .vid-card {
+.vid-card {
       border: var(--b);
       border-radius: var(--radius);
       overflow: hidden;
@@ -2307,38 +1955,38 @@
       transition: all .2s
     }
 
-    .vid-card:hover {
+.vid-card:hover {
       transform: translateY(-4px);
       background: rgba(255, 255, 255, .09)
     }
 
-    .vid-card.featured {
+.vid-card.featured {
       grid-row: span 2
     }
 
-    .vid-thumb {
+.vid-thumb {
       position: relative;
       overflow: hidden;
       background: #111;
       aspect-ratio: 16/9
     }
 
-    .vid-card.featured .vid-thumb {
+.vid-card.featured .vid-thumb {
       aspect-ratio: 16/10
     }
 
-    .vid-thumb img {
+.vid-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform .4s
     }
 
-    .vid-card:hover .vid-thumb img {
+.vid-card:hover .vid-thumb img {
       transform: scale(1.04)
     }
 
-    .vplay {
+.vplay {
       position: absolute;
       inset: 0;
       display: flex;
@@ -2347,7 +1995,7 @@
       background: rgba(0, 0, 0, .22)
     }
 
-    .vplay-circle {
+.vplay-circle {
       width: 52px;
       height: 52px;
       border-radius: 50%;
@@ -2359,32 +2007,32 @@
       transition: transform .15s
     }
 
-    .vid-card:hover .vplay-circle {
+.vid-card:hover .vplay-circle {
       transform: scale(1.1)
     }
 
-    .vplay-circle svg {
+.vplay-circle svg {
       width: 20px;
       height: 20px;
       fill: var(--navy);
       margin-left: 3px
     }
 
-    .vid-card.featured .vplay-circle {
+.vid-card.featured .vplay-circle {
       width: 64px;
       height: 64px
     }
 
-    .vid-card.featured .vplay-circle svg {
+.vid-card.featured .vplay-circle svg {
       width: 26px;
       height: 26px
     }
 
-    .vid-info {
+.vid-info {
       padding: 14px 16px
     }
 
-    .v-tag {
+.v-tag {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -2394,7 +2042,7 @@
       margin-bottom: 4px
     }
 
-    .v-title {
+.v-title {
       font-family: var(--font-head);
       font-size: 14px;
       font-weight: 800;
@@ -2404,18 +2052,18 @@
       text-transform: uppercase
     }
 
-    .vid-card.featured .v-title {
+.vid-card.featured .v-title {
       font-size: 17px
     }
 
-    .v-desc {
+.v-desc {
       font-size: 12px;
       font-weight: 500;
       color: rgba(255, 255, 255, .5);
       line-height: 1.5
     }
 
-    @media(max-width:768px) {
+@media(max-width:768px) {
       .vid-grid {
         grid-template-columns: 1fr
       }
@@ -2425,15 +2073,11 @@
       }
     }
 
-    /* ============================
-   COMPARISON TABLE
-   TASK 28: downgraded to --shadow-sm
-============================ */
-    #whyworks {
+#whyworks {
       background: #fff
     }
 
-    .compare-wrap {
+.compare-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       border: var(--b);
@@ -2442,14 +2086,14 @@
       margin-top: 40px
     }
 
-    .compare-table {
+.compare-table {
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
       min-width: 560px
     }
 
-    .compare-table th {
+.compare-table th {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -2460,27 +2104,27 @@
       text-align: left
     }
 
-    .compare-table th:first-child {
+.compare-table th:first-child {
       background: var(--cream);
       color: rgba(29, 38, 49, .5);
       width: 26%
     }
 
-    .compare-table th:nth-child(2) {
+.compare-table th:nth-child(2) {
       background: #e9e9e9;
       color: rgba(29, 38, 49, .55)
     }
 
-    .compare-table th:nth-child(3) {
+.compare-table th:nth-child(3) {
       background: var(--navy);
       color: var(--yellow)
     }
 
-    .compare-table th:not(:last-child) {
+.compare-table th:not(:last-child) {
       border-right: var(--b)
     }
 
-    .compare-table td {
+.compare-table td {
       padding: 13px 20px;
       font-size: 13px;
       font-weight: 500;
@@ -2489,7 +2133,7 @@
       vertical-align: top
     }
 
-    .compare-table td:first-child {
+.compare-table td:first-child {
       font-family: var(--font-head);
       font-weight: 800;
       font-size: 11px;
@@ -2497,66 +2141,62 @@
       background: rgba(29, 38, 49, .03)
     }
 
-    .compare-table td:nth-child(2) {
+.compare-table td:nth-child(2) {
       color: rgba(29, 38, 49, .52);
       background: #fafafa
     }
 
-    .compare-table td:nth-child(3) {
+.compare-table td:nth-child(3) {
       color: var(--navy);
       background: rgba(64, 210, 175, .06);
       font-weight: 600
     }
 
-    .compare-table td:not(:last-child) {
+.compare-table td:not(:last-child) {
       border-right: var(--b)
     }
 
-    .compare-table tr:last-child td {
+.compare-table tr:last-child td {
       border-bottom: none
     }
 
-    .compare-table tr:hover td {
+.compare-table tr:hover td {
       background: rgba(29, 38, 49, .02)
     }
 
-    .compare-table tr:hover td:nth-child(2) {
+.compare-table tr:hover td:nth-child(2) {
       background: #f5f5f5
     }
 
-    .compare-table tr:hover td:nth-child(3) {
+.compare-table tr:hover td:nth-child(3) {
       background: rgba(64, 210, 175, .1)
     }
 
-    .ck {
+.ck {
       color: var(--teal);
       font-weight: 900;
       margin-right: 4px
     }
 
-    .cx {
+.cx {
       color: #bbb;
       margin-right: 4px
     }
 
-    /* ============================
-   FORBES
-   TASK 13: upgraded to real image treatment — photo card + editorial badge
-============================ */
-    #forbes {
+#forbes {
       background: var(--cream);
       border-top: var(--b);
       border-bottom: var(--b)
     }
 
-    .forbes-inner {
+.forbes-inner {
       display: grid;
       grid-template-columns: 360px 1fr;
       gap: 48px;
       align-items: center
     }
 
-    .forbes-cover {
+.forbes-cover {
       border: var(--b);
       border-radius: var(--radius);
       overflow: hidden;
@@ -2568,13 +2208,13 @@
       position: relative
     }
 
-    .forbes-cover-top {
+.forbes-cover-top {
       background: var(--red);
       padding: 16px 20px;
       border-bottom: var(--b)
     }
 
-    .forbes-wordmark {
+.forbes-wordmark {
       font-family: var(--font-head);
       font-size: 42px;
       font-weight: 900;
@@ -2585,7 +2225,7 @@
       line-height: 1
     }
 
-    .forbes-edition {
+.forbes-edition {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -2595,7 +2235,7 @@
       margin-top: 4px
     }
 
-    .forbes-cover-body {
+.forbes-cover-body {
       flex: 1;
       padding: 24px 20px;
       display: flex;
@@ -2603,7 +2243,7 @@
       justify-content: space-between
     }
 
-    .forbes-cover-headline {
+.forbes-cover-headline {
       font-family: var(--font-head);
       font-size: clamp(16px, 2vw, 20px);
       font-weight: 900;
@@ -2613,7 +2253,7 @@
       margin-bottom: 16px
     }
 
-    .forbes-cover-name {
+.forbes-cover-name {
       font-family: var(--font-head);
       font-size: 28px;
       font-weight: 900;
@@ -2622,7 +2262,7 @@
       line-height: 1
     }
 
-    .forbes-cover-role {
+.forbes-cover-role {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -2632,7 +2272,7 @@
       margin-top: 6px
     }
 
-    .forbes-cover-badge {
+.forbes-cover-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -2648,8 +2288,7 @@
       margin-top: auto
     }
 
-    /* Real photo overlay — when image is available */
-    .forbes-cover-img {
+.forbes-cover-img {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -2659,7 +2298,7 @@
       opacity: .22
     }
 
-    .forbes-lbl {
+.forbes-lbl {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -2670,7 +2309,7 @@
       display: block
     }
 
-    .forbes-quote {
+.forbes-quote {
       font-family: var(--font-head);
       font-size: clamp(17px, 1.9vw, 23px);
       font-weight: 800;
@@ -2680,7 +2319,7 @@
       margin-bottom: 16px
     }
 
-    .forbes-attr {
+.forbes-attr {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -2690,7 +2329,7 @@
       line-height: 1.7
     }
 
-    @media(max-width:768px) {
+@media(max-width:768px) {
       .forbes-inner {
         grid-template-columns: 1fr
       }
@@ -2700,16 +2339,13 @@
       }
     }
 
-    /* ============================
-   JOIN
-============================ */
-    #join {
+#join {
       background: var(--navy);
       position: relative;
       overflow: hidden
     }
 
-    .join-grid {
+.join-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 18px;
@@ -2717,7 +2353,7 @@
       z-index: 2
     }
 
-    .jcard {
+.jcard {
       border: 3px solid rgba(255, 255, 255, .15);
       border-radius: 20px;
       padding: 28px;
@@ -2727,27 +2363,27 @@
       transition: transform .2s, box-shadow .2s
     }
 
-    .jcard:hover {
+.jcard:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
     }
 
-    .jc-red {
+.jc-red {
       background: var(--red);
       border-color: rgba(255, 255, 255, .25)
     }
 
-    .jc-teal {
+.jc-teal {
       background: rgba(64, 210, 175, .1);
       border-color: rgba(64, 210, 175, .2)
     }
 
-    .jc-white {
+.jc-white {
       background: rgba(255, 255, 255, .04);
       border-color: rgba(255, 255, 255, .1)
     }
 
-    .jcard-icon {
+.jcard-icon {
       width: 50px;
       height: 50px;
       border-radius: 12px;
@@ -2756,7 +2392,7 @@
       justify-content: center
     }
 
-    .jcard h3 {
+.jcard h3 {
       font-family: var(--font-head);
       font-size: 22px;
       font-weight: 900;
@@ -2765,14 +2401,14 @@
       color: #fff
     }
 
-    .jcard p {
+.jcard p {
       font-size: 14px;
       font-weight: 500;
       line-height: 1.6;
       color: rgba(255, 255, 255, .82)
     }
 
-    .jcard-note {
+.jcard-note {
       font-size: 12px;
       font-style: italic;
       font-weight: 500;
@@ -2780,7 +2416,7 @@
       line-height: 1.5
     }
 
-    .donate-widget {
+.donate-widget {
       background: rgba(255, 255, 255, .1);
       border: 1.5px solid rgba(255, 255, 255, .2);
       border-radius: 12px;
@@ -2788,7 +2424,7 @@
       margin-top: 4px
     }
 
-    .d-toggle {
+.d-toggle {
       display: flex;
       align-items: center;
       gap: 12px;
@@ -2797,7 +2433,7 @@
       padding: 8px 0
     }
 
-    .d-sw {
+.d-sw {
       width: 48px;
       height: 28px;
       border-radius: 14px;
@@ -2808,11 +2444,11 @@
       flex-shrink: 0
     }
 
-    .d-sw.on {
+.d-sw.on {
       background: var(--teal)
     }
 
-    .d-sw-k {
+.d-sw-k {
       position: absolute;
       top: 3px;
       left: 3px;
@@ -2824,11 +2460,11 @@
       box-shadow: 0 1px 3px rgba(0, 0, 0, .2)
     }
 
-    .d-sw.on .d-sw-k {
+.d-sw.on .d-sw-k {
       left: 23px
     }
 
-    .d-toggle-lbl {
+.d-toggle-lbl {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -2837,7 +2473,7 @@
       color: rgba(255, 255, 255, .8)
     }
 
-    .d-section-lbl {
+.d-section-lbl {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -2848,14 +2484,14 @@
       margin-bottom: 7px
     }
 
-    .d-amts {
+.d-amts {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
       margin-bottom: 4px
     }
 
-    .d-amt {
+.d-amt {
       background: rgba(255, 255, 255, .1);
       border: 1.5px solid rgba(255, 255, 255, .18);
       border-radius: 7px;
@@ -2870,19 +2506,18 @@
       min-height: 48px
     }
 
-    .d-amt:hover,
+.d-amt:hover,
     .d-amt.sel {
       background: rgba(255, 255, 255, .22);
       border-color: rgba(255, 255, 255, .5)
     }
 
-    .d-amt:focus-visible {
+.d-amt:focus-visible {
       outline: 3px solid var(--red);
       outline-offset: 2px
     }
 
-    /* TASK 22: impact equivalency line under donate amounts */
-    .d-impact {
+.d-impact {
       font-family: var(--font-sketch);
       font-size: 15px;
       color: var(--yellow);
@@ -2893,16 +2528,16 @@
       line-height: 1.3
     }
 
-    .d-custom-wrap {
+.d-custom-wrap {
       display: none;
       margin-bottom: 8px
     }
 
-    .d-custom-wrap.show {
+.d-custom-wrap.show {
       display: block
     }
 
-    .d-custom-input {
+.d-custom-input {
       width: 100%;
       background: rgba(255, 255, 255, .12);
       border: 1.5px solid rgba(255, 255, 255, .35);
@@ -2916,15 +2551,15 @@
       outline: none
     }
 
-    .d-custom-input::placeholder {
+.d-custom-input::placeholder {
       color: rgba(255, 255, 255, .4)
     }
 
-    .d-custom-input:focus {
+.d-custom-input:focus {
       border-color: rgba(255, 255, 255, .7)
     }
 
-    .d-go {
+.d-go {
       width: 100%;
       background: #fff;
       color: var(--red);
@@ -2940,13 +2575,12 @@
       transition: all .15s
     }
 
-    .d-go:hover {
+.d-go:hover {
       background: var(--yellow);
       color: var(--navy)
     }
 
-    /* TASK 23: soft conversion link */
-    .d-soft-cta {
+.d-soft-cta {
       display: block;
       text-align: center;
       font-family: var(--font-ui);
@@ -2959,11 +2593,11 @@
       transition: color .15s
     }
 
-    .d-soft-cta:hover {
+.d-soft-cta:hover {
       color: rgba(255, 255, 255, .8)
     }
 
-    .steps-list {
+.steps-list {
       background: rgba(255, 255, 255, .05);
       border: 1px solid rgba(255, 255, 255, .1);
       border-radius: 10px;
@@ -2973,7 +2607,7 @@
       gap: 7px
     }
 
-    .step-item {
+.step-item {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -2985,7 +2619,7 @@
       gap: 8px
     }
 
-    .step-n {
+.step-n {
       width: 18px;
       height: 18px;
       border-radius: 50%;
@@ -2999,22 +2633,19 @@
       flex-shrink: 0
     }
 
-    @media(max-width:900px) {
+@media(max-width:900px) {
       .join-grid {
         grid-template-columns: 1fr
       }
     }
 
-    /* ============================
-   PARTNERS
-============================ */
-    #partners {
+#partners {
       background: #fff;
       border-top: var(--b);
       border-bottom: var(--b)
     }
 
-    .partner-section-lbl {
+.partner-section-lbl {
       font-family: var(--font-ui);
       font-weight: 700;
       font-size: 10px;
@@ -3025,7 +2656,7 @@
       margin-bottom: 12px
     }
 
-    .partner-pills {
+.partner-pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -3033,7 +2664,7 @@
       margin-bottom: 20px
     }
 
-    .p-pill {
+.p-pill {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3047,13 +2678,13 @@
       transition: all .15s
     }
 
-    .p-pill:hover {
+.p-pill:hover {
       background: var(--navy);
       color: #fff;
       border-color: var(--navy)
     }
 
-    .cred-pills {
+.cred-pills {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -3061,7 +2692,7 @@
       margin-bottom: 32px
     }
 
-    .cred-pill {
+.cred-pill {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3075,7 +2706,7 @@
       transition: all .15s
     }
 
-    .founder-block {
+.founder-block {
       display: grid;
       grid-template-columns: auto 1fr;
       gap: 24px;
@@ -3088,7 +2719,7 @@
       box-shadow: var(--shadow)
     }
 
-    .founder-avatar {
+.founder-avatar {
       width: 76px;
       height: 76px;
       border-radius: 50%;
@@ -3099,7 +2730,7 @@
       background: rgba(255, 255, 255, .1)
     }
 
-    .founder-quote {
+.founder-quote {
       font-family: var(--font-head);
       font-size: clamp(15px, 1.8vw, 19px);
       font-weight: 800;
@@ -3109,7 +2740,7 @@
       margin-bottom: 10px
     }
 
-    .founder-attr {
+.founder-attr {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3118,7 +2749,7 @@
       color: rgba(255, 255, 255, .35)
     }
 
-    .newsletter {
+.newsletter {
       background: var(--cream);
       border: var(--b);
       border-radius: var(--radius);
@@ -3127,7 +2758,7 @@
       margin-top: 32px
     }
 
-    .newsletter h3 {
+.newsletter h3 {
       font-family: var(--font-head);
       font-size: 22px;
       font-weight: 900;
@@ -3135,21 +2766,21 @@
       margin-bottom: 6px
     }
 
-    .newsletter p {
+.newsletter p {
       font-size: 15px;
       font-weight: 500;
       color: rgba(29, 38, 49, .62);
       margin-bottom: 18px
     }
 
-    .nl-form {
+.nl-form {
       display: flex;
       gap: 10px;
       max-width: 400px;
       margin: 0 auto
     }
 
-    .nl-form input {
+.nl-form input {
       flex: 1;
       padding: 14px 18px;
       border: var(--b);
@@ -3160,13 +2791,13 @@
       min-height: 52px
     }
 
-    .nl-form input:focus {
+.nl-form input:focus {
       outline: none;
       border-color: var(--red);
       box-shadow: 0 0 0 3px rgba(238, 39, 38, .15)
     }
 
-    .nl-form button {
+.nl-form button {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -3182,19 +2813,16 @@
       transition: all .15s
     }
 
-    .nl-form button:hover {
+.nl-form button:hover {
       background: var(--red)
     }
 
-    .nl-form button:focus-visible {
+.nl-form button:focus-visible {
       outline: 3px solid var(--red);
       outline-offset: 2px
     }
 
-    /* ============================
-   FINAL CTA
-============================ */
-    #finalcta {
+#finalcta {
       background: var(--red);
       color: #fff;
       position: relative;
@@ -3203,11 +2831,11 @@
       border-bottom: var(--b)
     }
 
-    #finalcta .halftone {
+#finalcta .halftone {
       opacity: .08
     }
 
-    .fcta-inner {
+.fcta-inner {
       text-align: center;
       position: relative;
       z-index: 2;
@@ -3215,7 +2843,7 @@
       margin: 0 auto
     }
 
-    .fcta-h {
+.fcta-h {
       font-family: var(--font-head);
       font-size: clamp(28px, 4.5vw, 56px);
       font-weight: 900;
@@ -3226,7 +2854,7 @@
       letter-spacing: -.02em
     }
 
-    .fcta-p {
+.fcta-p {
       font-size: 17px;
       font-weight: 500;
       opacity: .92;
@@ -3234,38 +2862,34 @@
       line-height: 1.55
     }
 
-    /* TASK 19: CTA discipline — primary button prominent, secondaries demoted to outline */
-    .fcta-btns {
+.fcta-btns {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       justify-content: center
     }
 
-    /* ============================
-   FOOTER
-============================ */
-    footer {
+footer {
       background: var(--navy);
       color: #fff;
       border-top: var(--b)
     }
 
-    .footer-grid {
+.footer-grid {
       display: grid;
       grid-template-columns: 1.7fr 1fr 1fr;
       gap: 48px;
       padding: 56px 0 32px
     }
 
-    .f-logo {
+.f-logo {
       height: 44px;
       filter: brightness(0) invert(1);
       opacity: .75;
       margin-bottom: 14px
     }
 
-    .f-desc {
+.f-desc {
       font-size: 13px;
       font-weight: 500;
       opacity: .52;
@@ -3274,12 +2898,12 @@
       margin-bottom: 18px
     }
 
-    .f-socials {
+.f-socials {
       display: flex;
       gap: 9px
     }
 
-    .f-soc {
+.f-soc {
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -3290,18 +2914,18 @@
       transition: all .15s
     }
 
-    .f-soc:hover {
+.f-soc:hover {
       background: var(--red);
       border-color: var(--red)
     }
 
-    .f-soc svg {
+.f-soc svg {
       width: 14px;
       height: 14px;
       fill: #fff
     }
 
-    footer nav h3 {
+footer nav h3 {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3311,11 +2935,11 @@
       margin-bottom: 14px
     }
 
-    footer nav ul li {
+footer nav ul li {
       margin-bottom: 8px
     }
 
-    footer nav ul a {
+footer nav ul a {
       font-size: 13px;
       font-weight: 500;
       opacity: .58;
@@ -3323,12 +2947,12 @@
       display: inline-block
     }
 
-    footer nav ul a:hover {
+footer nav ul a:hover {
       opacity: 1;
       color: var(--yellow)
     }
 
-    .safeguarding-block {
+.safeguarding-block {
       background: rgba(255, 255, 255, .04);
       border: 1px solid rgba(255, 255, 255, .1);
       border-left: 3px solid var(--yellow);
@@ -3337,7 +2961,7 @@
       margin-top: 24px
     }
 
-    .sg-lbl {
+.sg-lbl {
       font-family: var(--font-ui);
       font-size: 9px;
       font-weight: 700;
@@ -3347,14 +2971,14 @@
       margin-bottom: 5px
     }
 
-    .sg-text {
+.sg-text {
       font-size: 12px;
       font-weight: 500;
       opacity: .6;
       line-height: 1.55
     }
 
-    .sg-link {
+.sg-link {
       font-family: var(--font-ui);
       font-size: 10px;
       font-weight: 700;
@@ -3367,11 +2991,11 @@
       transition: opacity .15s
     }
 
-    .sg-link:hover {
+.sg-link:hover {
       opacity: 1
     }
 
-    .footer-bottom {
+.footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, .07);
       padding: 16px 0;
       display: flex;
@@ -3387,17 +3011,14 @@
       flex-wrap: wrap
     }
 
-    @media(max-width:768px) {
+@media(max-width:768px) {
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 24px
       }
     }
 
-    /* ============================
-   MODAL + STICKY
-============================ */
-    #modal {
+#modal {
       display: none;
       position: fixed;
       inset: 0;
@@ -3409,11 +3030,11 @@
       padding: 20px
     }
 
-    #modal.open {
+#modal.open {
       display: flex
     }
 
-    .modal-inner {
+.modal-inner {
       width: 100%;
       max-width: 840px;
       background: #000;
@@ -3424,7 +3045,7 @@
       position: relative
     }
 
-    .modal-close {
+.modal-close {
       position: absolute;
       top: -52px;
       right: 0;
@@ -3443,23 +3064,23 @@
       transition: background .15s
     }
 
-    .modal-close:hover {
+.modal-close:hover {
       background: rgba(255, 255, 255, .15)
     }
 
-    .modal-close:focus-visible {
+.modal-close:focus-visible {
       outline: 3px solid var(--red);
       outline-offset: 3px
     }
 
-    .modal-inner iframe {
+.modal-inner iframe {
       width: 100%;
       aspect-ratio: 16/9;
       border: none;
       display: block
     }
 
-    #sticky {
+#sticky {
       position: fixed;
       bottom: 0;
       left: 0;
@@ -3473,11 +3094,11 @@
       transition: transform .35s cubic-bezier(0.16, 1, 0.3, 1)
     }
 
-    #sticky.show {
+#sticky.show {
       transform: none
     }
 
-    .sticky-inner {
+.sticky-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -3487,7 +3108,7 @@
       padding: 0 16px
     }
 
-    .sticky-msg {
+.sticky-msg {
       font-family: var(--font-ui);
       font-size: 11px;
       font-weight: 700;
@@ -3496,17 +3117,17 @@
       color: #fff
     }
 
-    .sticky-btns {
+.sticky-btns {
       display: flex;
       gap: 8px;
       align-items: center
     }
 
-    .sticky-btns .btn {
+.sticky-btns .btn {
       min-height: 40px
     }
 
-    .sticky-x {
+.sticky-x {
       color: rgba(255, 255, 255, .4);
       font-size: 18px;
       padding: 8px;
@@ -3521,11 +3142,11 @@
       border: none
     }
 
-    .sticky-x:hover {
+.sticky-x:hover {
       color: #fff
     }
 
-    @media(max-width:580px) {
+@media(max-width:580px) {
       #sticky {
         padding: 10px 0
       }
@@ -3540,7 +3161,7 @@
         font-size: 11px
       }
     }
-  </style>
+</style>
 </head>
 
 <body>
@@ -3648,7 +3269,7 @@
 <main id="main" style="padding-top:calc(var(--ticker-h) + 70px)">
 
     <!-- ======== HERO ======== -->
-<section id="hero">
+<section id="hero" class="section-cream section-no-pad">
   <div class="hero-halftone"></div>
   <div class="hero-glow-r"></div>
   <div class="hero-glow-l"></div>
@@ -3888,7 +3509,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </div>
 
     <!-- ======== MANIFESTO ======== -->
-    <section id="manifesto">
+    <section id="manifesto" class="section-cream">
       <div class="container">
         <!-- TASK 1: reveal class on .manifesto-inner — this is what the fixed CSS selector targets -->
         <div class="manifesto-inner reveal">
@@ -3901,26 +3522,26 @@ document.addEventListener('DOMContentLoaded', function(){
     </section>
 
     <!-- ======== PHOTO STRIP ======== -->
-    <div class="photo-strip" role="region" aria-label="Omuto Foundation programmes">
-      <div class="ps-item ps-water">
+    <div class="photo-strip photo-strip-4" role="region" aria-label="Omuto Foundation programmes">
+      <div class="ps-item ps-water img-hover-scale">
         <img src="https://img.youtube.com/vi/1oZI4jqyjYc/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/1oZI4jqyjYc/hqdefault.jpg'" alt="PureWater Initiative — Purifaaya filter installation" loading="lazy" />
         <div class="ps-cap">
           <p class="ps-cap-lbl">Water Access</p>
         </div>
       </div>
-      <div class="ps-item ps-girls">
+      <div class="ps-item ps-girls img-hover-scale">
         <img src="https://img.youtube.com/vi/JZ76qdSHM2Q/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/JZ76qdSHM2Q/hqdefault.jpg'" alt="RED Campaign — girls menstrual health programme" loading="lazy" />
         <div class="ps-cap">
           <p class="ps-cap-lbl">Girls & Menstrual Health</p>
         </div>
       </div>
-      <div class="ps-item ps-lead">
+      <div class="ps-item ps-lead img-hover-scale">
         <img src="https://img.youtube.com/vi/qhKgGPs_Gy8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/1oZI4jqyjYc/hqdefault.jpg'" alt="Youth leadership — debates, forums, community action" loading="lazy" />
         <div class="ps-cap">
           <p class="ps-cap-lbl">Youth Leadership</p>
         </div>
       </div>
-      <div class="ps-item ps-sports">
+      <div class="ps-item ps-sports img-hover-scale">
         <img src="https://img.youtube.com/vi/Pmcf5-HD1Z8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/Pmcf5-HD1Z8/hqdefault.jpg'" alt="Omuto Football Alliance — sports for development" loading="lazy" />
         <div class="ps-cap">
           <p class="ps-cap-lbl">Talents & Voice</p>
@@ -3932,10 +3553,10 @@ document.addEventListener('DOMContentLoaded', function(){
      TASK 16: removed class="section" — .reality-hook controls its own padding
      TASK 15: removed redundant inline style="background:..." (already in CSS)
 ============================ -->
-    <section id="reality">
+    <section id="reality" class="section-navy">
       <div class="halftone halftone-light"></div>
       <div class="container reality-hook">
-        <div class="hook-inner reveal">
+        <div class="hook-inner grid-2 reveal">
           <div class="hook-stat-block">
             <span class="hook-pct">57%</span>
             <p class="hook-label">of Uganda's youth<br />not in school,<br />work, or training.</p>
@@ -3949,7 +3570,7 @@ document.addEventListener('DOMContentLoaded', function(){
           </div>
         </div>
         <h2 class="visually-hidden">The Problems We Address</h2>
-        <div class="prob-grid">
+        <div class="prob-grid grid-4">
           <div class="prob-card pc-water reveal rd1">
             <div class="prob-thumb"><img src="https://pplx-res.cloudinary.com/image/upload/t_thumbnail_512/pplx_search_images/a2da555753b4b3a13bebfa4619e4bb44c969c3e4.jpg" alt="Unsafe water access in rural Uganda" loading="lazy" style="object-position:center" /></div>
             <div class="prob-overlay"></div>
@@ -3995,7 +3616,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </section>
 
     <!-- ======== OMUTO MODEL (ISOLATED) ======== -->
-<section id="model" class="section">
+<section id="model" class="section section-cream">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-teal">Our Methodology</span>
@@ -4162,14 +3783,14 @@ document.addEventListener('DOMContentLoaded', function(){
     <!-- ======== ECOSYSTEM
      TASK 15: removed redundant inline style="background:var(--cream)"
 ============================ -->
-    <section id="ecosystem" class="section">
+    <section id="ecosystem" class="section section-cream">
       <div class="container">
         <div style="text-align:center" class="reveal">
           <span class="eyebrow ew-navy">Connected System</span>
           <h2 class="t-section">Three Programmes.<br /><em class="line-red">One System.</em></h2>
           <p class="t-body" style="opacity:.65;max-width:480px;margin:12px auto 0">Youth, talent, and enterprise — reinforcing each other.</p>
         </div>
-        <div class="pillar-grid">
+        <div class="pillar-grid grid-3">
           <div class="pillar reveal rd1">
             <div class="pillar-float-img"><img src="https://i.ibb.co/wrPnfcKG/21.png" alt="Omuto Youth Project" loading="lazy" /></div>
             <div class="pillar-body">
@@ -4208,10 +3829,10 @@ document.addEventListener('DOMContentLoaded', function(){
     </section>
 
     <!-- ======== YOUTH CENTER ======== -->
-    <section id="youthcenter" class="section-lg">
+    <section id="youthcenter" class="section-lg section-navy">
       <div class="halftone halftone-light"></div>
       <div class="container">
-        <div class="yc-grid">
+        <div class="yc-grid grid-2">
           <div class="reveal">
             <span class="yc-new-badge">
               <svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24">
@@ -4282,13 +3903,13 @@ document.addEventListener('DOMContentLoaded', function(){
      TASK 12: fixed missing closing </div> for .container — was causing broken DOM from this section onward
      TASK 15: removed redundant inline style="background:var(--cream)"
 ============================ -->
-    <section id="proof" class="section">
+    <section id="proof" class="section section-cream">
       <div class="container">
         <div style="text-align:center" class="reveal">
           <span class="eyebrow ew-navy">The Movement</span>
           <h2 class="t-section">We Don't Just Do Projects.<br /><em class="line-red">We Build Teams.</em></h2>
         </div>
-        <div class="proof-grid reveal">
+        <div class="proof-grid grid-3 reveal">
           <div class="proof-cell pc-env">
             <span class="proof-num">2,300+</span>
             <span class="proof-label">Trees Planted &amp;<br />Counting</span>
@@ -4312,7 +3933,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </section>
 
     <!-- ======== VIDEOS ======== -->
-    <section id="videos" class="section">
+    <section id="videos" class="section section-navy">
       <div class="halftone halftone-light"></div>
       <div class="container" style="position:relative;z-index:2">
         <div style="text-align:center" class="reveal">
@@ -4393,7 +4014,7 @@ document.addEventListener('DOMContentLoaded', function(){
     <!-- ======== WHY IT WORKS
      TASK 24: renamed columns from "The Old Way / The OMUTO Way" → "Temporary Fixes / Youth-Owned Systems"
 ============================ -->
-    <section id="whyworks" class="section">
+    <section id="whyworks" class="section section-white">
       <div class="container">
         <div style="text-align:center" class="reveal">
           <span class="eyebrow ew-navy">Our Approach</span>
@@ -4454,9 +4075,9 @@ document.addEventListener('DOMContentLoaded', function(){
     <!-- ======== FORBES
      TASK 13: upgraded — real photo overlaid on designed cover for combined credibility
 ============================ -->
-    <section id="forbes" class="section">
+    <section id="forbes" class="section section-cream">
       <div class="container">
-        <div class="forbes-inner reveal">
+        <div class="forbes-inner grid-2-center reveal">
           <div class="forbes-cover">
             <!-- TASK 13: real Forbes magazine photo overlaid at low opacity for texture and credibility -->
             <img class="forbes-cover-img" src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/481358055_681242387558860_9015998618836394289_n.jpg?stp=c0.198.1448.1448a_dst-jpg_s552x414_tt6&_nc_cat=102&ccb=1-7&_nc_sid=a934a8&_nc_ohc=5H605KJQk4MQ7kNvwE128mi&_nc_oc=AdnwbsT3R_qzUPRL9k-9Znw-cTMsuYzw_ICgcesqfyLHZm2DuylggiVGJiDGYzAB5UprsNeI8XMOZ28UKXtuBTFD&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=6JsjhLM4QZaYzKzz5FS_hQ&_nc_ss=8&oh=00_AfwLDUJff9_nhuyvWPr9edvaqQ1tM2MUXvwCOCsdeK0XCA&oe=69B0F3F2" alt="" aria-hidden="true" onerror="this.style.display='none'" />
@@ -4497,13 +4118,13 @@ document.addEventListener('DOMContentLoaded', function(){
      TASK 23: soft conversion link
      TASK 19: CTA discipline throughout
 ============================ -->
-    <section id="join" class="section-lg">
+    <section id="join" class="section-lg section-navy">
       <div class="halftone halftone-light"></div>
       <div class="container">
         <div style="text-align:center;margin-bottom:40px" class="reveal">
           <h2 class="t-section" style="color:#fff">Three Ways To <em class="line-yellow">Join In</em></h2>
         </div>
-        <div class="join-grid">
+        <div class="join-grid grid-3">
           <!-- DONATE -->
           <div class="jcard jc-red reveal rd1">
             <div class="jcard-icon" style="background:rgba(255,255,255,.2)">
@@ -4571,7 +4192,7 @@ document.addEventListener('DOMContentLoaded', function(){
     </section>
 
     <!-- ======== PARTNERS ======== -->
-    <section id="partners" class="section-sm">
+    <section id="partners" class="section-sm section-white">
       <div class="container">
         <p class="partner-section-lbl">Mission-Aligned Partners</p>
         <div class="partner-pills">
@@ -4613,7 +4234,7 @@ document.addEventListener('DOMContentLoaded', function(){
     <!-- ======== FINAL CTA
      TASK 19: primary btn prominent, secondaries demoted to outline/navy
 ============================ -->
-    <section id="finalcta" class="section-lg">
+    <section id="finalcta" class="section-lg section-red">
       <div class="halftone"></div>
       <div class="container">
         <div class="fcta-inner reveal">

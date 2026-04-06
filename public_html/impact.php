@@ -8,22 +8,17 @@ $page_extra_css = '<style>
 
 /* ═══════════════════════════════════════════════════
    IMPACT.PHP
-   Full about.php design system.
-   No Tailwind. No Font Awesome. No emoji icons.
-   Numbers match about.php / osx.php / yap.php.
+   Page-unique styles only. All global classes from global.css.
    ═══════════════════════════════════════════════════ */
 
 /* ─── 1. HERO ─── */
 #imp-hero {
   min-height: 78svh;
-  background: var(--navy);
   display: flex; align-items: flex-end;
-  position: relative; overflow: hidden;
-  border-bottom: var(--b);
 }
 .imph-bg {
   position: absolute; inset: 0;
-  background-image: url('https://i.ibb.co/m5TL3gFq/23.png');
+  background-image: url(\'https://i.ibb.co/m5TL3gFq/23.png\');
   background-size: cover; background-position: center 20%;
   opacity: .14; pointer-events: none;
 }
@@ -84,23 +79,6 @@ $page_extra_css = '<style>
   .is-cell-lbl { transform: translateY(0); }
 }
 
-.ih-dots {
-  position: absolute; inset: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size: 22px 22px; pointer-events: none;
-}
-.ih-glow-r {
-  position: absolute; top: -80px; right: -80px;
-  width: 500px; height: 500px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(238,39,38,.13), transparent 70%);
-  pointer-events: none;
-}
-.ih-glow-l {
-  position: absolute; bottom: -60px; left: -60px;
-  width: 380px; height: 380px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(64,210,175,.09), transparent 70%);
-  pointer-events: none;
-}
 .ih-inner { position: relative; z-index: 2; width: 100%; }
 .ih-rule  { width: 100%; height: 4px; background: var(--red); }
 .ih-body  { padding: 52px 0 0; }
@@ -121,7 +99,7 @@ $page_extra_css = '<style>
   color: rgba(255,255,255,.58); line-height: 1.75;
   max-width: 560px; margin: 22px 0 0; padding-bottom: 52px;
 }
-/* stat strip */
+/* stat strip — 6 column variant (global is 4-col) */
 .ih-strip {
   display: grid; grid-template-columns: repeat(6, 1fr);
   border-top: 1px solid rgba(255,255,255,.08);
@@ -152,7 +130,7 @@ $page_extra_css = '<style>
 /* ─── 2. KYANJA CASE STUDY  (yellow) ─── */
 #kyanja {
   background: var(--yellow);
-  border-bottom: var(--b); position: relative; overflow: hidden;
+  border-bottom: var(--b);
 }
 .kc-wrap {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -246,13 +224,6 @@ $page_extra_css = '<style>
 #prog-metrics {
   background: var(--cream);
   padding: 88px 0; border-bottom: var(--b);
-  position: relative; overflow: hidden;
-}
-.pm-wm {
-  position: absolute; top: 10px; right: -20px;
-  font-family: var(--font-head); font-size: clamp(90px,14vw,170px);
-  font-weight: 900; color: rgba(29,38,49,.04); letter-spacing: -.05em;
-  pointer-events: none; user-select: none; white-space: nowrap;
 }
 .prog-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0;
@@ -443,7 +414,6 @@ $page_extra_css = '<style>
 #how-we-measure {
   background: var(--navy);
   padding: 88px 0; border-bottom: var(--b);
-  position: relative; overflow: hidden;
 }
 .hwm-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -537,7 +507,6 @@ $page_extra_css = '<style>
 #imp-cta {
   background: var(--red);
   padding: 88px 0; border-top: var(--b);
-  position: relative; overflow: hidden;
 }
 #imp-cta .halftone { opacity: .06; }
 .imp-cta-inner {
@@ -565,14 +534,14 @@ $page_extra_css = '<style>
 include 'header.php';
 ?>
 
-<main style="padding-top:calc(var(--ticker-h) + 70px)">
+<main>
 
 <!-- ① HERO -->
-<section id="imp-hero">
+<section id="imp-hero" class="section-navy">
   <div class="imph-bg"></div>
-  <div class="ih-dots"></div>
-  <div class="ih-glow-r"></div>
-  <div class="ih-glow-l"></div>
+  <div class="ih-dots hero-dots"></div>
+  <div class="ih-glow-r glow-red"></div>
+  <div class="ih-glow-l glow-teal"></div>
   <div class="ih-inner">
     <div class="ih-rule"></div>
     <div class="container">
@@ -583,28 +552,28 @@ include 'header.php';
       </div>
       <div class="ih-strip reveal">
         <div class="ih-cell">
-          <span class="ih-num">574</span>
-          <span class="ih-lbl">Leaders Trained</span>
+          <span class="ih-num stat-strip-num">574</span>
+          <span class="ih-lbl stat-strip-lbl">Leaders Trained</span>
         </div>
         <div class="ih-cell">
-          <span class="ih-num">700+</span>
-          <span class="ih-lbl">Girls Supported</span>
+          <span class="ih-num stat-strip-num">700+</span>
+          <span class="ih-lbl stat-strip-lbl">Girls Supported</span>
         </div>
         <div class="ih-cell">
-          <span class="ih-num">2,300+</span>
-          <span class="ih-lbl">Trees Planted</span>
+          <span class="ih-num stat-strip-num">2,300+</span>
+          <span class="ih-lbl stat-strip-lbl">Trees Planted</span>
         </div>
         <div class="ih-cell">
-          <span class="ih-num">3,200+</span>
-          <span class="ih-lbl">Safer Water Access</span>
+          <span class="ih-num stat-strip-num">3,200+</span>
+          <span class="ih-lbl stat-strip-lbl">Safer Water Access</span>
         </div>
         <div class="ih-cell">
-          <span class="ih-num">47</span>
-          <span class="ih-lbl">Projects Completed</span>
+          <span class="ih-num stat-strip-num">47</span>
+          <span class="ih-lbl stat-strip-lbl">Projects Completed</span>
         </div>
         <div class="ih-cell">
-          <span class="ih-num">$150K</span>
-          <span class="ih-lbl">Kyanja Prize Won</span>
+          <span class="ih-num stat-strip-num">$150K</span>
+          <span class="ih-lbl stat-strip-lbl">Kyanja Prize Won</span>
         </div>
       </div>
     </div>
@@ -612,7 +581,7 @@ include 'header.php';
 </section>
 
 <!-- ② KYANJA CASE STUDY  (yellow) -->
-<section id="kyanja">
+<section id="kyanja" class="section-yellow">
   <div class="kc-photo">
     <img src="https://i.ibb.co/wZ9cf7Ny/31.png" alt="Kyanja High School — Zayed Sustainability Prize 2025" loading="lazy"/>
     <span class="kc-photo-cap">Kyanja High School · Ecoloop Project · Zayed Sustainability Prize 2025 · $150,000 USD Global Winner</span>
@@ -668,8 +637,8 @@ include 'header.php';
 </section>
 
 <!-- ③ PROGRAMME METRICS  (cream) -->
-<section id="prog-metrics">
-  <span class="pm-wm" aria-hidden="true">METRICS</span>
+<section id="prog-metrics" class="section-cream">
+  <span class="pm-wm watermark" aria-hidden="true">METRICS</span>
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-red">By Programme</span>
@@ -759,7 +728,7 @@ include 'header.php';
 </section>
 
 <!-- ④ YOSKILLS + OFA  (white) -->
-<section id="secondary-progs">
+<section id="secondary-progs" class="section-white">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-navy">Beyond Schools</span>
@@ -801,7 +770,7 @@ include 'header.php';
 </section>
 
 <!-- PHOTO STRIP -->
-<div id="imp-strip">
+<div id="imp-strip" class="photo-strip-3-eq">
   <div class="is-cell">
     <img src="https://i.ibb.co/QtQpJRz/10.png" alt="McMike Mutumba — Omuto founder" loading="lazy"/>
     <span class="is-cell-lbl">McMike Mutumba · Founder</span>
@@ -817,7 +786,7 @@ include 'header.php';
 </div>
 
 <!-- ⑤ PULSE + ESSENTIALS  (cream) -->
-<section id="pulse-essentials">
+<section id="pulse-essentials" class="section-cream">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-teal">Content &amp; Commerce</span>
@@ -859,7 +828,7 @@ include 'header.php';
 </section>
 
 <!-- ⑥ HOW WE MEASURE  (navy) -->
-<section id="how-we-measure">
+<section id="how-we-measure" class="section-navy">
   <div class="halftone halftone-light"></div>
   <div class="container">
     <div class="hwm-grid">
@@ -915,7 +884,7 @@ include 'header.php';
 </section>
 
 <!-- ⑦ RECOGNITION  (cream) -->
-<section id="recognition">
+<section id="recognition" class="section-cream">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-teal">Verified &amp; Recognised</span>
@@ -972,19 +941,19 @@ include 'header.php';
 </section>
 
 <!-- ⑧ FINAL CTA  (red) -->
-<section id="imp-cta">
+<section id="imp-cta" class="section-red">
   <div class="halftone"></div>
   <div class="container">
-    <div class="imp-cta-inner reveal">
+    <div class="imp-cta-inner cta-section reveal">
       <span class="eyebrow ew-white">Get Involved</span>
-      <h2 class="imp-cta-h">Every number<br/>here has a<br/>name behind it.</h2>
-      <p class="imp-cta-p">574 trained leaders. 700 girls back in class. 3,200 students drinking clean water. If you want to add to these numbers — fund a chapter, partner with us, or register your school.</p>
-      <div class="imp-cta-btns">
+      <h2 class="imp-cta-h cta-section-h">Every number<br/>here has a<br/>name behind it.</h2>
+      <p class="imp-cta-p cta-section-p">574 trained leaders. 700 girls back in class. 3,200 students drinking clean water. If you want to add to these numbers — fund a chapter, partner with us, or register your school.</p>
+      <div class="imp-cta-btns cta-section-btns">
         <a href="campaign.php" class="btn btn-white" style="padding:16px 32px;font-size:13px">Fund a Chapter →</a>
         <a href="osx.php"      class="btn btn-navy" style="padding:16px 32px;font-size:13px">Partner a School →</a>
         <a href="contact.php"  class="btn btn-outline-white" style="padding:16px 32px;font-size:13px">Get in Touch</a>
       </div>
-      <p class="imp-cta-note">Omuto Foundation · Registered NGO · Kammengo, Mpigi · info@omuto.org</p>
+      <p class="imp-cta-note cta-section-note">Omuto Foundation · Registered NGO · Kammengo, Mpigi · info@omuto.org</p>
     </div>
   </div>
 </section>

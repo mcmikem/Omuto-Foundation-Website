@@ -15,14 +15,6 @@ $page_extra_css = '<style>
 /* ─── 1. HERO ─── */
 #osx-hero {
   min-height: 88svh;
-  background: var(--navy);
-  position: relative; overflow: hidden;
-  border-bottom: var(--b);
-}
-.oh-dots {
-  position: absolute; inset: 0; z-index: 0;
-  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size: 22px 22px; pointer-events: none;
 }
 .oh-bg { display: none; }
 /* hero split grid */
@@ -43,7 +35,7 @@ $page_extra_css = '<style>
 .oh-photo:last-child { border-bottom: none; }
 .oh-photo img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  filter: grayscale(25%) brightness(.8); transition: filter .5s;
+  transition: filter .5s;
 }
 .oh-photo:hover img { filter: grayscale(0%) brightness(.95); }
 .oh-photo-lbl {
@@ -72,23 +64,7 @@ $page_extra_css = '<style>
   max-width: 480px; margin: 18px 0 28px;
 }
 .oh-btns { display: flex; gap: 12px; flex-wrap: wrap; padding-bottom: 48px; }
-/* stat strip bottom of left col */
-.oh-strip {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid rgba(255,255,255,.1);
-}
-.oh-cell { padding: 20px 0; border-right: 1px solid rgba(255,255,255,.06); }
-.oh-cell:last-child { border-right: none; }
 .oh-cell-pad { padding-left: 20px; }
-.oh-num {
-  font-family: var(--font-head); font-size: clamp(18px,2.4vw,30px);
-  font-weight: 900; line-height: 1; display: block; color: var(--yellow);
-}
-.oh-lbl {
-  font-family: var(--font-ui); font-size: 8px; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .16em;
-  display: block; margin-top: 4px; color: rgba(255,255,255,.28);
-}
 @media(max-width:900px){
   .oh-split { grid-template-columns: 1fr; min-height: auto; }
   .oh-left  { border-right: none; border-bottom: var(--b); padding: 40px 20px; }
@@ -96,11 +72,6 @@ $page_extra_css = '<style>
 }
 
 /* ─── 2. KYANJA PROOF ─── */
-#kyanja {
-  background: var(--yellow);
-  border-bottom: var(--b);
-  position: relative; overflow: hidden;
-}
 .kyanja-wrap {
   display: grid; grid-template-columns: 1fr 1fr; gap: 0;
 }
@@ -137,7 +108,6 @@ $page_extra_css = '<style>
   text-transform: uppercase; letter-spacing: .16em;
   color: var(--red); text-decoration: underline;
 }
-/* right side */
 .kyanja-big {
   font-family: var(--font-head);
   font-size: clamp(22px, 3.2vw, 40px);
@@ -162,14 +132,13 @@ $page_extra_css = '<style>
   .kyanja-wrap { grid-template-columns: 1fr; }
   .kyanja-l { border-right: none; border-bottom: var(--b); }
 }
-/* kyanja photo panel */
 .kyanja-photo {
   width: 100%; aspect-ratio: 16/9;
   overflow: hidden; border-bottom: var(--b); position: relative;
 }
 .kyanja-photo img {
   width: 100%; height: 100%; object-fit: cover;
-  display: block; filter: grayscale(15%);
+  display: block;
 }
 .kyanja-photo-cap {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -217,16 +186,11 @@ $page_extra_css = '<style>
 }
 .sc-img img {
   width: 100%; height: 100%; object-fit: cover; display: block;
-  transition: transform .5s ease; filter: grayscale(10%);
+  transition: transform .5s ease;
 }
 .story-card:hover .sc-img img { transform: scale(1.04); }
 
 /* ─── 3. PROGRAMMES (tight grid) ─── */
-#programmes {
-  background: var(--cream);
-  padding: 88px 0; border-bottom: var(--b);
-  position: relative; overflow: hidden;
-}
 .prog-wm-osx {
   position: absolute; top: 10px; right: -20px;
   font-family: var(--font-head);
@@ -258,7 +222,6 @@ $page_extra_css = '<style>
 .pc:hover { filter: brightness(.97); }
 .pc:nth-child(2n) { border-right: none; }
 .pc:nth-last-child(-n+2) { border-bottom: none; }
-/* colours */
 .pc.c-navy { background: var(--navy); color: #fff; }
 .pc.c-red  { background: var(--red);  color: #fff; }
 .pc.c-teal { background: var(--teal); }
@@ -280,7 +243,6 @@ $page_extra_css = '<style>
   opacity: .68; margin-bottom: 24px; flex: 1;
 }
 .pc.c-navy .pc-body, .pc.c-red .pc-body { opacity: .82; color: #fff; }
-/* stat mini bar */
 .pc-stats {
   display: flex; gap: 0;
   border: var(--b-thin); overflow: hidden; margin-bottom: 20px;
@@ -304,7 +266,6 @@ $page_extra_css = '<style>
   text-transform: uppercase; letter-spacing: .1em; opacity: .45;
 }
 .pc.c-navy .pc-s small, .pc.c-red .pc-s small { color: #fff; opacity: .5; }
-/* list */
 .pc-list { display: flex; flex-direction: column; gap: 6px; }
 .pc-li {
   font-size: 12px; font-weight: 600; opacity: .65; line-height: 1.45;
@@ -320,10 +281,6 @@ $page_extra_css = '<style>
 }
 
 /* ─── 4. THE SYSTEM ─── */
-#system {
-  background: #fff;
-  padding: 88px 0; border-bottom: var(--b);
-}
 .sys-track {
   display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
   border: var(--b);
@@ -369,10 +326,6 @@ $page_extra_css = '<style>
 }
 
 /* ─── 5. STORIES ─── */
-#stories {
-  background: var(--cream);
-  padding: 88px 0; border-bottom: var(--b);
-}
 .stories-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 18px; margin-top: 48px;
@@ -418,11 +371,6 @@ $page_extra_css = '<style>
 @media(max-width:560px){ .stories-grid { grid-template-columns: 1fr; } }
 
 /* ─── 6. PRICING ─── */
-#pricing {
-  background: var(--navy);
-  padding: 88px 0; border-bottom: var(--b);
-  position: relative; overflow: hidden;
-}
 .price-note {
   font-size: 14px; font-weight: 500; font-style: italic;
   color: rgba(255,255,255,.42); max-width: 440px; margin: 14px auto 0;
@@ -440,7 +388,6 @@ $page_extra_css = '<style>
 }
 .ptier:last-child { border-right: none; }
 .ptier:hover { background: rgba(255,255,255,.04); }
-/* featured — yellow treatment */
 .ptier.featured {
   background: var(--yellow);
   border: var(--b) !important;
@@ -502,10 +449,6 @@ $page_extra_css = '<style>
 }
 
 /* ─── 7. PROBLEM / SOLUTION ─── */
-#probsol {
-  background: var(--cream);
-  padding: 88px 0; border-bottom: var(--b);
-}
 .ps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .ps-h {
   font-family: var(--font-head); font-size: clamp(22px,3vw,38px);
@@ -530,7 +473,6 @@ $page_extra_css = '<style>
 .ps-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; line-height: 1; }
 .ps-text { font-size: 14px; font-weight: 600; color: var(--navy); line-height: 1.5; }
 .ps-text strong { font-weight: 800; color: var(--red); }
-/* solution box */
 .sol-box {
   background: var(--navy); border: var(--b);
   padding: 36px; box-shadow: var(--shadow);
@@ -562,10 +504,6 @@ $page_extra_css = '<style>
 @media(max-width:900px){ .ps-grid { grid-template-columns: 1fr; gap: 40px; } }
 
 /* ─── 8. SERVICES ─── */
-#services {
-  background: #fff;
-  padding: 88px 0; border-bottom: var(--b);
-}
 .svc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .svc-table {
   border: var(--b); overflow: hidden;
@@ -585,7 +523,6 @@ $page_extra_css = '<style>
 }
 .svc-label { font-family: var(--font-head); font-size: 13px; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; }
 .svc-note { font-size: 11px; font-weight: 500; color: rgba(29,38,49,.5); }
-/* gold card */
 .svc-card {
   background: var(--gold); color: #fff;
   border: var(--b); padding: 40px;
@@ -605,10 +542,6 @@ $page_extra_css = '<style>
 @media(max-width:900px){ .svc-grid { grid-template-columns: 1fr; gap: 40px; } }
 
 /* ─── 9. ROADMAP + TEAM ─── */
-#roadmap {
-  background: var(--cream);
-  padding: 88px 0; border-bottom: var(--b);
-}
 .rm-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
 .rm-track {
   display: flex; flex-direction: column; gap: 0;
@@ -636,7 +569,6 @@ $page_extra_css = '<style>
 }
 .rm-desc { font-size: 13px; font-weight: 500; color: rgba(29,38,49,.65); line-height: 1.6; }
 .rm-desc strong { color: var(--navy); font-weight: 700; }
-/* team grid */
 .team-osx { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
 .tc {
   border: var(--b); padding: 20px;
@@ -656,11 +588,6 @@ $page_extra_css = '<style>
 @media(max-width:900px){ .rm-grid { grid-template-columns: 1fr; gap: 40px; } }
 
 /* ─── 10. PLEDGE ─── */
-#pledge {
-  background: var(--navy);
-  padding: 44px 0; border-bottom: var(--b);
-  position: relative; overflow: hidden;
-}
 .pledge-inner {
   display: flex; align-items: center; gap: 24px;
   position: relative; z-index: 2;
@@ -677,16 +604,7 @@ $page_extra_css = '<style>
 @media(max-width:700px){ .pledge-inner { flex-direction: column; text-align: center; } }
 
 /* ─── 11. FINAL CTA ─── */
-#osx-cta {
-  background: var(--red);
-  padding: 88px 0; border-top: var(--b);
-  position: relative; overflow: hidden;
-}
 #osx-cta .halftone { opacity: .06; }
-.cta-inner {
-  text-align: center; position: relative; z-index: 2;
-  max-width: 560px; margin: 0 auto;
-}
 .cta-h {
   font-family: var(--font-head);
   font-size: clamp(34px, 5.5vw, 68px);
@@ -697,11 +615,6 @@ $page_extra_css = '<style>
   font-size: 17px; font-weight: 500;
   color: rgba(255,255,255,.88); margin-bottom: 32px; line-height: 1.6;
 }
-.cta-btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
-.cta-note {
-  font-size: 12px; font-weight: 500; font-style: italic;
-  color: rgba(255,255,255,.42); margin-top: 22px;
-}
 
 </style>';
 
@@ -711,8 +624,8 @@ include 'header.php';
 <main style="padding-top:calc(var(--ticker-h) + 70px)">
 
 <!-- ①  HERO -->
-<section id="osx-hero">
-  <div class="oh-dots"></div>
+<section id="osx-hero" class="section-navy">
+  <div class="oh-dots hero-dots"></div>
   <div class="oh-split">
 
     <!-- LEFT — text -->
@@ -724,33 +637,33 @@ include 'header.php';
         <a href="#pricing" class="btn btn-white">Choose Your Tier →</a>
         <a href="contact.php" class="btn btn-outline-white">Book a Meeting</a>
       </div>
-      <div class="oh-strip">
-        <div class="oh-cell">
-          <span class="oh-num">40</span>
-          <span class="oh-lbl">Schools</span>
+      <div class="oh-strip stat-strip">
+        <div class="oh-cell stat-strip-cell">
+          <span class="oh-num stat-strip-num">40</span>
+          <span class="oh-lbl stat-strip-lbl">Schools</span>
         </div>
-        <div class="oh-cell oh-cell-pad">
-          <span class="oh-num">574</span>
-          <span class="oh-lbl">Leaders Trained</span>
+        <div class="oh-cell oh-cell-pad stat-strip-cell">
+          <span class="oh-num stat-strip-num">574</span>
+          <span class="oh-lbl stat-strip-lbl">Leaders Trained</span>
         </div>
-        <div class="oh-cell oh-cell-pad">
-          <span class="oh-num">$150K</span>
-          <span class="oh-lbl">Kyanja Prize</span>
+        <div class="oh-cell oh-cell-pad stat-strip-cell">
+          <span class="oh-num stat-strip-num">$150K</span>
+          <span class="oh-lbl stat-strip-lbl">Kyanja Prize</span>
         </div>
-        <div class="oh-cell oh-cell-pad">
-          <span class="oh-num">'20</span>
-          <span class="oh-lbl">Since</span>
+        <div class="oh-cell oh-cell-pad stat-strip-cell">
+          <span class="oh-num stat-strip-num">'20</span>
+          <span class="oh-lbl stat-strip-lbl">Since</span>
         </div>
       </div>
     </div>
 
     <!-- RIGHT — stacked photos -->
     <div class="oh-right">
-      <div class="oh-photo">
+      <div class="oh-photo img-grayscale">
         <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/480921922_679986591017773_8574608311739862468_n.jpg?stp=c267.0.1067.1067a_dst-jpg_s552x414_tt6&_nc_cat=110&ccb=1-7&_nc_sid=5df8b4&_nc_ohc=qW8cgYJv-HEQ7kNvwHLzBfJ&_nc_oc=Adn19MYc2iG6YjyNbiaytWAJHbYCbohJ-7-7U8rbZN3Ab_2V9LCfy_BF3vxA72c9N9PsFvx--fb8dTurxkE_AMfL&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=PavKO5Bv61uYXSbIdr151Q&_nc_ss=8&oh=00_AfxdQbd5d8mqL-E619BlAy5nbdTs8wco4d8smncpb5pBVA&oe=69B0CDFF" alt="Youth-led project work — Omuto Foundation" loading="eager"/>
         <span class="oh-photo-lbl">Youth Action · Mpigi District</span>
       </div>
-      <div class="oh-photo">
+      <div class="oh-photo img-grayscale">
         <img src="https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/479510278_671916641824768_165185212080284169_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=106&ccb=1-7&_nc_sid=a934a8&_nc_ohc=kArFpSvBJ5sQ7kNvwGVlIiF&_nc_oc=AdkBwBbcoSDxHNkJVfj8mHxPyBFfan1z7HXhhJlwGMfvEmVCtM8X8T_NLDSF65poKmX6Dlb4Q0VXBWxpfZLLauWl&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=79UYzfS-7_qhe7TSQ_yw6g&_nc_ss=8&oh=00_AfyTXOsbEXOzn-BY7R_wNoTHnhM0CPCk0SNAOHJFMhjXsg&oe=69B0F52D" alt="Omuto youth in community action" loading="eager"/>
         <span class="oh-photo-lbl">Student Leaders Forum · 2025</span>
       </div>
@@ -760,12 +673,12 @@ include 'header.php';
 </section>
 
 <!-- ②  KYANJA — lead proof -->
-<section id="kyanja">
-  <div class="kyanja-photo">
+<section id="kyanja" class="section-yellow">
+  <div class="kyanja-photo img-grayscale-light">
     <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/615225873_1401241771412487_8236127724590046681_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=103&ccb=1-7&_nc_sid=7b2446&_nc_ohc=uou0iADwOLAQ7kNvwFwsNvY&_nc_oc=AdnTXxy0S-UPz4pmTu2DLUuB8DBlBCM6EYcAdj3YlHB4JBYuQeqxI-13V_GOqWa4i_iDxv-LfTtrjtVfAYhOWW63&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=b20Tissf1eCKboSOkCNr5w&_nc_ss=8&oh=00_AfzK3pPEdegjUO_a2OnJzEgx-LkltrfCJr-Xzewwq_lvbA&oe=69B11151" alt="Kyanja High School Ecoloop team — Zayed Sustainability Prize 2025" loading="lazy"/>
     <span class="kyanja-photo-cap">Kyanja High School · Ecoloop · Zayed Sustainability Prize 2025 · $150,000 USD</span>
   </div>
-  <div class="kyanja-wrap">
+  <div class="kyanja-wrap grid-2">
     <div class="kyanja-l reveal">
       <span class="kyanja-tag">Proof It Works · Zayed Sustainability Prize 2025</span>
       <h2 class="kyanja-prize">Kyanja High<br/>Won <span>$150,000.</span></h2>
@@ -795,8 +708,8 @@ include 'header.php';
 </section>
 
 <!-- ③  PROGRAMMES — tight grid, no deep dives -->
-<section id="programmes">
-  <span class="prog-wm-osx" aria-hidden="true">PROGRAMMES</span>
+<section id="programmes" class="section-cream">
+  <span class="prog-wm-osx watermark" aria-hidden="true">PROGRAMMES</span>
   <div class="container">
     <div class="prog-intro">
       <div class="reveal">
@@ -808,7 +721,7 @@ include 'header.php';
       </div>
     </div>
 
-    <div class="prog-grid-osx">
+    <div class="prog-grid-osx grid-3-tight">
 
       <!-- SLF -->
       <div class="pc c-navy reveal">
@@ -883,14 +796,14 @@ include 'header.php';
 </section>
 
 <!-- ④  THE 5-STEP CHAPTER SYSTEM -->
-<section id="system">
+<section id="system" class="section-white">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-navy">How It Works</span>
       <h2 class="t-section">The Chapter<br/><em class="line-red">System</em></h2>
       <p class="t-body" style="opacity:.62;max-width:440px;margin:12px auto 0">Five steps. One school year. Leadership infrastructure that runs itself.</p>
     </div>
-    <div class="sys-track reveal">
+    <div class="sys-track grid-5 reveal">
       <div class="sys-cell">
         <div class="sys-bar"></div>
         <span class="sys-num">01</span>
@@ -928,32 +841,32 @@ include 'header.php';
 <!-- PHOTO STRIP -->
 <div id="photo-strip">
   <div class="ps-img">
-    <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/476896815_671279225221843_1032820912016263947_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=109&ccb=1-7&_nc_sid=a934a8&_nc_ohc=OmZtODDPfaYQ7kNvwFohJw3&_nc_oc=Admoz2KNxIdWk84H-Zk1zSpJYh2J4DaBmxLMvsvRtMJY6gt7qrOaZxG-0JblcyWdO1hUTDWa2OxFyeUMuETW3X7U&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=6ldJHiobwjspU4JW7sg2Cg&_nc_ss=8&oh=00_Afwv36OPchLjs3u0Odp2RuSuno36IMA8BveuDJetA8_MxA&oe=69B0C681" alt="Student leadership session" loading="lazy"/>
+    <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/476896815_671279225221843_1032820912016263947_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=109&ccb=1-7&_nc_sid=a934a8&_nc_ohc=OmZtODDPfaYQ7kNvwFohJw3&_nc_oc=Admoz2KNxIdWk84H-Zk1zSpJYh2J4DaBmxLMvsvRtMJY6gt7qrOaZxG-0JblcyWdO1hUTDWa2OxFyeUMuETW3X7U&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=6ldJHiobwjspU4JW7sg2Cg&_nc_ss=8&oh=00_Afwv36OPchLjs3u0Odp2RuSuno36IMA8BveuDJetA8_MxA&oe=69B0C681" alt="Student leadership session" loading="lazy" class="img-hover-scale"/>
     <span class="ps-img-label">Student Leaders Forum · Mpigi 2025</span>
   </div>
   <div class="ps-img">
-    <img src="https://www.globalgiving.org/pfil/63544/IMG_0517_Large.jpeg" alt="RED Campaign session" loading="lazy"/>
+    <img src="https://www.globalgiving.org/pfil/63544/IMG_0517_Large.jpeg" alt="RED Campaign session" loading="lazy" class="img-hover-scale"/>
     <span class="ps-img-label">RED Campaign · Dignity Kits</span>
   </div>
   <div class="ps-img">
-    <img src="https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/480860931_679995001016932_4611239094514458600_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=106&ccb=1-7&_nc_sid=a934a8&_nc_ohc=_0uJpCuYZN4Q7kNvwF5IVR8&_nc_oc=Adlg4B-OKcKW3m1xfMbWH-u2CVHJ5Ck3tcbeT4m-EKEyzfdOkUZpRVceCPWhIf9BemdrERTco-CpjTXZR4C3ARHH&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=NHoSxjjLNAyvUTzmzB_VaQ&_nc_ss=8&oh=00_AfxtlkUCmZZUms55SVUW39a3BR6eyyDArFd4zJZnGreo3w&oe=69B0F032" alt="GreenSchools tree planting" loading="lazy"/>
+    <img src="https://scontent.ftlv19-3.fna.fbcdn.net/v/t39.30808-6/480860931_679995001016932_4611239094514458600_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=106&ccb=1-7&_nc_sid=a934a8&_nc_ohc=_0uJpCuYZN4Q7kNvwF5IVR8&_nc_oc=Adlg4B-OKcKW3m1xfMbWH-u2CVHJ5Ck3tcbeT4m-EKEyzfdOkUZpRVceCPWhIf9BemdrERTco-CpjTXZR4C3ARHH&_nc_zt=23&_nc_ht=scontent.ftlv19-3.fna&_nc_gid=NHoSxjjLNAyvUTzmzB_VaQ&_nc_ss=8&oh=00_AfxtlkUCmZZUms55SVUW39a3BR6eyyDArFd4zJZnGreo3w&oe=69B0F032" alt="GreenSchools tree planting" loading="lazy" class="img-hover-scale"/>
     <span class="ps-img-label">GreenSchools · Tree Planting</span>
   </div>
 </div>
 
 <!-- ⑤  STORIES -->
-<section id="stories">
+<section id="stories" class="section-cream">
   <div class="container">
     <div class="reveal" style="text-align:center">
       <span class="eyebrow ew-teal">Field Report 2025</span>
       <h2 class="t-section">Stories of <em class="line-red">Change</em></h2>
       <p class="t-body" style="opacity:.62;max-width:480px;margin:12px auto 0">What happens when you give students real tools and real responsibility.</p>
     </div>
-    <div class="stories-grid">
+    <div class="stories-grid grid-3">
 
       <div class="story-card reveal">
         <div class="sc-img">
-          <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/476838397_671279345221831_4548276021285878824_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=105&ccb=1-7&_nc_sid=a934a8&_nc_ohc=qkFO1ZbtoT8Q7kNvwHpEqOP&_nc_oc=AdlVRzKkMEH_TByGW2ybw2Wr_81SUm6Pp0bflE5uT7ffRVu_KZUfQoGWbUk0MvBGrSKtU-ABzB9sXyb6nH72hfuk&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=6ldJHiobwjspU4JW7sg2Cg&_nc_ss=8&oh=00_AfyIBOABC4ycYMZrqd7K1yeXOSUIQBGQ0PwNIPqTkjmHZA&oe=69B0EFC7" alt="Mitaramaria Hill Secondary students" loading="lazy"/>
+          <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/476838397_671279345221831_4548276021285878824_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=105&ccb=1-7&_nc_sid=a934a8&_nc_ohc=qkFO1ZbtoT8Q7kNvwHpEqOP&_nc_oc=AdlVRzKkMEH_TByGW2ybw2Wr_81SUm6Pp0bflE5uT7ffRVu_KZUfQoGWbUk0MvBGrSKtU-ABzB9sXyb6nH72hfuk&_nc_zt=23&_nc_ht=scontent.ftlv19-2.fna&_nc_gid=6ldJHiobwjspU4JW7sg2Cg&_nc_ss=8&oh=00_AfyIBOABC4ycYMZrqd7K1yeXOSUIQBGQ0PwNIPqTkjmHZA&oe=69B0EFC7" alt="Mitaramaria Hill Secondary students" loading="lazy" class="img-hover-scale img-grayscale-light"/>
         </div>
         <div class="sc-top">
           <span class="sc-loc">Buwama</span>
@@ -967,7 +880,7 @@ include 'header.php';
 
       <div class="story-card reveal rd2">
         <div class="sc-img">
-          <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/479285217_671916531824779_1464741376816009831_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a934a8&_nc_ohc=MXaD23FXPZoQ7kNvwG6Hk_h&_nc_oc=AdnDN8iGo2hFBwgrkwnX8kfOQTfjoKcuPgj0AboIKlc0QH0hGPJFzPOT5y5UO9acM0Kt6y3Nh37UpgwFbDhiGNB5&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=t-9c0xW7awEyZ8WtEaiMHw&_nc_ss=8&oh=00_AfwPemPFDGI2ydLXKR9XuSSXBj-iSG-j5iSO1ZSqRP637g&oe=69B0E8C4" alt="Mitaramaria Standard Primary book project" loading="lazy"/>
+          <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/479285217_671916531824779_1464741376816009831_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a934a8&_nc_ohc=MXaD23FXPZoQ7kNvwG6Hk_h&_nc_oc=AdnDN8iGo2hFBwgrkwnX8kfOQTfjoKcuPgj0AboIKlc0QH0hGPJFzPOT5y5UO9acM0Kt6y3Nh37UpgwFbDhiGNB5&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=t-9c0xW7awEyZ8WtEaiMHw&_nc_ss=8&oh=00_AfwPemPFDGI2ydLXKR9XuSSXBj-iSG-j5iSO1ZSqRP637g&oe=69B0E8C4" alt="Mitaramaria Standard Primary book project" loading="lazy" class="img-hover-scale img-grayscale-light"/>
         </div>
         <div class="sc-top">
           <span class="sc-loc">Buwama</span>
@@ -981,7 +894,7 @@ include 'header.php';
 
       <div class="story-card reveal rd3">
         <div class="sc-img">
-          <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/480027248_671916561824776_701939243737967098_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a934a8&_nc_ohc=gyXusTBlWkEQ7kNvwHY33YV&_nc_oc=Adk33tCx04_lA6q1GXFIjnsO7ul-7GfusBHOvO_66KlARVBS_aHhqin2kBHhXIi4rqm85o_P9toRRJ9-t8_EC9tH&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=ckDtdeBTwbb6QkgZ-QfLHA&_nc_ss=8&oh=00_AfwdLNarqH8dOnYEtvk3qfXOyKjC3K_8nj5tRBsAKC8OZQ&oe=69B0CBCC" alt="St Bonaventure peer support circles" loading="lazy"/>
+          <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/480027248_671916561824776_701939243737967098_n.jpg?stp=c342.0.1365.1365a_dst-jpg_s552x414_tt6&_nc_cat=100&ccb=1-7&_nc_sid=a934a8&_nc_ohc=gyXusTBlWkEQ7kNvwHY33YV&_nc_oc=Adk33tCx04_lA6q1GXFIjnsO7ul-7GfusBHOvO_66KlARVBS_aHhqin2kBHhXIi4rqm85o_P9toRRJ9-t8_EC9tH&_nc_zt=23&_nc_ht=scontent.ftlv19-1.fna&_nc_gid=ckDtdeBTwbb6QkgZ-QfLHA&_nc_ss=8&oh=00_AfwdLNarqH8dOnYEtvk3qfXOyKjC3K_8nj5tRBsAKC8OZQ&oe=69B0CBCC" alt="St Bonaventure peer support circles" loading="lazy" class="img-hover-scale img-grayscale-light"/>
         </div>
         <div class="sc-top">
           <span class="sc-loc gold-loc">Kanyike</span>
@@ -998,7 +911,7 @@ include 'header.php';
 </section>
 
 <!-- ⑥  PRICING -->
-<section id="pricing">
+<section id="pricing" class="section-navy">
   <div class="halftone halftone-light"></div>
   <div class="container">
     <div class="reveal" style="text-align:center">
@@ -1006,7 +919,7 @@ include 'header.php';
       <h2 class="t-section" style="color:#fff">Choose Your <em style="color:var(--yellow)">Tier</em></h2>
       <p class="price-note">Designed for school cashflow — paid termly. All tiers include training, toolkits, and monitoring. Only <strong style="color:#fff">12 slots per term</strong> to protect quality.</p>
     </div>
-    <div class="price-grid reveal">
+    <div class="price-grid grid-4 reveal">
 
       <!-- Partner -->
       <div class="ptier">
@@ -1085,14 +998,14 @@ include 'header.php';
 </section>
 
 <!-- ⑦  PROBLEM / SOLUTION -->
-<section id="probsol">
+<section id="probsol" class="section-cream">
   <div class="container">
-    <div class="ps-grid">
+    <div class="ps-grid grid-2">
       <div class="reveal">
         <span class="eyebrow ew-red" style="margin-bottom:24px">The Problem We Solve</span>
         <p class="ps-h">Titles without<br/><span class="red">training.</span></p>
         <p class="ps-intro">Every school has prefects. Almost none have been trained to actually lead. The result is the same everywhere — clubs that exist on paper, students waiting to be told what to do, teachers carrying everything themselves.</p>
-        <div class="ps-list">
+        <div class="ps-list bordered-list">
           <div class="ps-row"><span class="ps-icon">✗</span><p class="ps-text">Prefects who command but haven't learned to lead</p></div>
           <div class="ps-row"><span class="ps-icon">✗</span><p class="ps-text">Clubs that exist on paper but produce nothing</p></div>
           <div class="ps-row"><span class="ps-icon">✗</span><p class="ps-text">Students waiting to be pushed instead of self-starting</p></div>
@@ -1106,7 +1019,7 @@ include 'header.php';
       <div class="reveal rd2">
         <div class="sol-box">
           <p class="sol-box-h">The Omuto <span class="teal">Fix</span></p>
-          <div class="sol-list">
+          <div class="sol-list bordered-list-dark">
             <div class="sol-row"><span class="sol-n">01</span><div class="sol-t"><strong>Train Real Skills</strong><span>Planning, mobilising, conflict resolution, public speaking — tools, not theory.</span></div></div>
             <div class="sol-row"><span class="sol-n">02</span><div class="sol-t"><strong>Provide the Tools</strong><span>Printed logbooks, monthly scorecards, project planning templates, and a patron guide.</span></div></div>
             <div class="sol-row"><span class="sol-n">03</span><div class="sol-t"><strong>Track Results</strong><span>Monitoring visits and documented outcomes every term — nothing left to guesswork.</span></div></div>
@@ -1120,15 +1033,15 @@ include 'header.php';
 </section>
 
 <!-- ⑧  SERVICES -->
-<section id="services">
+<section id="services" class="section-white">
   <div class="container">
-    <div class="svc-grid">
+    <div class="svc-grid grid-2-sm">
       <div class="reveal">
         <span class="eyebrow ew-navy" style="margin-bottom:24px">Optional Add-Ons</span>
         <h2 class="t-section" style="font-size:clamp(28px,3.5vw,44px)">Schools buy.<br/><em class="line-red">Youth earn.</em></h2>
         <p style="font-size:15px;line-height:1.85;font-weight:500;color:rgba(29,38,49,.68);margin-bottom:4px">Beyond training, we provide youth-led professional services at competitive rates — separate from your partnership fee. When schools buy from Omuto, they directly fund the programmes.</p>
         <p style="font-size:11px;font-style:italic;opacity:.38;margin-bottom:24px">Services are quoted separately from partnership fees.</p>
-        <div class="svc-table">
+        <div class="svc-table bordered-list">
           <div class="svc-row">
             <div class="svc-ico">🖨️</div>
             <div><span class="svc-label">Printing</span><span class="svc-note">Exams, holiday packages, circulars, reports</span></div>
@@ -1159,13 +1072,13 @@ include 'header.php';
 </section>
 
 <!-- ⑨  ROADMAP + TEAM -->
-<section id="roadmap">
+<section id="roadmap" class="section-cream">
   <div class="container">
-    <div class="rm-grid">
+    <div class="rm-grid grid-2">
       <div class="reveal">
         <span class="eyebrow ew-navy" style="margin-bottom:20px">2026 Calendar</span>
         <h2 class="t-section" style="font-size:clamp(28px,3.5vw,44px)">Three Terms.<br/><em class="line-red">One Year.</em></h2>
-        <div class="rm-track">
+        <div class="rm-track bordered-list">
           <div class="rm-row">
             <div class="rm-dot"></div>
             <div>
@@ -1219,7 +1132,7 @@ include 'header.php';
 </section>
 
 <!-- ⑩  INTEGRITY PLEDGE -->
-<section id="pledge">
+<section id="pledge" class="section-navy">
   <div class="halftone halftone-light"></div>
   <div class="container">
     <div class="pledge-inner reveal">
@@ -1233,10 +1146,10 @@ include 'header.php';
 </section>
 
 <!-- ⑪  FINAL CTA -->
-<section id="osx-cta">
+<section id="osx-cta" class="section-red">
   <div class="halftone"></div>
   <div class="container">
-    <div class="cta-inner reveal">
+    <div class="cta-inner cta-section reveal">
       <span class="eyebrow ew-white">Register for 2026</span>
       <h2 class="cta-h">Ready to<br/>Transform?</h2>
       <p class="cta-sub">Secure your school's slot for Term 1 2026. Only 12 partner slots per term — we cap numbers to protect quality of delivery.</p>
