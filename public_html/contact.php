@@ -5,64 +5,7 @@ $page_canonical  = "https://omuto.org/contact";
 $page_active_nav = "impact";
 $footer_show_sticky = false;
 
-$page_extra_css = '<style>
-.hero-contact{min-height:60svh;display:flex;align-items:flex-end}
-.hero-contact-glow{top:-80px;right:-80px;width:500px;height:500px}
-.hero-contact-wm{position:absolute;bottom:20px;right:40px;font-family:var(--font-head);font-size:clamp(80px,15vw,180px);font-weight:900;color:rgba(255,255,255,.04);letter-spacing:-.02em;pointer-events:none;user-select:none}
-.hero-contact-inner{padding:60px 0;position:relative;z-index:2}
-.hero-contact h1{font-family:var(--font-head);font-size:clamp(48px,8vw,96px);font-weight:900;line-height:.9;letter-spacing:-.04em;text-transform:uppercase;color:#fff;margin-bottom:16px}
-.hero-contact h1 em{font-style:italic;color:var(--teal)}
-.hero-contact p{font-size:16px;font-weight:500;color:rgba(255,255,255,.65);max-width:480px;line-height:1.7}
-.hc{display:flex;align-items:center;gap:10px;padding:12px 18px;background:rgba(255,255,255,.08);border:2px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);color:#fff;font-size:13px;font-weight:700;transition:all .15s;margin-right:8px;margin-bottom:8px}
-.hc:hover{background:rgba(255,255,255,.15);border-color:var(--teal)}
-.hc svg{width:16px;height:16px;fill:currentColor}
-#engage{background:var(--navy);padding:88px 0;border-bottom:var(--b)}
-.engage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:var(--b);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);margin-top:48px}
-.engage-card{padding:36px 28px;border-right:var(--b);display:flex;flex-direction:column;gap:10px;transition:background .18s}
-.engage-card:last-child{border-right:none}
-.engage-card:hover{background:rgba(255,255,255,.05)}
-.engage-card h3{font-family:var(--font-head);font-size:20px;font-weight:900;text-transform:uppercase;font-style:italic;color:#fff;margin-bottom:8px}
-.engage-card p{font-size:13px;font-weight:500;color:rgba(255,255,255,.55);line-height:1.6}
-.engage-card .ec-icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
-.engage-card .ec-icon svg{width:22px;height:22px;fill:#fff}
-@media(max-width:768px){.engage-grid{grid-template-columns:1fr}.engage-card{border-right:none;border-bottom:var(--b)}.engage-card:last-child{border-bottom:none}}
-#faq{background:var(--cream);padding:88px 0;border-bottom:var(--b)}
-.faq-list{max-width:720px;margin:48px auto 0}
-.faq-item{border:var(--b-thin);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;background:#fff}
-.faq-trigger{width:100%;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;background:none;border:none;cursor:pointer;text-align:left}
-.faq-q{font-family:var(--font-head);font-size:15px;font-weight:800;text-transform:uppercase;color:var(--navy)}
-.faq-chevron{width:24px;height:24px;display:flex;align-items:center;justify-content:center;transition:transform .2s}
-.faq-chevron svg{width:18px;height:18px;fill:var(--navy)}
-.faq-trigger[aria-expanded="true"] .faq-chevron{transform:rotate(180deg)}
-.faq-body{padding:0 24px 20px;font-size:14px;font-weight:500;line-height:1.7;color:rgba(29,38,49,.7);display:none}
-.faq-item.open .faq-body{display:block}
-#map-section{background:#fff;padding:88px 0;border-bottom:var(--b)}
-.map-layout{display:grid;grid-template-columns:1fr 300px;gap:24px;margin-top:48px}
-#contact-map{height:400px;border:var(--b);border-radius:var(--radius)}
-.map-cards{display:flex;flex-direction:column;gap:12px}
-.map-addr{background:var(--cream);padding:16px 20px;border:var(--b-thin);border-radius:var(--radius-sm)}
-.ma-tag{font-family:var(--font-ui);font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;background:var(--red);color:#fff;padding:2px 8px;border-radius:4px;margin-bottom:8px;display:inline-block}
-.ma-name{font-family:var(--font-head);font-size:14px;font-weight:800;text-transform:uppercase;margin-bottom:4px}
-.ma-addr{font-size:12px;font-weight:500;opacity:.6;line-height:1.5}
-#finalcta{background:var(--navy);padding:88px 0;position:relative;overflow:hidden}
-.fc-inner{display:flex;gap:48px;align-items:center}
-.fc-left{flex:1}
-.fc-left h2{font-family:var(--font-head);font-size:clamp(36px,5vw,56px);font-weight:900;text-transform:uppercase;font-style:italic;color:#fff;margin-bottom:16px}
-.fc-left h2 .red{color:var(--red)}
-.fc-left p{font-size:15px;font-weight:500;color:rgba(255,255,255,.6);line-height:1.7;max-width:400px}
-.fc-note{font-family:var(--font-ui);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.35);margin-top:12px}
-.fc-right{display:flex;flex-direction:column;gap:10px;min-width:280px}
-.fc-channel{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1);border-radius:var(--radius-sm);transition:all .15s}
-.fc-channel:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.3)}
-.fc-ch-left{display:flex;align-items:center;gap:14px}
-.fc-ch-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center}
-.fc-ch-icon svg{width:16px;height:16px;fill:#fff}
-.fc-ch-label{font-family:var(--font-ui);font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.4);display:block}
-.fc-ch-val{font-size:13px;font-weight:700;color:#fff;display:block;margin-top:2px}
-.fc-ch-arrow{font-size:20px;color:rgba(255,255,255,.3)}
-@media(max-width:900px){.fc-inner{flex-direction:column;gap:32px}.fc-right{width:100%;min-width:auto}}
-@media(max-width:600px){.map-layout{grid-template-columns:1fr}}
-</style>';
+$page_extra_css = '<link rel="stylesheet" href="contact.css"/>';
 
 $page_extra_head = '<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>';
 $footer_extra_js = '<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>

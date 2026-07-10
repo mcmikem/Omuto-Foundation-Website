@@ -92,7 +92,7 @@ $page_active_nav = "work";
 .pg-talents-header{text-align:center;margin-bottom:56px}
 .pg-talents-h{font-family:var(--font-head);font-size:clamp(36px,6vw,72px);font-weight:900;text-transform:uppercase;font-style:italic;line-height:1;color:#fff}
 .pg-talents-h-accent{color:var(--yellow)}
-.pg-talents-sketch{font-family:var(--font-sketch);font-size:28px;color:var(--yellow);margin-top:12px}
+.pg-talents-sketch{font-family:var(--font-primary);font-weight:600;font-size:22px;color:var(--yellow);margin-top:12px}
 .pg-talents-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .pg-talents-card{background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.2);padding:32px;border-radius:var(--radius)}
 .pg-talents-card-icon{width:64px;height:64px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
